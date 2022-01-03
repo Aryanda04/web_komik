@@ -1,0 +1,45 @@
+{
+    "komik":[
+        {
+            "kategori": "Manhua",
+            "judul": "Magic Emperor",
+            "deskripsi": "Deskripsi",
+            "gambar": "komik1.webp",
+            "chapter": 2,
+            "genre":["action","mature","roleplay"]
+        },
+        {
+            "kategori": "Manhwa",
+            "judul": "Talent-Swallowing Magician",
+            "deskripsi": "Deskripsi",
+            "gambar": "komik2.webp",
+            "chapter": 56,
+            "genre":["action","mature","roleplay"]
+        },
+        {
+            "kategori": "Manhwa",
+            "judul": "Regina Rena – To the Unforgiveable",
+            "deskripsi": "Deskripsiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiibfionfpnafdfjsdfsdnfabdflnasdfbasfnasdanfsfasjfbasbnflnasldfnalsn",
+            "gambar": "komik3.jpeg",
+            "chapter": 4,
+            "genre":["comedy","romance"]
+
+        },
+        {
+            "kategori": "Manhwa",
+            "judul": "Max Level Returner",
+            "deskripsi": "Deskripsi",
+            "gambar": "komik4.jpg",
+            "chapter": 12,
+            "genre":["comedy","action"]
+        },
+        {
+            "kategori": "Manhua",
+            "judul": "The Gamer Seorang pemalas",
+            "deskripsi": "Udinnnnnnnnnnnnnnnnnnnnn",
+            "gambar": "udin.jpg",
+            "chapter": 4,
+            "genre":["sport"]
+        }
+    ]
+}
