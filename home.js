@@ -23,7 +23,7 @@ $.getJSON('data.json', function(data) {
             </div>
             <div class="card-footer" style="background-color:white; border-top:none">
             <small class="text-muted my-2" style="float:right">${data.chapter} Chapter</small>
-            <a href="#" class="btn btn-primary">Details</a>
+            <a href="detail.html" class="btn btn-primary">Details</a>
             </div>
             </div>
             </div>`);
@@ -82,7 +82,6 @@ $('.nav-link').on('click', function(){
     $('h1').html(kategori);
 //ini buat yang home
     if(kategori=='Home'){
-        $('h1').html('singpusing');
         // empty buat ngosongin yang sisa dari kategori
         $('#daftar-menu').empty();
         allMenu();
