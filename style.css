@@ -164,3 +164,7 @@ input:checked + .slider:before {
 .chapterPrevious:hover {
   background-color: rgb(59, 58, 58);
 }
+
+#chapterGambar {
+  align-items: center;
+}
