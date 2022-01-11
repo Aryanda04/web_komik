@@ -66,10 +66,7 @@
             <div class="navbar-nav">
               <a class="nav-link active" aria-current="page" href="index.html">Home</a>
               <a class="nav-link" aria-current="page" href="genre.html">Genre</a>
-              <a class="nav-link" aria-current="page" href="Release.html">Lates Release</a>
-              <a class="nav-link" aria-current="page" href="#">Manhwa</a>
-    
-    
+              <a class="nav-link" aria-current="page" href="Release.html">Lates Release</a>  
             </div>
           </div>
         </div>
@@ -130,7 +127,6 @@
             
         </div>
     </div>
-    
     <!-- <div class="komik_info-cover-box">
         <div class="komik_info-cover-image">
           <img width="824" height="1172" src="https://komikcast.com/wp-content/uploads/2021/07/E6p48uFUYAM9A_3-e1626830020974.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy">      </div>
@@ -140,8 +136,11 @@
     var table = document.getElementById('table');
     var i = 65;
     while(i!=0){
-        table.innerHTML += `<tr>
-                        <td style="padding-right: 850px;">Chapter ${i}</td>
+        table.innerHTML += `
+                    <tr>
+                        <td style="padding-right: 850px;">
+                            <a href="isi_komik.html">Chapter ${i}</a>
+                        </td>
                         <td>2 weeks ago</td>
                     </tr>`
         i-=1;
