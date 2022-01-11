@@ -1,12 +1,11 @@
 {
-    "komik":[
-        {
+    "komik": [{
             "kategori": "Manhua",
             "judul": "Magic Emperor",
             "deskripsi": "Deskripsi",
             "gambar": "komik1.webp",
             "chapter": 2,
-            "genre":["action","mature","roleplay"]
+            "genre": ["action", "mature", "roleplay"]
         },
         {
             "kategori": "Manhwa",
@@ -14,7 +13,7 @@
             "deskripsi": "Deskripsi",
             "gambar": "komik2.webp",
             "chapter": 56,
-            "genre":["action","mature","roleplay"]
+            "genre": ["action", "mature", "roleplay"]
         },
         {
             "kategori": "Manhwa",
@@ -22,7 +21,7 @@
             "deskripsi": "Deskripsiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiibfionfpnafdfjsdfsdnfabdflnasdfbasfnasdanfsfasjfbasbnflnasldfnalsn",
             "gambar": "komik3.jpeg",
             "chapter": 4,
-            "genre":["comedy","romance"]
+            "genre": ["comedy", "romance"]
 
         },
         {
@@ -31,15 +30,15 @@
             "deskripsi": "Deskripsi",
             "gambar": "komik4.jpg",
             "chapter": 12,
-            "genre":["comedy","action"]
+            "genre": ["comedy", "action"]
         },
         {
             "kategori": "Manhua",
             "judul": "The Gamer Seorang pemalas",
             "deskripsi": "Udinnnnnnnnnnnnnnnnnnnnn",
-            "gambar": "udin.jpg",
+            "gambar": "boruto.jpg",
             "chapter": 4,
-            "genre":["sport"]
+            "genre": ["sport"]
         }
     ]
 }
