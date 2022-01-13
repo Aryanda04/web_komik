@@ -1,0 +1,65 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+.badan {
+  width: 80%;
+  margin: 35px auto;
+  background-color: white;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.badan h2 {
+  /* background-color: aqua; */
+  color: rgb(0, 0, 0);
+  border-bottom: 3px solid rgb(0, 0, 0);
+  margin: 5px;
+  margin-bottom: 13px;
+  padding-left: 20px;
+}
+
+.list-produk {
+  border: 2px solid rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  float: left;
+  width: 20%;
+  margin: 40px;
+  text-align: center;
+  min-height: max-content;
+  min-width: max-content;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grid-container {
+  object-fit: fill;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  min-height: max-content;
+
+  /* width: max-content; */
+  background-color: #388ff3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(0, 255, 8, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+  max-width: 25%;
+}
