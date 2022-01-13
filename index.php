@@ -2,15 +2,34 @@
 require 'db/functions.php';
 
 $select_komik = mysqli_query($conn, "SELECT * FROM komik");
-$select_komik_sort_view = mysqli_query($conn, "SELECT * FROM komik ORDER BY total_views");
+$select_komik_sort_view = mysqli_query($conn, "SELECT * FROM komik ORDER BY total_views DESC");
 
-$list_komik = [];
-$row = mysqli_fetch_assoc($select_komik_sort_view);
-// while($row = mysqli_fetch_assoc($select_komik_sort_view)) {
-//   $list_komik[] = $row; 
-// }
-
-// var_dump($list_komik);
+function showKomik($queryKomik, $loop)
+{
+  $i = 1;
+  while ($row = mysqli_fetch_assoc($queryKomik)) {
+    $max_char = 60;
+    if (strlen($row["deskripsi"]) > $max_char) {
+      $deskripsi = substr($row["deskripsi"], 0, $max_char) . "...";
+    } else {
+      $deskripsi = $row["deskripsi"];
+    }
+    echo "<div class=\"list-produk\">";
+    echo "  <div class=\"kategori\">" . $row["kategori"] . "</div>";
+    echo "  <img src=\"img/komik1.webp\" style=\"object-fit:contain; height:233px !important; align:center\">";
+    echo "    <div class=\"judul\">" . $row["nama_komik"] . "</div>";
+    echo "    <p class=\"deskripsi\">" . $deskripsi . "</p>";
+    echo "  <div class=\"footer\">";
+    echo "    <a href=\"detail.html\" class=\"detail-button\"> Details </a>";
+    echo "    <div class=\"detail-chapter\">" . $row["total_chapter"] . " Chapter</div>";
+    echo "  </div>";
+    echo "</div>";
+    $i++;
+    if ($i > $loop && $loop != -1) {
+      break;
+    }
+  }
+}
 ?>
 
 <!doctype html>
@@ -20,9 +39,6 @@ $row = mysqli_fetch_assoc($select_komik_sort_view);
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Bootstrap CSS -->
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
 
 
   <title>Home Page</title>
@@ -43,75 +59,25 @@ $row = mysqli_fetch_assoc($select_komik_sort_view);
     </label>
     <input type="text" placeholder="Search.." class="Searchbox">
   </ul>
-
   <div class="badan">
-    <div class="grid-container" style="border-bottom:solid black 5px">
-      <h1>Most View</h1>
-    </div>
-    <div class="flex-container">
+    <h1 class="grid-container">Most View</h1>
+    <div class="flex-container" id="most-view">
       <?php
-      $i = 1;
-      while ($row = mysqli_fetch_assoc($select_komik_sort_view)) {
-        $max_char = 60;
-        if (strlen($row["deskripsi"]) > $max_char) {
-          $deskripsi = substr($row["deskripsi"], 0, $max_char) . "...";
-        } else {
-          $deskripsi = $row["deskripsi"];
-        }
-      ?>
-        <div class="list-produk">
-          <div class=""><?= $row["kategori"] ?></div>
-          <img src="img/komik1.webp" style="object-fit:contain; height:233px !important;">
-          <div class="">
-            <h5 class=""><?= $row["nama_komik"] ?></h5>
-            <p class=""><?= $deskripsi ?></p>
-          </div>
-          <div class="" style="background-color:white; border-top:none">
-            <small class="" style="float:right"><?= $row["total_chapter"] ?> Chapter</small>
-            <a href="detail.html" class="btn btn-primary">Details</a>
-          </div>
-        </div>
-      <?php
-        $i++;
-        if ($i > 5) {
-          break;
-        }
-      }
+      showKomik($select_komik_sort_view, 4);
       ?>
     </div>
 
-    <h1>Komik List</h1>
-    <div class="flex-container" id="daftar-komik" style="border-top:solid black 5px; padding-top: 10px;">
-
+    <h1 class="grid-container">Komik List</h1>
+    <div class="flex-container" id="daftar-komik">
       <?php
-      while ($row = mysqli_fetch_assoc($select_komik)) {
-        $max_char = 60;
-        if (strlen($row["deskripsi"]) > $max_char) {
-          $deskripsi = substr($row["deskripsi"], 0, $max_char) . "...";
-        } else {
-          $deskripsi = $row["deskripsi"];
-        }
-      ?>
-        <div class="list-produk">
-          <div class=""><?= $row["kategori"] ?></div>
-          <img src="img/${data.gambar}" style="object-fit:contain; height:233px !important;">
-          <div class="">
-            <h5 class=""><?= $row["nama_komik"] ?></h5>
-            <p class=""><?= $deskripsi ?></p>
-          </div>
-          <div class="" style="background-color:white; border-top:none">
-            <small class="" style="float:right"><?= $row["total_chapter"] ?> Chapter</small>
-            <a href="detail.html" class="btn btn-primary">Details</a>
-          </div>
-        </div>
-      <?php
-      }
+      showKomik($select_komik, -1);
       ?>
     </div>
   </div>
 
-  <!-- <script src="home.js"></script>
-  <script src="isi_komik.js"></script> -->
+
+  <script src="home.js"></script>
+  <script src="isi_komik.js"></script>
 </body>
 
 </html>

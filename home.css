@@ -27,16 +27,60 @@ body {
 }
 
 .list-produk {
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px solid rgb(146, 146, 146);
   background-color: rgb(255, 255, 255);
   float: left;
   width: 20%;
   margin: 20px;
   text-align: center;
   min-height: max-content;
-  min-width: max-content;
+  min-width: content;
+  border-radius: 10px;
 }
-
+.kategori {
+  text-align: left;
+  background-color: rgb(189, 189, 189);
+  padding: 10px;
+  border-radius: 10px 10px 0px 0px;
+}
+.judul {
+  text-align: left;
+  font-size: 20px;
+  padding: 10px;
+  font-weight: 900;
+}
+.deskripsi {
+  margin-top: 0px;
+  padding: 10px;
+  text-align: left;
+  font-size: 15px;
+}
+.footer {
+  background-color: rgb(189, 189, 189);
+  border-top: rgb(146, 146, 146);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0px 0px 10px 10px;
+}
+.detail-chapter {
+  font-size: 15px;
+  color: rgb(88, 88, 88);
+  margin-top: auto;
+  margin-bottom: auto;
+  /* float: right; */
+  /* padding: 10px; */
+}
+.detail-button {
+  background-color: #5c5c5c;
+  border: none;
+  color: white;
+  padding: 7px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -49,18 +93,8 @@ body {
   object-fit: fill;
   display: grid;
   grid-template-columns: auto auto auto auto;
-  grid-gap: 10px;
   min-height: max-content;
-
   /* width: max-content; */
-  background-color: #388ff3;
-  padding: 10px;
-}
-
-.grid-container > div {
-  background-color: rgba(0, 255, 8, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-  max-width: 25%;
+  background-color: #ffffff;
+  border-bottom: solid black 5px;
 }
