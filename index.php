@@ -8,14 +8,17 @@ function showKomik($queryKomik, $loop)
 {
   $i = 1;
   while ($row = mysqli_fetch_assoc($queryKomik)) {
-    $max_char = 60;
+    $max_char = 120;
     if (strlen($row["deskripsi"]) > $max_char) {
       $deskripsi = substr($row["deskripsi"], 0, $max_char) . "...";
     } else {
       $deskripsi = $row["deskripsi"];
     }
     echo "<div class=\"list-produk\">";
-    echo "  <div class=\"kategori\">" . $row["kategori"] . "</div>";
+    echo "  <div class=\"kategori\">";
+    echo "    <div>" . $row["kategori"] . "</div>";
+    echo "    <div>" . $row["total_views"] . " Total Pembaca</div>";
+    echo "  </div>";
     echo "  <img src=\"img/" . $row["nama_komik"] . "/" . $row["cover_komik"] . "\"  style=\"object-fit:contain; height:233px !important; align:center\">";
     echo "    <div class=\"judul\">" . $row["nama_komik"] . "</div>";
     echo "    <p class=\"deskripsi\">" . $deskripsi . "</p>";
@@ -59,6 +62,7 @@ function showKomik($queryKomik, $loop)
     </label>
     <input type="text" placeholder="Search.." class="Searchbox">
   </ul>
+  
   <div class="badan">
     <h1 class="grid-container">Most View</h1>
     <div class="flex-container" id="most-view">
@@ -77,7 +81,6 @@ function showKomik($queryKomik, $loop)
 
 
   <script src="home.js"></script>
-  <script src="isi_komik.js"></script>
 </body>
 
 </html>
