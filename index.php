@@ -27,14 +27,14 @@ $row = mysqli_fetch_assoc($select_komik_sort_view);
 
   <title>Home Page</title>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" type="text/css" href="home.css">
 </head>
 
 <body>
 
   <ul class="tulisanNav">
     <li><img src="logo.webp" width="200px" alt=""></li>
-    <li><a href="index.html">Home</a></li>
+    <li><a href="index.php">Home</a></li>
     <li><a href="genre.html">Genre</a></li>
     <li><a href="release.html">Latest Release</a></li>
     <label class="switch" style="margin-top: 12px; float: right; margin-right: 10px;">
@@ -48,7 +48,7 @@ $row = mysqli_fetch_assoc($select_komik_sort_view);
     <div class="grid-container" style="border-bottom:solid black 5px">
       <h1>Most View</h1>
     </div>
-    <div class="flex-container" id="most-view">
+    <div class="flex-container">
       <?php
       $i = 1;
       while ($row = mysqli_fetch_assoc($select_komik_sort_view)) {
@@ -61,7 +61,7 @@ $row = mysqli_fetch_assoc($select_komik_sort_view);
       ?>
         <div class="list-produk">
           <div class=""><?= $row["kategori"] ?></div>
-          <img src="img/${data.gambar}" style="object-fit:contain; height:233px !important; align:center">
+          <img src="img/komik1.webp" style="object-fit:contain; height:233px !important;">
           <div class="">
             <h5 class=""><?= $row["nama_komik"] ?></h5>
             <p class=""><?= $deskripsi ?></p>
@@ -73,7 +73,7 @@ $row = mysqli_fetch_assoc($select_komik_sort_view);
         </div>
       <?php
         $i++;
-        if ($i > 4) {
+        if ($i > 5) {
           break;
         }
       }
@@ -82,9 +82,10 @@ $row = mysqli_fetch_assoc($select_komik_sort_view);
 
     <h1>Komik List</h1>
     <div class="flex-container" id="daftar-komik" style="border-top:solid black 5px; padding-top: 10px;">
+
       <?php
       while ($row = mysqli_fetch_assoc($select_komik)) {
-        $max_char = 150;
+        $max_char = 60;
         if (strlen($row["deskripsi"]) > $max_char) {
           $deskripsi = substr($row["deskripsi"], 0, $max_char) . "...";
         } else {
@@ -93,7 +94,7 @@ $row = mysqli_fetch_assoc($select_komik_sort_view);
       ?>
         <div class="list-produk">
           <div class=""><?= $row["kategori"] ?></div>
-          <img src="img/${data.gambar}" style="object-fit:contain; height:233px !important; align:center">
+          <img src="img/${data.gambar}" style="object-fit:contain; height:233px !important;">
           <div class="">
             <h5 class=""><?= $row["nama_komik"] ?></h5>
             <p class=""><?= $deskripsi ?></p>
@@ -109,8 +110,8 @@ $row = mysqli_fetch_assoc($select_komik_sort_view);
     </div>
   </div>
 
-  <script src="home.js"></script>
-  <script src="isi_komik.js"></script>
+  <!-- <script src="home.js"></script>
+  <script src="isi_komik.js"></script> -->
 </body>
 
 </html>

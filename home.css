@@ -31,7 +31,7 @@ body {
   background-color: rgb(255, 255, 255);
   float: left;
   width: 20%;
-  margin: 40px;
+  margin: 20px;
   text-align: center;
   min-height: max-content;
   min-width: max-content;
@@ -42,6 +42,7 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .grid-container {
