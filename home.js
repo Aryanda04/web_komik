@@ -12,20 +12,24 @@ $.getJSON('data.json', function(data) {
                 deskripsi = data.deskripsi;
             }
 
-            $('#daftar-weekly').append(`<div class="col-md-3 d-flex">
-            <div class="card mb-5 " style="min-height:max-content; width:100%">
-            <div class="card-header">${data.kategori}</div>
-            <img src="img/${data.gambar}" style="object-fit:contain; height:233px !important; align:center">
-            <div class="card-body">
-            <h5 class="card-title">${data.judul}</h5>
-            <p class="card-text">${deskripsi}</p>
+            $('#most-view').append(`
+            <div class="list-produk">
 
+            <div class="">${data.kategori}</div>
+            
+            <img src="img/${data.gambar}" style="object-fit:contain; height:233px !important; align:center">
+
+            <div class="">
+            <h5 class="">${data.judul}</h5>
+            <p class="">${deskripsi}</p>
             </div>
-            <div class="card-footer" style="background-color:white; border-top:none">
-            <small class="text-muted my-2" style="float:right">${data.chapter} Chapter</small>
+
+            <div class="" style="background-color:white; border-top:none">
+            <small class="" style="float:right">${data.chapter} Chapter</small>
             <a href="detail.html" class="btn btn-primary">Details</a>
             </div>
-            </div>
+
+         
             </div>`);
             console.log(i)
         }
@@ -52,20 +56,24 @@ function allMenu(){
                     deskripsi = data.deskripsi;
                 }
     
-                $('#daftar-komik').append(`<div class="col-md-3 d-flex">
-                <div class="card mb-5 " style="min-height:max-content; width:100%">
-                <div class="card-header">${data.kategori}</div>
+                $('#daftar-komik').append(` 
+                <div class="list-produk">
+
+                <div class="">${data.kategori}</div>
+                
                 <img src="img/${data.gambar}" style="object-fit:contain; height:233px !important; align:center">
-                <div class="card-body">
-                <h5 class="card-title">${data.judul}</h5>
-                <p class="card-text">${deskripsi}</p>
     
+                <div class="">
+                <h5 class="">${data.judul}</h5>
+                <p class="">${deskripsi}</p>
                 </div>
-                <div class="card-footer" style="background-color:white; border-top:none">
-                <small class="text-muted my-2" style="float:right">${data.chapter} Chapter</small>
-                <a href="#" class="btn btn-primary">Details</a>
+    
+                <div class="" style="background-color:white; border-top:none">
+                <small class="" style="float:right">${data.chapter} Chapter</small>
+                <a href="detail.html" class="btn btn-primary">Details</a>
                 </div>
-                </div>
+    
+             
                 </div>`);
             console.log(i)
             
