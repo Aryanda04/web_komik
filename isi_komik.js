@@ -1,8 +1,8 @@
 gambar = document.getElementById("chapterGambar");
 console.log("tes");
-for (let i = 1; i <= 2; i++) {
+for (let i = 1; i <= 8; i++) {
     gambar.innerHTML += `
-      <img src="img/komikdummy/${i}.png" alt="" class = "center">
+      <img src="img/Solo Leveling/chapter1/${i}.png" alt="" class = "center">
    `;
     console.log("tes gambar");
 }
