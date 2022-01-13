@@ -1,9 +1,9 @@
 function change() {
-    var genres = document.querySelectorAll(".models input[type='checkbox']");
-    var manhwas = document.querySelectorAll(".processors input[type='checkbox']");
+    var genres = document.querySelectorAll(".gen input[type='checkbox']");
+    var manhwas = document.querySelectorAll(".man input[type='checkbox']");
     var filters = {
-      models: getClassOfCheckedCheckboxes(genres),
-      processors: getClassOfCheckedCheckboxes(manhwas)
+      gen: getClassOfCheckedCheckboxes(genres),
+      man: getClassOfCheckedCheckboxes(manhwas)
     };
   
     filterResults(filters);
@@ -36,11 +36,11 @@ function change() {
     for (var i = 0; i < rElems.length; i++) {
       var el = rElems[i];
   
-      if (filters.models.length > 0) {
+      if (filters.gen.length > 0) {
         var isHidden = true;
   
-        for (var j = 0; j < filters.models.length; j++) {
-          var filter = filters.models[j];
+        for (var j = 0; j < filters.gen.length; j++) {
+          var filter = filters.gen[j];
   
           if (el.classList.contains(filter)) {
             isHidden = false;
@@ -53,11 +53,11 @@ function change() {
         }
       }
   
-      if (filters.processors.length > 0) {
+      if (filters.man.length > 0) {
         var isHidden = true;
   
-        for (var j = 0; j < filters.processors.length; j++) {
-          var filter = filters.processors[j];
+        for (var j = 0; j < filters.man.length; j++) {
+          var filter = filters.man[j];
   
           if (el.classList.contains(filter)) {
             isHidden = false;
