@@ -16,7 +16,7 @@ function showKomik($queryKomik, $loop)
     }
     echo "<div class=\"list-produk\">";
     echo "  <div class=\"kategori\">" . $row["kategori"] . "</div>";
-    echo "  <img src=\"img/komik1.webp\" style=\"object-fit:contain; height:233px !important; align:center\">";
+    echo "  <img src=\"img/" . $row["nama_komik"] . "/" . $row["cover_komik"] . "\"  style=\"object-fit:contain; height:233px !important; align:center\">";
     echo "    <div class=\"judul\">" . $row["nama_komik"] . "</div>";
     echo "    <p class=\"deskripsi\">" . $deskripsi . "</p>";
     echo "  <div class=\"footer\">";
@@ -49,7 +49,7 @@ function showKomik($queryKomik, $loop)
 <body>
 
   <ul class="tulisanNav">
-    <li><img src="logo.webp" width="200px" alt=""></li>
+    <li><img src="img/logo.webp" width="200px" alt=""></li>
     <li><a href="index.php">Home</a></li>
     <li><a href="genre.html">Genre</a></li>
     <li><a href="release.html">Latest Release</a></li>
