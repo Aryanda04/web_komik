@@ -47,6 +47,7 @@ body {
   padding: 10px;
   border-radius: 10px 10px 0px 0px;
   display: flex;
+  flex-basis: 0;
   justify-content: space-between;
 }
 .judul {
