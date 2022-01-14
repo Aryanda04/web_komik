@@ -1,6 +1,6 @@
 <?php
         //koneksi ke database
-        $conn = mysqli_connect("localhost", "root", "", "komik_tubes");
+        $conn = mysqli_connect("localhost", "root", "", "web_komik");
 
         //fungsi untuk mengambil data dari database
         function query($query){
