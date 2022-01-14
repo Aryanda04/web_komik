@@ -1,6 +1,6 @@
 <?php
         //koneksi ke database
-        $conn = mysqli_connect("localhost", "root", "", "web_komik");
+        $conn = mysqli_connect("localhost", "root", "", "komik_tubes");
 
         //fungsi untuk mengambil data dari database
         function query($query){
@@ -41,4 +41,3 @@
             //contoh: jika id = 3 terdapat pada database maka akan mereturn nilai 1, jika tidak ada maka return 0
             return mysqli_affected_rows($conn);
         }
-?>
