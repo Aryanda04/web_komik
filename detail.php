@@ -40,7 +40,7 @@
             margin-left: 7%;
             margin-right: 7%;
         }
-        
+
         .img-box {
             width: 200px;
             margin: 10px;
@@ -48,12 +48,12 @@
             line-height: 75px;
             font-size: 30px;
         }
-        
+
         .content {
             width: 800px;
             margin: 10px;
         }
-        
+
         .rating {
             background-color: rgb(144, 157, 160);
             width: 250px;
@@ -62,26 +62,26 @@
             line-height: 75px;
             font-size: 30px;
         }
-        
+
         .title {
             font-size: 30px;
         }
-        
+
         .checked {
             color: orange;
         }
-        
+
         .chapter {
             background-color: rgb(144, 157, 160);
             width: 100%;
             height: 100%;
             margin: 10px;
         }
-        
+
         .teks {
             font-size: 15px;
         }
-        
+
         .scroll {
             width: 100%;
             height: 100vh;
@@ -97,8 +97,8 @@
         <li><a href="genre.html">Genre</a></li>
         <li><a href="release.html">Latest Release</a></li>
         <label class="switch" style="margin-top: 12px; float: right; margin-right: 10px;">
-        <input type="checkbox" onclick="darkMode()">
-        <span class="slider round"></span>
+            <input type="checkbox" onclick="darkMode()">
+            <span class="slider round"></span>
         </label>
         <input type="text" placeholder="Search.." class="Searchbox">
     </ul>

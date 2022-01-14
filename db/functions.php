@@ -41,4 +41,3 @@
             //contoh: jika id = 3 terdapat pada database maka akan mereturn nilai 1, jika tidak ada maka return 0
             return mysqli_affected_rows($conn);
         }
-?>
