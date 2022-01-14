@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2022 at 05:48 PM
+-- Generation Time: Jan 14, 2022 at 08:50 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -34,6 +34,28 @@ CREATE TABLE `chapter` (
   `total_gambar` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `chapter`
+--
+
+INSERT INTO `chapter` (`chapter_id`, `komik_id`, `nama_chapter`, `total_gambar`) VALUES
+(1, 1, 'Chapter 1', 8),
+(2, 1, 'Chapter 2', 7),
+(3, 3, 'Chapter 1', 22);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gambar`
+--
+
+CREATE TABLE `gambar` (
+  `gambar_id` int(11) NOT NULL,
+  `chapter_id` int(11) NOT NULL,
+  `nomor_gambar` int(11) NOT NULL,
+  `file_gambar` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 -- --------------------------------------------------------
 
 --
@@ -52,7 +74,12 @@ CREATE TABLE `genre` (
 INSERT INTO `genre` (`genre_id`, `nama_genre`) VALUES
 (1, 'action'),
 (2, 'romance'),
-(3, 'adventure');
+(3, 'adventure'),
+(4, 'fantasy'),
+(5, 'martial arts'),
+(6, 'josei'),
+(7, 'drama'),
+(8, 'shounen');
 
 -- --------------------------------------------------------
 
@@ -91,9 +118,33 @@ INSERT INTO `komik` (`komik_id`, `nama_komik`, `cover_komik`, `kategori`, `deskr
 
 CREATE TABLE `list_genre` (
   `list_genre_id` int(11) NOT NULL,
-  `genre_id` int(11) NOT NULL,
-  `komik_id` int(11) NOT NULL
+  `komik_id` int(11) NOT NULL,
+  `genre_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `list_genre`
+--
+
+INSERT INTO `list_genre` (`list_genre_id`, `komik_id`, `genre_id`) VALUES
+(4, 1, 1),
+(5, 1, 3),
+(6, 1, 4),
+(7, 2, 1),
+(8, 2, 3),
+(9, 2, 4),
+(10, 2, 5),
+(11, 3, 6),
+(12, 3, 7),
+(13, 3, 4),
+(14, 3, 2),
+(15, 4, 1),
+(16, 4, 3),
+(17, 4, 4),
+(18, 5, 8),
+(19, 5, 1),
+(20, 5, 7),
+(21, 5, 4);
 
 --
 -- Indexes for dumped tables
@@ -105,6 +156,13 @@ CREATE TABLE `list_genre` (
 ALTER TABLE `chapter`
   ADD PRIMARY KEY (`chapter_id`),
   ADD KEY `chapter_chapter_id_komik_komik_id_fk` (`komik_id`);
+
+--
+-- Indexes for table `gambar`
+--
+ALTER TABLE `gambar`
+  ADD PRIMARY KEY (`gambar_id`),
+  ADD KEY `gambar_gambar_id_chapter_chapter_id_fk` (`chapter_id`);
 
 --
 -- Indexes for table `genre`
@@ -134,13 +192,19 @@ ALTER TABLE `list_genre`
 -- AUTO_INCREMENT for table `chapter`
 --
 ALTER TABLE `chapter`
-  MODIFY `chapter_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `chapter_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `gambar`
+--
+ALTER TABLE `gambar`
+  MODIFY `gambar_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `genre`
 --
 ALTER TABLE `genre`
-  MODIFY `genre_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `genre_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `komik`
@@ -152,7 +216,7 @@ ALTER TABLE `komik`
 -- AUTO_INCREMENT for table `list_genre`
 --
 ALTER TABLE `list_genre`
-  MODIFY `list_genre_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `list_genre_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Constraints for dumped tables
@@ -163,6 +227,12 @@ ALTER TABLE `list_genre`
 --
 ALTER TABLE `chapter`
   ADD CONSTRAINT `chapter_chapter_id_komik_komik_id_fk` FOREIGN KEY (`komik_id`) REFERENCES `komik` (`komik_id`);
+
+--
+-- Constraints for table `gambar`
+--
+ALTER TABLE `gambar`
+  ADD CONSTRAINT `gambar_gambar_id_chapter_chapter_id_fk` FOREIGN KEY (`chapter_id`) REFERENCES `chapter` (`chapter_id`);
 
 --
 -- Constraints for table `list_genre`
