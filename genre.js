@@ -1,9 +1,7 @@
 function change() {
     var genres = document.querySelectorAll(".gen input[type='checkbox']");
-    var manhwas = document.querySelectorAll(".man input[type='checkbox']");
     var filters = {
       gen: getClassOfCheckedCheckboxes(genres),
-      man: getClassOfCheckedCheckboxes(manhwas)
     };
   
     filterResults(filters);
@@ -41,23 +39,6 @@ function change() {
   
         for (var j = 0; j < filters.gen.length; j++) {
           var filter = filters.gen[j];
-  
-          if (el.classList.contains(filter)) {
-            isHidden = false;
-            break;
-          }
-        }
-  
-        if (isHidden) {
-          hiddenElems.push(el);
-        }
-      }
-  
-      if (filters.man.length > 0) {
-        var isHidden = true;
-  
-        for (var j = 0; j < filters.man.length; j++) {
-          var filter = filters.man[j];
   
           if (el.classList.contains(filter)) {
             isHidden = false;
