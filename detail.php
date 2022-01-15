@@ -1,16 +1,26 @@
 <?php
-require 'db/functions.php';
+    require 'db/functions.php';
 
+    $id = $_GET['id'];
+    
+    $select_komik = mysqli_query($conn, "SELECT * FROM `komik` WHERE komik_id = $id");
+    $data_detail = mysqli_fetch_assoc($select_komik);
 
-$id = $_GET['id'];
+    $select_list_genre = mysqli_query($conn, "SELECT * FROM `list_genre` JOIN `genre` ON list_genre.genre_id = genre.genre_id WHERE list_genre.komik_id = $id");
+    $data_genre_list = [];
+    while($row_list = mysqli_fetch_assoc($select_list_genre)) {
+        $data_genre_list[] = $row_list;
+    }
 
-$select_komik = mysqli_query($conn, "SELECT * FROM `komik` WHERE komik_id = $id");
+    $select_komik_chapter = mysqli_query($conn, "SELECT * from `chapter` JOIN `komik` ON chapter.komik_id = komik.komik_id WHERE chapter.komik_id = $id");
+    $data_chapter = [];
+    while($row_list = mysqli_fetch_assoc($select_komik_chapter)) {
+        $data_chapter[] = $row_list;
+    }
 
-$row = mysqli_fetch_assoc($select_komik);
-// var_dump($row);
-var_dump($row["nama_komik"] . "/" . $row["cover_komik"]);
+    // var_dump($data_chapter[0]["nama_chapter"]);
 
-
+    var_dump($data_detail["total_chapter"])
 ?>
 
 <!DOCTYPE html>
@@ -94,36 +104,36 @@ var_dump($row["nama_komik"] . "/" . $row["cover_komik"]);
     </ul>
 
     <div style="width: 1100px;height:450px;overflow:hidden;margin: auto; opacity: 0.7;background-size: contain;">
-        <img src="img/<?= $row["nama_komik"] . "/" . $row["cover_komik"] ?>" width="1100" height="" />
+        <img src="img/<?= $data_detail["nama_komik"] . "/" . $data_detail["cover_komik"] ?>" width="1100" height="" />
     </div>
     <br>
     <div class="flex-container">
         <div>
-            <img src="img/<?= $row["nama_komik"] . "/" . $row["cover_komik"] ?>" alt="" width="200" style="border: black 5pt solid;">
+            <img src="img/<?= $data_detail["nama_komik"] . "/" . $data_detail["cover_komik"] ?>" alt="" width="200" style="border: black 5pt solid;">
         </div>
         <div class="content">
-            <p class="title"><strong><?= $row["nama_komik"] ?></strong></p>
-            <p>Genre :
-                <button class="btn btn-secondary btn-sm me-3">Action</button>
-                <button class="btn btn-secondary btn-sm me-3">Adventure</button>
-                <button class="btn btn-secondary btn-sm me-3">Fantasy</button>
-                <button class="btn btn-secondary btn-sm me-3">Comedy</button>
+            <p class="title"><strong><?= $data_detail["nama_komik"] ?></strong></p>
+            <p>
+                Genre :
+                <?php foreach($data_genre_list as $data) { ?>
+                    <button class="btn btn-secondary btn-sm me-3"><?= ucwords($data["nama_genre"]) ?></button>        
+                <?php } ?>
             </p>
             <table border="0" cellpadding="0">
                 <tr>
-                    <td style="padding-right: 250px;"><strong>Released : </strong><?= $row["waktu_rilis"] ?></td>
-                    <td><strong>Type : </strong><?= $row["kategori"] ?></td>
+                    <td style="padding-right: 250px;"><strong>Released : </strong><?= $data_detail["waktu_rilis"] ?></td>
+                    <td><strong>Type : </strong><?= $data_detail["kategori"] ?></td>
                 </tr>
                 <tr>
-                    <td style="padding-right: 250px;"><strong>Total Chapter : </strong><?= $row["total_chapter"] ?></td>
-                    <td><strong>Updated on : </strong><?= $row["waktu_update"] ?></td>
+                    <td style="padding-right: 250px;"><strong>Total Chapter : </strong><?= $data_detail["total_chapter"] ?></td>
+                    <td><strong>Updated on : </strong><?= date_format(date_create($data_detail["waktu_update"]), "Y F d") ?></td>
                 </tr>
             </table>
 
         </div>
         <div class="rating">
-            <p>Jumlah Penonton</p>
-            <p><?= $row["total_views"] ?></p>
+            <p>Jumlah Pembaca</p>
+            <p><?= $data_detail["total_views"] ?></p>
         </div>
     </div>
 
@@ -131,13 +141,20 @@ var_dump($row["nama_komik"] . "/" . $row["cover_komik"]);
         <div class="chapter">
             <p style="font-size: 25px;"><strong>Sinopsis</strong></p>
             <hr>
-            <p class="teks"><?= $row["deskripsi"] ?></p>
+            <p class="teks"><?= $data_detail["deskripsi"] ?></p>
             <br><br>
-            <p style="color: teal;" class="teks">CHAPTER <?= $row['nama_komik']; ?></p>
+            <p style="color: teal;" class="teks">CHAPTER <?= strtoupper($data_detail["nama_komik"]) ?></p>
             <hr>
             <div class="scroll">
                 <table cellpadding="5" id="table">
-
+                    <?php foreach($data_chapter as $chapter) {?>
+                        <tr>
+                            <td style="padding-right: 850px;">
+                                <a href="isi_komik.php?id=<?= $chapter["chapter_id"] ?>"><?= $chapter["nama_chapter"] ?></a>
+                            </td>
+                            <td>2 weeks ago</td>
+                        </tr>
+                    <?php } ?>
                 </table>
             </div>
 
@@ -148,9 +165,10 @@ var_dump($row["nama_komik"] . "/" . $row["cover_komik"]);
           <img width="824" height="1172" src="https://komikcast.com/wp-content/uploads/2021/07/E6p48uFUYAM9A_3-e1626830020974.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy">      </div>
       </div> -->
 </body>
-<script>
-    var table = document.getElementById('table');
-    var i = 65;
+<!-- <script>
+    console.log("tes");
+    var table = document.getElementById('table');    
+    var i =3;
     while (i != 0) {
         table.innerHTML += `
                     <tr>
@@ -161,7 +179,7 @@ var_dump($row["nama_komik"] . "/" . $row["cover_komik"]);
                     </tr>`
         i -= 1;
     }
-</script>
-<script src="isi_komik.js"></script>
+</script> -->
+<!-- <script src="isi_komik.js"></script> -->
 
 </html>
