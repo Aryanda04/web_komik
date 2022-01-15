@@ -2,8 +2,6 @@
     require 'db/functions.php';
 
     $data_komik = selectALL("SELECT * FROM `komik` ORDER BY waktu_update DESC");
-
-    die(var_dump($data_komik))
 ?>
 
 <!doctype html>
