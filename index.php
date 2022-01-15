@@ -39,48 +39,48 @@ function showKomik($queryKomik, $loop)
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Home Page</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" type="text/css" href="home.css">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="home.css">
 </head>
 
 <body>
 
-  <ul class="tulisanNav">
-    <li><img src="img/logo.webp" width="200px" alt=""></li>
-    <li><a href="index.php">Home</a></li>
-    <li><a href="genre.html">Genre</a></li>
-    <li><a href="release.html">Latest Release</a></li>
-    <label class="switch" style="margin-top: 12px; float: right; margin-right: 10px;">
-      <input type="checkbox" onclick="darkMode()">
-      <span class="slider round"></span>
-    </label>
-    <input type="text" placeholder="Search.." class="Searchbox">
-  </ul>
+    <ul class="tulisanNav">
+        <li><img src="img/logo.webp" width="200px" alt=""></li>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="genre.php">Genre</a></li>
+        <li><a href="Release.php">Latest Release</a></li>
+        <label class="switch" style="margin-top: 12px; float: right; margin-right: 10px;">
+            <input type="checkbox" onclick="darkMode()">
+            <span class="slider round"></span>
+        </label>
+        <input type="text" placeholder="Search.." class="Searchbox">
+    </ul>
 
-  <div class="badan">
-    <h1 class="grid-container">Most View</h1>
-    <div class="flex-container" id="most-view">
-      <?php
+    <div class="badan">
+        <h1 class="grid-container">Most View</h1>
+        <div class="flex-container" id="most-view">
+            <?php
       showKomik($select_komik_sort_view, 4);
       ?>
-    </div>
+        </div>
 
-    <h1 class="grid-container">Komik List</h1>
-    <div class="flex-container" id="daftar-komik">
-      <?php
+        <h1 class="grid-container">Komik List</h1>
+        <div class="flex-container" id="daftar-komik">
+            <?php
       showKomik($select_komik, -1);
       ?>
+        </div>
     </div>
-  </div>
 
 
-  <script src="home.js"></script>
+    <script src="home.js"></script>
 </body>
 
 </html>
