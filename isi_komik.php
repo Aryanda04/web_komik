@@ -8,7 +8,24 @@
 
     // data list chapter
     $id_komik = $data_gambar[0]["komik_id"];
-    $data_chapter = selectALL("SELECT * from `chapter` JOIN `komik` ON chapter.komik_id = komik.komik_id WHERE chapter.komik_id = $id_komik")
+    $data_chapter = selectALL("SELECT chapter_id, nama_chapter FROM `chapter` JOIN `komik` ON chapter.komik_id = komik.komik_id WHERE chapter.komik_id = $id_komik");
+
+    // var_dump($data_chapter);
+    $key_array = array_search($id, array_column($data_chapter, 'chapter_id'));
+    // var_dump($key_array);
+    echo "batas atas";
+    if($key_array+1 > count($data_chapter)-1) {
+        $next_chapter = NULL;
+    } else {
+        $next_chapter = $data_chapter[$key_array+1];
+    }
+
+    echo "batas bawah";
+    if($key_array-1 < 0) {
+        $prev_chapter = NULL;
+    } else {
+        $prev_chapter = $data_chapter[$key_array-1];
+    }
 ?>
 
 <!doctype html>
