@@ -4,32 +4,13 @@ require 'db/functions.php';
     $id = $_GET['id'];
     
     /// data detail komik
-    $select_komik = mysqli_query($conn, "SELECT * FROM `komik` WHERE komik_id = $id");
-    $data_detail = mysqli_fetch_assoc($select_komik);
+    $data_detail = selectFirst("SELECT * FROM `komik` WHERE komik_id = $id");
 
     /// data list genre di detail komik
-    $select_list_genre = mysqli_query($conn, "SELECT * FROM `list_genre` JOIN `genre` ON list_genre.genre_id = genre.genre_id WHERE list_genre.komik_id = $id");
-    $data_genre_list = [];
-    while($row_list = mysqli_fetch_assoc($select_list_genre)) {
-        $data_genre_list[] = $row_list;
-    }
+    $data_genre_list = selectALL("SELECT * FROM `list_genre` JOIN `genre` ON list_genre.genre_id = genre.genre_id WHERE list_genre.komik_id = $id");
 
     /// data list chapter
-    $select_komik_chapter = mysqli_query($conn, "SELECT * from `chapter` JOIN `komik` ON chapter.komik_id = komik.komik_id WHERE chapter.komik_id = $id");
-    $data_chapter = [];
-    while($row_list = mysqli_fetch_assoc($select_komik_chapter)) {
-        $data_chapter[] = $row_list;
-    }
-
-$select_komik_chapter = mysqli_query($conn, "SELECT * from `chapter` JOIN `komik` ON chapter.komik_id = komik.komik_id WHERE chapter.komik_id = $id");
-$data_chapter = [];
-while ($row_list = mysqli_fetch_assoc($select_komik_chapter)) {
-    $data_chapter[] = $row_list;
-}
-
-// var_dump($data_chapter[0]["nama_chapter"]);
-
-var_dump($data_detail["total_chapter"])
+    $data_chapter = selectALL("SELECT * from `chapter` JOIN `komik` ON chapter.komik_id = komik.komik_id WHERE chapter.komik_id = 1 ORDER BY chapter_id DESC");
 ?>
 
 <!DOCTYPE html>

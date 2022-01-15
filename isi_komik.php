@@ -3,18 +3,12 @@
     
     $id = $_GET['id'];
 
-    $select_gambar = mysqli_query($conn, "SELECT file_gambar, chapter.nama_chapter, komik.nama_komik, komik.komik_id FROM `gambar` JOIN `chapter` ON gambar.chapter_id = chapter.chapter_id JOIN `komik` ON komik.komik_id = chapter.komik_id WHERE chapter.chapter_id = $id");
-    $data_gambar = [];
-    while($row = mysqli_fetch_assoc($select_gambar)) {
-        $data_gambar[] = $row;
-    }
+    // data kumpulan gambar dari chapter yang halaman saat itu dibuka
+    $data_gambar = selectALL("SELECT file_gambar, chapter.nama_chapter, komik.nama_komik, komik.komik_id FROM `gambar` JOIN `chapter` ON gambar.chapter_id = chapter.chapter_id JOIN `komik` ON komik.komik_id = chapter.komik_id WHERE chapter.chapter_id = $id");
 
+    // data list chapter
     $id_komik = $data_gambar[0]["komik_id"];
-    $select_komik_chapter = mysqli_query($conn, "SELECT * from `chapter` JOIN `komik` ON chapter.komik_id = komik.komik_id WHERE chapter.komik_id = $id_komik");
-    $data_chapter = [];
-    while($row_list = mysqli_fetch_assoc($select_komik_chapter)) {
-        $data_chapter[] = $row_list;
-    }
+    $data_chapter = selectALL("SELECT * from `chapter` JOIN `komik` ON chapter.komik_id = komik.komik_id WHERE chapter.komik_id = $id_komik")
 ?>
 
 <!doctype html>

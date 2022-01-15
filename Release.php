@@ -1,11 +1,7 @@
 <?php
     require 'db/functions.php';
 
-    $select_komik_latest = mysqli_query($conn, "SELECT * FROM `komik` ORDER BY waktu_update DESC");
-    $data_komik = [];
-    while($data = mysqli_fetch_assoc($select_komik_latest)) {
-        $data_komik[] = $data;
-    }
+    $data_komik = selectALL("SELECT * FROM `komik` ORDER BY waktu_update DESC");
 
     die(var_dump($data_komik))
 ?>

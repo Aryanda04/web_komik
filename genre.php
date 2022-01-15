@@ -2,17 +2,19 @@
     require 'db/functions.php';
 
     // data list komik semua
-    $select_komik = mysqli_query($conn, "SELECT * FROM `komik`");
+    $data_komik = selectALL("SELECT * FROM `komik`");
+
     // data list komik berdasarkan genri yang dipilih
-    $select_komik_by_genre = mysqli_query($conn, "SELECT * FROM `komik`
+    $data_komik_by_genre = selectALL("SELECT * FROM `komik`
     JOIN 
         `list_genre` ON komik.komik_id = list_genre.komik_id
     JOIN
         `genre` ON list_genre.genre_id = genre.genre_id
     WHERE
         genre.nama_genre = 'action'");
+        
     // data list genre
-    $select_genre = mysqli_query($conn, "SELECT * FROM `genre`");
+    $data_genre = selectALL("SELECT * FROM `genre`");
 ?>
 
 <!DOCTYPE html>

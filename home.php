@@ -1,38 +1,40 @@
 <?php
-require 'db/functions.php';
+    require 'db/functions.php';
 
-$select_komik = mysqli_query($conn, "SELECT * FROM komik");
-$select_komik_sort_view = mysqli_query($conn, "SELECT * FROM komik ORDER BY total_views DESC");
+    $select_komik = "SELECT * FROM komik";
+    $select_komik_sort_view = "SELECT * FROM komik ORDER BY total_views DESC";
 
-function showKomik($queryKomik, $loop)
-{
-  $i = 1;
-  while ($row = mysqli_fetch_assoc($queryKomik)) {
-    $max_char = 100;
-    if (strlen($row["deskripsi"]) > $max_char) {
-      $deskripsi = substr($row["deskripsi"], 0, $max_char) . "...";
-    } else {
-      $deskripsi = $row["deskripsi"];
+    function showKomik($queryKomik, $loop)
+    {
+      $i = 1;
+      // data list komik berdasarkan query dari variabel queryKomik
+      $list_komik = selectALL($queryKomik);
+      foreach($list_komik as $komik) {
+        $max_char = 100;
+        if (strlen($komik["deskripsi"]) > $max_char) {
+          $deskripsi = substr($komik["deskripsi"], 0, $max_char) . "...";
+        } else {
+          $deskripsi = $komik["deskripsi"];
+        }
+        echo "<div class=\"list-produk\">";
+        echo "  <div class=\"kategori\">";
+        echo "    <div>" . $komik["kategori"] . "</div>";
+        echo "    <div>" . $komik["total_views"] . " Total Pembaca</div>";
+        echo "  </div>";
+        echo "  <img src=\"img/" . $komik["nama_komik"] . "/" . $komik["cover_komik"] . "\"  style=\"object-fit:contain; height:233px !important; align:center\">";
+        echo "    <div class=\"judul\">" . $komik["nama_komik"] . "</div>";
+        echo "    <p class=\"deskripsi\">" . $deskripsi . "</p>";
+        echo "  <div class=\"footer\">";
+        echo "    <a href=\"detail.php?id=" . $komik["komik_id"] . "\" class=\"detail-button\"> Details </a>";
+        echo "    <div class=\"detail-chapter\">" . $komik["total_chapter"] . " Chapter</div>";
+        echo "  </div>";
+        echo "</div>";
+        $i++;
+        if ($i > $loop && $loop != -1) {
+          break;
+        }    
+      }
     }
-    echo "<div class=\"list-produk\">";
-    echo "  <div class=\"kategori\">";
-    echo "    <div>" . $row["kategori"] . "</div>";
-    echo "    <div>" . $row["total_views"] . " Total Pembaca</div>";
-    echo "  </div>";
-    echo "  <img src=\"img/" . $row["nama_komik"] . "/" . $row["cover_komik"] . "\"  style=\"object-fit:contain; height:233px !important; align:center\">";
-    echo "    <div class=\"judul\">" . $row["nama_komik"] . "</div>";
-    echo "    <p class=\"deskripsi\">" . $deskripsi . "</p>";
-    echo "  <div class=\"footer\">";
-    echo "    <a href=\"detail.php?id=" . $row["komik_id"] . "\" class=\"detail-button\"> Details </a>";
-    echo "    <div class=\"detail-chapter\">" . $row["total_chapter"] . " Chapter</div>";
-    echo "  </div>";
-    echo "</div>";
-    $i++;
-    if ($i > $loop && $loop != -1) {
-      break;
-    }
-  }
-}
 ?>
 
 <!doctype html>
@@ -66,16 +68,12 @@ function showKomik($queryKomik, $loop)
     <div class="badan">
         <h1 class="grid-container">Most View</h1>
         <div class="flex-container" id="most-view">
-            <?php
-      showKomik($select_komik_sort_view, 4);
-      ?>
+            <?php showKomik($select_komik_sort_view, 4) ?>
         </div>
 
         <h1 class="grid-container">Komik List</h1>
         <div class="flex-container" id="daftar-komik">
-            <?php
-      showKomik($select_komik, -1);
-      ?>
+            <?php showKomik($select_komik, -1) ?>
         </div>
     </div>
 

@@ -3,7 +3,7 @@
         $conn = mysqli_connect("localhost", "root", "", "komik_tubes");
 
         //fungsi untuk mengambil data dari database
-        function query($query){
+        function selectALL($query){
             global $conn;
             $data = mysqli_query($conn, $query);
             $mahasiswas = [];
@@ -11,6 +11,12 @@
                 $mahasiswas[] = $mahasiswa;
             }
             return $mahasiswas;
+        }
+
+        function selectFirst($query) {
+            global $conn;
+            $data = mysqli_query($conn, $query);
+            return mysqli_fetch_assoc($data);
         }
 
         //fungsi untuk menambah data
