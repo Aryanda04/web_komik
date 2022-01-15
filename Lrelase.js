@@ -54,7 +54,7 @@ function allMenu() {
             $('#daftar-komik').append(`<div class="col-md-3 d-flex">
                 <div class="card mb-5 " style="min-height:max-content; width:100%">
                 <div class="card-header">${data.kategori}</div>
-                <img src="img/${data.gambar}" style="object-fit:contain; height:233px !important; align:center">
+                <img src="img/${data.judul}/${data.gambar}" style="object-fit:contain; height:233px !important; align:center">
                 <div class="card-body">
                 <h5 class="card-title">${data.judul}</h5>
                 <p class="card-text">${deskripsi}</p>

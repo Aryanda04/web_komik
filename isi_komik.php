@@ -3,8 +3,11 @@
     
     $id = $_GET['id'];
 
-    $select_gambar = mysqli_query($conn, "SELECT * FROM `chapter` JOIN `komik` ON chapter.komik_id = komik.komik_id WHERE chapter.chapter_id = $id");
-    $data_gambar = $gambar = mysqli_fetch_assoc($select_gambar);
+    $select_gambar = mysqli_query($conn, "SELECT file_gambar, chapter.nama_chapter, komik.nama_komik FROM `gambar` JOIN `chapter` ON gambar.chapter_id = chapter.chapter_id JOIN `komik` ON komik.komik_id = chapter.komik_id WHERE chapter.chapter_id = $id");
+    $data_gambar = [];
+    while($row = mysqli_fetch_assoc($select_gambar)) {
+        $data_gambar[] = $row;
+    }
 ?>
 
 <!doctype html>
@@ -18,8 +21,8 @@
 
 <body>
     <ul class="tulisanNav">
-        <li><img src="logo.webp" width="200px" alt=""></li>
-        <li><a href="index.php">Home</a></li>
+        <li><img src="img/logo.webp" width="200px" alt=""></li>
+        <li><a href="home.php">Home</a></li>
         <li><a href="genre.html">Genre</a></li>
         <li><a href="release.html">Latest Release</a></li>
         <label class="switch" style="margin-top: 12px; float: right; margin-right: 10px;">
@@ -41,8 +44,8 @@
         <button class="chapterPrevious" role="button">« Previous Chapter</button>
     </div><br><br>
     <div id="chapterGambar">
-        <?php for($i = 1; $i <= $data_gambar["total_gambar"]; $i++) { ?>
-            <img src="img/<?= $data_gambar["nama_komik"] ?>/<?= $data_gambar["nama_chapter"] ?>/<?= $i ?>.png" alt="" class = "center">
+        <?php foreach($data_gambar as $data) { ?>
+            <img src="img/<?= $data["nama_komik"] ?>/<?= $data["nama_chapter"] ?>/<?= $data["file_gambar"] ?>" alt="" class = "center">
         <?php } ?>
     </div>
 

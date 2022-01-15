@@ -3,15 +3,18 @@
 
     $id = $_GET['id'];
     
+    /// data detail komik
     $select_komik = mysqli_query($conn, "SELECT * FROM `komik` WHERE komik_id = $id");
     $data_detail = mysqli_fetch_assoc($select_komik);
 
+    /// data list genre di detail komik
     $select_list_genre = mysqli_query($conn, "SELECT * FROM `list_genre` JOIN `genre` ON list_genre.genre_id = genre.genre_id WHERE list_genre.komik_id = $id");
     $data_genre_list = [];
     while($row_list = mysqli_fetch_assoc($select_list_genre)) {
         $data_genre_list[] = $row_list;
     }
 
+    /// data list chapter
     $select_komik_chapter = mysqli_query($conn, "SELECT * from `chapter` JOIN `komik` ON chapter.komik_id = komik.komik_id WHERE chapter.komik_id = $id");
     $data_chapter = [];
     while($row_list = mysqli_fetch_assoc($select_komik_chapter)) {
@@ -93,7 +96,7 @@
 <body>
     <ul class="tulisanNav">
         <li><img src="img/logo.webp" width="200px" alt=""></li>
-        <li><a href="index.php">Home</a></li>
+        <li><a href="home.php">Home</a></li>
         <li><a href="genre.html">Genre</a></li>
         <li><a href="release.html">Latest Release</a></li>
         <label class="switch" style="margin-top: 12px; float: right; margin-right: 10px;">

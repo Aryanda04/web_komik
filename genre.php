@@ -25,7 +25,7 @@ require 'db/functions.php';
 <body>
     <ul class="tulisanNav">
         <li><img src="img/logo.webp" width="200px" alt=""></li>
-        <li><a href="index.php">Home</a></li>
+        <li><a href="home.php">Home</a></li>
         <li><a href="genre.php">Genre</a></li>
         <li><a href="release.php">Latest Release</a></li>
         <label class="switch" style="margin-top: 12px; float: right; margin-right: 10px;">
@@ -90,26 +90,25 @@ require 'db/functions.php';
 
                             <div class="fantasy" style="min-height: max-content; width: 20%">
                                 <h1>Magic Emperor</h1>
-                                <img src="img/komik1.webp" />
+                                <img src="img/Magic Emperor/komik1.webp" />
                                 <p>Deskripsi</p>
                                 <a href="#" class="btn btn-primary">Details</a>
                                 <br>
                                 <h1>Talent-Swallowing Magician</h1>
-                                <img src="img/komik2.webp" />
+                                <img src="img/Talent-Swallowing Magician/komik2.webp" />
                                 <p>Deskripsi</p>
                                 <a href="#" class="btn btn-primary">Details</a>
                                 <br>
                                 <h1>Regina Rena : To the Unforgiveable</h1>
-                                <img src="img/komik3.jpeg" />
+                                <img src="img/Regina Rena : To the Unforgiveable/komik3.jpeg" />
                                 <p>Deskripsi</p>
                                 <a href="#" class="btn btn-primary">Details</a>
                                 <br>
                                 <h1>Max Level Returner</h1>
-                                <img src="img/komik4.jpg" />
+                                <img src="img/Max Level Returner/komik4.jpg" >
                                 <p>Deskripsi</p>
                                 <a href="#" class="btn btn-primary">Details</a>
                             </div>
-
                         </div>
                     </div>
                 </div>
