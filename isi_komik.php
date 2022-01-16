@@ -47,18 +47,6 @@ if ($key_array - 1 < 0) {
         </select>
     </div>
 
-    <!-- <div>
-        <button class="chapterNext">Next Chapter »</button>
-        <button class="chapterPrevious">« Previous Chapter</button>
-    </div> -->
-
-    <?php
-
-    //var_dump($data_chapter);
-    //var_dump($data["chapter_id"]);
-
-    ?>
-
     <?php
     $data_next = $key_array;
     if ($key_array + 1 > count($data_chapter) - 1) {
