@@ -1,11 +1,33 @@
+/* body */
+body {
+  margin: 0;
+
+  background-color: #b0d8fd;
+}
+
+/* toggle darkmode */
+
+.dark-mode {
+  background-color: #041525;
+  color: rgb(0, 0, 0);
+}
+
 /* Navbar */
 
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #14274e;
+}
+
+.tulisanNav {
+  margin-bottom: 20px;
+  padding: 0;
+
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 li {
@@ -16,7 +38,7 @@ li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 20px 16px;
   padding-left: 20px;
   text-decoration: none;
 }
@@ -26,17 +48,12 @@ li a:hover {
   color: #0a58ca;
 }
 
-.tulisanNav {
-  text-align: center;
-  font-size: 30px;
-}
-
 /* searchbox */
 
 .Searchbox {
   font-size: 30px;
   float: right;
-  margin-top: 10px;
+  margin-top: 15px;
   margin-right: 10px;
   border-radius: 30px;
 }
@@ -45,12 +62,7 @@ ul input[type="text"] {
   padding: 0 0 0 20px;
 }
 
-/* toggle darkmode */
-
-.dark-mode {
-  background-color: rgb(0, 17, 92);
-  color: rgb(0, 0, 0);
-}
+/* dark-mode slider */
 
 .switch {
   position: relative;
@@ -121,14 +133,13 @@ input:checked + .slider:before {
   margin-left: 30px;
   max-width: 300px;
   width: 150px;
-  background-color: rgb(124, 124, 124);
+  background-color: #394867;
   border-radius: 6px;
   border-width: 0;
   color: #fff;
   cursor: pointer;
   font-size: 100%;
   height: 35px;
-  color: rgb(185, 182, 182);
   text-align: left;
 }
 
@@ -170,11 +181,31 @@ input:checked + .slider:before {
 
 #chapterGambar {
   align-items: center;
+
+  margin: auto 120px;
+  margin-top: 20px;
+  padding: 0px 130px;
+
+  border-radius: 10px;
+}
+
+.chapterGambar {
+  background-color: #041525;
+}
+
+.listGambar-darkmode {
+  background-color: #b0d8fd;
 }
 
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  height: auto;
+  width: 100%;
+}
+
+/* tanpa garis bawah */
+.tanpa {
+  text-decoration: none;
 }

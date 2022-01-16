@@ -6,12 +6,12 @@
 } */
 
 body {
-  background-color: rgb(255, 255, 255);
+  background-color: #b0d8fd;
 }
 
 .badan {
   width: 80%;
-  margin: 35px auto;
+  margin: 15px auto;
   background-color: white;
   padding: 20px;
   overflow: hidden;
