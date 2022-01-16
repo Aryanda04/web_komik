@@ -1,29 +1,29 @@
 <?php
-require 'db/functions.php';
+    require 'db/functions.php';
 
-$id = $_GET['id'];
+    $id = $_GET['id'];
 
-// data kumpulan gambar dari chapter yang halaman saat itu dibuka
-$data_gambar = selectALL("SELECT file_gambar, chapter.nama_chapter, komik.nama_komik, komik.komik_id FROM `gambar` JOIN `chapter` ON gambar.chapter_id = chapter.chapter_id JOIN `komik` ON komik.komik_id = chapter.komik_id WHERE chapter.chapter_id = $id");
+    // data kumpulan gambar dari chapter yang halaman saat itu dibuka
+    $data_gambar = selectALL("SELECT file_gambar, chapter.nama_chapter, komik.nama_komik, komik.komik_id FROM `gambar` JOIN `chapter` ON gambar.chapter_id = chapter.chapter_id JOIN `komik` ON komik.komik_id = chapter.komik_id WHERE chapter.chapter_id = $id");
 
-// data list chapter
-$id_komik = $data_gambar[0]["komik_id"];
-$data_chapter = selectALL("SELECT chapter_id, nama_chapter FROM `chapter` JOIN `komik` ON chapter.komik_id = komik.komik_id WHERE chapter.komik_id = $id_komik");
+    // data list chapter
+    $id_komik = $data_gambar[0]["komik_id"];
+    $data_chapter = selectALL("SELECT chapter_id, nama_chapter, total_views FROM `chapter` JOIN `komik` ON chapter.komik_id = komik.komik_id WHERE chapter.komik_id = $id_komik ORDER BY chapter_id DESC");
+    // var_dump($data_chapter[0]["total_views"]);
+    updateTotalView($id_komik);
 
-// var_dump($data_chapter);
-$key_array = array_search($id, array_column($data_chapter, 'chapter_id'));
-// var_dump($key_array);
-if ($key_array + 1 > count($data_chapter) - 1) {
-    $next_chapter = NULL;
-} else {
-    $next_chapter = $data_chapter[$key_array + 1];
-}
+    $key_array = array_search($id, array_column($data_chapter, 'chapter_id'));
+    if ($key_array + 1 > count($data_chapter) - 1) {
+        $next_chapter = NULL;
+    } else {
+        $next_chapter = $data_chapter[$key_array + 1];
+    }
 
-if ($key_array - 1 < 0) {
-    $prev_chapter = NULL;
-} else {
-    $prev_chapter = $data_chapter[$key_array - 1];
-}
+    if ($key_array - 1 < 0) {
+        $prev_chapter = NULL;
+    } else {
+        $prev_chapter = $data_chapter[$key_array - 1];
+    }
 ?>
 
 <!doctype html>
@@ -42,7 +42,7 @@ if ($key_array - 1 < 0) {
         <select id="chapter" class="chapterList" onchange="location = this.value;">
             <option value="">Chapter</option>
             <?php foreach ($data_chapter as $data) { ?>
-                <option value="isi_komik.php?id= <?= $data["chapter_id"]; ?>"><?= $data["nama_chapter"]; ?></option>
+                <option value="isi_komik.php?id=<?= $data["chapter_id"]; ?>"><?= $data["nama_chapter"]; ?></option>
             <?php } ?>
         </select>
     </div>
