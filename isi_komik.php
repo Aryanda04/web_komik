@@ -38,6 +38,8 @@ if ($key_array - 1 < 0) {
 <body>
     <?php include 'template/header.php' ?>
 
+    <h1 id="judulBacaan" class="judulBacaan"><?= $data_gambar[0]["nama_komik"] ?> <?= $data_gambar[0]["nama_chapter"] ?></h1>
+
     <div>
         <select id="chapter" class="chapterList" onchange="location = this.value;">
             <option value="">Chapter</option>
