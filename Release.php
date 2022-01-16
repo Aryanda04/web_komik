@@ -1,7 +1,7 @@
 <?php
-    require 'db/functions.php';
+require 'db/functions.php';
 
-    $data_komik = selectALL("SELECT * FROM `komik` ORDER BY waktu_update DESC");
+$data_komik = selectALL("SELECT * FROM `komik` ORDER BY waktu_update DESC");
 ?>
 
 <!doctype html>
@@ -20,23 +20,23 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-    .column {
-        float: left;
-        width: 80%;
-        border-radius: 20px;
-        padding: 5px;
-        height: auto;
-        /* Should be removed. Only for demonstration */
-    }
+        .column {
+            float: left;
+            width: 80%;
+            border-radius: 20px;
+            padding: 5px;
+            height: auto;
+            /* Should be removed. Only for demonstration */
+        }
 
-    .column-2 {
-        float: right;
-        width: 18%;
-        border-radius: 20px;
-        padding: 5px;
-        height: 800px;
-        /* Should be removed. Only for demonstration */
-    }
+        .column-2 {
+            float: right;
+            width: 18%;
+            border-radius: 20px;
+            padding: 5px;
+            height: 800px;
+            /* Should be removed. Only for demonstration */
+        }
     </style>
 </head>
 
@@ -53,11 +53,9 @@
     </div>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="Lrelase.js"></script>
     <!-- <script src="isi_komik.js"></script> -->
 </body>
