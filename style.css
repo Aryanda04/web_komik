@@ -1,6 +1,15 @@
 /* body */
 body {
   margin: 0;
+
+  background-color: #b0d8fd;
+}
+
+/* toggle darkmode */
+
+.dark-mode {
+  background-color: #041525;
+  color: rgb(0, 0, 0);
 }
 
 /* Navbar */
@@ -13,7 +22,7 @@ ul {
 }
 
 .tulisanNav {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   padding: 0;
 
   text-align: center;
@@ -51,13 +60,6 @@ li a:hover {
 
 ul input[type="text"] {
   padding: 0 0 0 20px;
-}
-
-/* toggle darkmode */
-
-.dark-mode {
-  background-color: rgb(0, 17, 92);
-  color: rgb(0, 0, 0);
 }
 
 .switch {
@@ -178,11 +180,26 @@ input:checked + .slider:before {
 
 #chapterGambar {
   align-items: center;
+
+  margin: auto 120px;
+  margin-top: 20px;
+  padding: 0px 130px;
+
+  border-radius: 10px;
+}
+
+.chapterGambar {
+  background-color: #041525;
+}
+
+.listGambar-darkmode {
+  background-color: #b0d8fd;
 }
 
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  height: auto;
+  width: 100%;
 }

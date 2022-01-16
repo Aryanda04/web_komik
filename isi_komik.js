@@ -1,6 +1,6 @@
 function darkMode() {
-    var element = document.body;
-    // var element2 = document.getElementsByClassName("list-produk");
-    element.classList.toggle("dark-mode");
-    // element2[0].toggle("badan-darkmode");
+    var body_element = document.body;
+    var list_gambar_element = document.getElementById("chapterGambar");
+    body_element.classList.toggle("dark-mode");
+    list_gambar_element.classList.toggle("listGambar-darkmode");
 }

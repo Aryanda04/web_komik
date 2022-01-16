@@ -48,7 +48,7 @@
         <button class="chapterNext" role="button">Next Chapter »</button>
         <button class="chapterPrevious" role="button">« Previous Chapter</button>
     </div><br><br>
-    <div id="chapterGambar">
+    <div id="chapterGambar" class="chapterGambar">
         <?php foreach($data_gambar as $data) { ?>
             <img src="img/<?= $data["nama_komik"] ?>/<?= $data["nama_chapter"] ?>/<?= $data["file_gambar"] ?>" alt="" class = "center">
         <?php } ?>
