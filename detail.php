@@ -80,17 +80,7 @@ require 'db/functions.php';
 </head>
 
 <body>
-    <ul class="tulisanNav">
-        <li><img src="img/logo.webp" width="200px" alt=""></li>
-        <li><a href="home.php">Home</a></li>
-        <li><a href="genre.html">Genre</a></li>
-        <li><a href="release.html">Latest Release</a></li>
-        <label class="switch" style="margin-top: 12px; float: right; margin-right: 10px;">
-            <input type="checkbox" onclick="darkMode()">
-            <span class="slider round"></span>
-        </label>
-        <input type="text" placeholder="Search.." class="Searchbox">
-    </ul>
+    <?php include 'template/header.php' ?>
 
     <div style="width: 1100px;height:450px;overflow:hidden;margin: auto; opacity: 0.7;background-size: contain;">
         <img src="img/<?= $data_detail["nama_komik"] . "/" . $data_detail["cover_komik"] ?>" width="1100" height="" />

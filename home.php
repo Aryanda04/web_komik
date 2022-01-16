@@ -44,26 +44,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
     <title>Home Page</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="home.css">
 </head>
 
 <body>
-
-    <ul class="tulisanNav">
-        <li><img src="img/logo.webp" width="200px" alt=""></li>
-        <li><a href="home.php">Home</a></li>
-        <li><a href="genre.php">Genre</a></li>
-        <li><a href="Release.php">Latest Release</a></li>
-        <label class="switch" style="margin-top: 12px; float: right; margin-right: 10px;">
-            <input type="checkbox" onclick="darkMode()">
-            <span class="slider round"></span>
-        </label>
-        <input type="text" placeholder="Search.." class="Searchbox">
-    </ul>
+    <?php include 'template/header.php' ?>
 
     <div class="badan">
         <h1 class="grid-container">Most View</h1>

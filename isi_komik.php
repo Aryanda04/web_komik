@@ -13,14 +13,12 @@
     // var_dump($data_chapter);
     $key_array = array_search($id, array_column($data_chapter, 'chapter_id'));
     // var_dump($key_array);
-    echo "batas atas";
     if($key_array+1 > count($data_chapter)-1) {
         $next_chapter = NULL;
     } else {
         $next_chapter = $data_chapter[$key_array+1];
     }
 
-    echo "batas bawah";
     if($key_array-1 < 0) {
         $prev_chapter = NULL;
     } else {
@@ -38,18 +36,7 @@
 </head>
 
 <body>
-    <ul class="tulisanNav">
-        <li><img src="img/logo.webp" width="200px" alt=""></li>
-        <li><a href="home.php">Home</a></li>
-        <li><a href="genre.php">Genre</a></li>
-        <li><a href="release.php">Latest Release</a></li>
-        <label class="switch" style="margin-top: 12px; float: right; margin-right: 10px;">
-            <input type="checkbox" onclick="darkMode()">
-            <span class="slider round"></span>
-          </label>
-        <input type="text" placeholder="Search.." class="Searchbox">
-    </ul>
-    <br><br><br>
+    <?php include 'template/header.php' ?>
 
     <div>
         <select id="chapter" class="chapterList" onchange="chapterDropDown()">

@@ -1,11 +1,24 @@
+/* body */
+body {
+  margin: 0;
+}
+
 /* Navbar */
 
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
   overflow: hidden;
   background-color: #333;
+}
+
+.tulisanNav {
+  margin-bottom: 40px;
+  padding: 0;
+
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 li {
@@ -16,7 +29,7 @@ li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 20px 16px;
   padding-left: 20px;
   text-decoration: none;
 }
@@ -24,11 +37,6 @@ li a {
 li a:hover {
   background-color: #111;
   color: #0a58ca;
-}
-
-.tulisanNav {
-  text-align: center;
-  font-size: 30px;
 }
 
 /* searchbox */
