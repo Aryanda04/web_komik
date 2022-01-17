@@ -1,8 +1,8 @@
 <?php
     require 'db/functions.php';
 
-    $select_komik = "SELECT * FROM komik";
-    $select_komik_sort_view = "SELECT * FROM komik ORDER BY total_views DESC";
+    $select_komik = "SELECT komik.*, COUNT(komik.komik_id) AS total_chapter FROM komik JOIN chapter ON komik.komik_id = chapter.komik_id GROUP BY komik.komik_id";
+    $select_komik_sort_view = "SELECT komik.*, COUNT(komik.komik_id) AS total_chapter FROM komik JOIN chapter ON komik.komik_id = chapter.komik_id GROUP BY komik.komik_id ORDER BY total_views DESC";
 
     function showKomik($queryKomik, $loop)
     {
@@ -17,9 +17,6 @@
         } else {
           $deskripsi = $komik["deskripsi"];
         }
-
-        $komik_id = $komik["komik_id"];
-        $komik["total_chapter"] = selectFirst("SELECT COUNT(komik.komik_id) AS total_chapter FROM `komik` JOIN `chapter` ON komik.komik_id = chapter.komik_id where komik.komik_id = $komik_id")["total_chapter"];
 
         echo "<div class=\"list-produk\">";
         echo "  <div class=\"kategori\">";
