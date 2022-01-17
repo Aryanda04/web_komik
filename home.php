@@ -9,6 +9,7 @@
       $i = 1;
       // data list komik berdasarkan query dari variabel queryKomik
       $list_komik = selectALL($queryKomik);
+      
       foreach($list_komik as $komik) {
         $max_char = 100;
         if (strlen($komik["deskripsi"]) > $max_char) {
@@ -16,6 +17,10 @@
         } else {
           $deskripsi = $komik["deskripsi"];
         }
+
+        $komik_id = $komik["komik_id"];
+        $komik["total_chapter"] = selectFirst("SELECT COUNT(komik.komik_id) AS total_chapter FROM `komik` JOIN `chapter` ON komik.komik_id = chapter.komik_id where komik.komik_id = $komik_id")["total_chapter"];
+
         echo "<div class=\"list-produk\">";
         echo "  <div class=\"kategori\">";
         echo "    <div>" . $komik["kategori"] . "</div>";
@@ -30,6 +35,7 @@
         echo "  </div>";
         echo "</div>";
         $i++;
+
         if ($i > $loop && $loop != -1) {
           break;
         }    

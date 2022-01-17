@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 16, 2022 at 07:49 PM
+-- Generation Time: Jan 17, 2022 at 02:59 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -438,20 +438,19 @@ CREATE TABLE `komik` (
   `deskripsi` varchar(2000) NOT NULL,
   `waktu_rilis` year(4) NOT NULL,
   `waktu_update` date NOT NULL,
-  `total_views` int(11) NOT NULL,
-  `total_chapter` int(11) NOT NULL
+  `total_views` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `komik`
 --
 
-INSERT INTO `komik` (`komik_id`, `nama_komik`, `cover_komik`, `kategori`, `deskripsi`, `waktu_rilis`, `waktu_update`, `total_views`, `total_chapter`) VALUES
-(1, 'Solo Leveling', 'cover.png', 'Manhwa', '10 tahun yang lalu, setelah \"Gerbang\" yang menghubungkan dunia nyata dengan dunia monster terbuka, beberapa orang biasa, setiap hari menerima kekuatan untuk berburu monster di dalam Gerbang. Mereka dikenal sebagai \"Pemburu\". Namun, tidak semua Pemburu kuat. Nama saya Sung Jin-Woo, seorang Pemburu peringkat-E. Saya seseorang yang harus mempertaruhkan nyawanya di ruang bawah tanah paling rendah, \"Terlemah di Dunia\". Tidak memiliki keterampilan apa pun untuk ditampilkan, saya hampir tidak mendapatkan uang yang dibutuhkan dengan bertarung di ruang bawah tanah berlevel rendah… setidaknya sampai saya menemukan ruang bawah tanah tersembunyi dengan kesulitan tersulit dalam ruang bawah tanah peringkat-D! Pada akhirnya, saat aku menerima kematian, tiba-tiba aku menerima kekuatan aneh, log pencarian yang hanya bisa kulihat, rahasia untuk naik level yang hanya aku yang tahu! Jika saya berlatih sesuai dengan pencarian saya dan monster yang diburu, level saya akan naik. Berubah dari Hunter terlemah menjadi Hunter S-rank terkuat!', 2016, '2022-01-02', 442105, 2),
-(2, 'Magic Emperor', 'komik1.webp', 'Manhwa', 'Zhuo Yifan adalah seorang kaisar sihir atau bisa di panggil kaisar iblis, karena dia mempunyai buku kaisar kuno yang di sebut buku sembilan rahasia dia menjadi sasaran semua ahli beradiri bahkan dia di khianati dan di bunuh oleh muridnya. Kemudian jiwanya masuk dan hidup kembali dalam seorang anak pelayan keluarga bernama Zhuo Fan.Karena suatu sihir iblis mengekangnya, dia harus menyatukan ingatan anak itu dan tidak bisa mengabaikan keluarga dan nona yang dia layaninya. Bagaimana kehidupan nya membangun kembali keluarganya dan kembali menjadi yang terkuat didaratan benua', 2018, '2022-01-09', 1720358, 2),
-(3, 'Regina Rena - To the Unforgiveable', 'komik3.jpeg', 'Manhwa', '“Aku akan memberimu kesempatan. Kesempatan untuk dimaafkan.” Sang ayah membuang putrinya. Dan putri itu kembali dari neraka. Di sebuah kerajaan dengan keragaman hidup dan mati, Rena Rubel ditakdirkan untuk mati sebagai pengorbanan untuk ayahnya. Tapi enam tahun kemudian, gadis yang semua orang mengira telah mati, hidup kembali. Melepas topeng domba kecil, dan menjadi singa.', 2021, '2022-01-10', 21117, 2),
-(4, 'Max Level Returner', 'komik4.jpg', 'Manhwa', '120 juta orang telah hilang di seluruh dunia. [Hadiah Penyelesaian Misi Akhir: \'Kembali\' Diaktifkan] Untuk pertama kalinya dalam 22 tahun, Yoon Sang-Hyuk menyelesaikan game bertahan hidup terburuk di dunia. Dia, yang disebut orang terkuat di antara semua pemain lain, yang memiliki semua item hadiah bahkan yang tidak dapat diperoleh orang lain, telah kembali.', 2020, '2022-01-12', 1301190, 2),
-(5, 'Talent-Swallowing Magician', 'komik2.webp', 'Manhua', 'Elric Melvinger. Pewaris kekuasan dari keluarga sihir terkemuka. Dia tidak memiliki ‘Talent’ dari lahir, sebagai akibatnya dia tidak bisa mempelajari ilmu sihir. namun, dia mendapatkan ‘Blessing’ dari leluhurnya! [Makan Demon] [Telan Demon] [Minum darah Demon] [ Akan aku Kumpulkan Sebanyak-banyaknya demon dalam diriku, dan dapatkan Sihir baru!] Aku akan bertambah kuat. Sangat kuat sampai tidak ada yang mampu mengalahkanku.', 2021, '2022-01-05', 225101, 2);
+INSERT INTO `komik` (`komik_id`, `nama_komik`, `cover_komik`, `kategori`, `deskripsi`, `waktu_rilis`, `waktu_update`, `total_views`) VALUES
+(1, 'Solo Leveling', 'cover.png', 'Manhwa', '10 tahun yang lalu, setelah \"Gerbang\" yang menghubungkan dunia nyata dengan dunia monster terbuka, beberapa orang biasa, setiap hari menerima kekuatan untuk berburu monster di dalam Gerbang. Mereka dikenal sebagai \"Pemburu\". Namun, tidak semua Pemburu kuat. Nama saya Sung Jin-Woo, seorang Pemburu peringkat-E. Saya seseorang yang harus mempertaruhkan nyawanya di ruang bawah tanah paling rendah, \"Terlemah di Dunia\". Tidak memiliki keterampilan apa pun untuk ditampilkan, saya hampir tidak mendapatkan uang yang dibutuhkan dengan bertarung di ruang bawah tanah berlevel rendah… setidaknya sampai saya menemukan ruang bawah tanah tersembunyi dengan kesulitan tersulit dalam ruang bawah tanah peringkat-D! Pada akhirnya, saat aku menerima kematian, tiba-tiba aku menerima kekuatan aneh, log pencarian yang hanya bisa kulihat, rahasia untuk naik level yang hanya aku yang tahu! Jika saya berlatih sesuai dengan pencarian saya dan monster yang diburu, level saya akan naik. Berubah dari Hunter terlemah menjadi Hunter S-rank terkuat!', 2016, '2022-01-02', 442107),
+(2, 'Magic Emperor', 'komik1.webp', 'Manhwa', 'Zhuo Yifan adalah seorang kaisar sihir atau bisa di panggil kaisar iblis, karena dia mempunyai buku kaisar kuno yang di sebut buku sembilan rahasia dia menjadi sasaran semua ahli beradiri bahkan dia di khianati dan di bunuh oleh muridnya. Kemudian jiwanya masuk dan hidup kembali dalam seorang anak pelayan keluarga bernama Zhuo Fan.Karena suatu sihir iblis mengekangnya, dia harus menyatukan ingatan anak itu dan tidak bisa mengabaikan keluarga dan nona yang dia layaninya. Bagaimana kehidupan nya membangun kembali keluarganya dan kembali menjadi yang terkuat didaratan benua', 2018, '2022-01-09', 1720365),
+(3, 'Regina Rena - To the Unforgiveable', 'komik3.jpeg', 'Manhwa', '“Aku akan memberimu kesempatan. Kesempatan untuk dimaafkan.” Sang ayah membuang putrinya. Dan putri itu kembali dari neraka. Di sebuah kerajaan dengan keragaman hidup dan mati, Rena Rubel ditakdirkan untuk mati sebagai pengorbanan untuk ayahnya. Tapi enam tahun kemudian, gadis yang semua orang mengira telah mati, hidup kembali. Melepas topeng domba kecil, dan menjadi singa.', 2021, '2022-01-10', 21117),
+(4, 'Max Level Returner', 'komik4.jpg', 'Manhwa', '120 juta orang telah hilang di seluruh dunia. [Hadiah Penyelesaian Misi Akhir: \'Kembali\' Diaktifkan] Untuk pertama kalinya dalam 22 tahun, Yoon Sang-Hyuk menyelesaikan game bertahan hidup terburuk di dunia. Dia, yang disebut orang terkuat di antara semua pemain lain, yang memiliki semua item hadiah bahkan yang tidak dapat diperoleh orang lain, telah kembali.', 2020, '2022-01-12', 1301190),
+(5, 'Talent-Swallowing Magician', 'komik2.webp', 'Manhua', 'Elric Melvinger. Pewaris kekuasan dari keluarga sihir terkemuka. Dia tidak memiliki ‘Talent’ dari lahir, sebagai akibatnya dia tidak bisa mempelajari ilmu sihir. namun, dia mendapatkan ‘Blessing’ dari leluhurnya! [Makan Demon] [Telan Demon] [Minum darah Demon] [ Akan aku Kumpulkan Sebanyak-banyaknya demon dalam diriku, dan dapatkan Sihir baru!] Aku akan bertambah kuat. Sangat kuat sampai tidak ada yang mampu mengalahkanku.', 2021, '2022-01-05', 225101);
 
 -- --------------------------------------------------------
 
