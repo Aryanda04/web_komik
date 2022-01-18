@@ -93,5 +93,6 @@ $data_chapter = selectALL("SELECT chapter.* from `chapter` JOIN `komik` ON chapt
 
 </body>
 <script src="detail.js"></script>
+<!--  -->
 
 </html>
