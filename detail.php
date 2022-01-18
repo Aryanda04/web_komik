@@ -4,7 +4,7 @@ require 'db/functions.php';
 $id = $_GET['id'];
 
 /// data detail komik
-$data_detail = selectFirst("SELECT komik.*,MAX(chapter.waktu_update) AS waktu_update,total_views,COUNT(komik.komik_id) AS total_chapter FROM `komik` JOIN `chapter` ON komik.komik_id = chapter.komik_id GROUP BY komik.komik_id");
+$data_detail = selectFirst("SELECT komik.*,MAX(chapter.waktu_update) AS waktu_update,total_views,COUNT(komik.komik_id) AS total_chapter FROM `komik` JOIN `chapter` ON komik.komik_id = chapter.komik_id WHERE komik.komik_id = $id GROUP BY komik.komik_id");
 
 /// data list genre di detail komik
 $data_genre_list = selectALL("SELECT * FROM `list_genre` JOIN `genre` ON list_genre.genre_id = genre.genre_id WHERE list_genre.komik_id = $id");

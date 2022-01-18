@@ -17,6 +17,17 @@ body {
   overflow: hidden;
 }
 
+.cover {
+  /* border: 2px solid rgb(255, 255, 255); */
+  height: 80%;
+  overflow: hidden;
+}
+
+.cover img {
+  max-height: 300px;
+  max-width: min-content;
+}
+
 .badan h2 {
   /* background-color: aqua; */
   color: rgb(0, 0, 0);
@@ -27,7 +38,7 @@ body {
 }
 
 .badan-darkmode {
-  background-color: rgb(0, 17, 92);
+  background-color: #14274e;
 }
 
 .list-produk {
@@ -41,6 +52,10 @@ body {
   min-width: content;
   border-radius: 10px;
 }
+.list-darkmode {
+  background-color: #394867;
+}
+
 .footer {
   background-color: rgb(189, 189, 189);
   border-top: rgb(146, 146, 146);
@@ -93,6 +108,7 @@ body {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  border-radius: 3px;
 }
 .flex-container {
   display: flex;
@@ -108,11 +124,13 @@ body {
   display: grid;
   grid-template-columns: auto auto auto auto;
   min-height: max-content;
+  padding-left: 15px;
   /* width: max-content; */
   background-color: #ffffff;
   border-bottom: solid black 5px;
+  border-radius: 10px;
 }
 
 .grid-darkmode {
-  background-color: #3a98f0;
+  background-color: #9ba4b4;
 }
