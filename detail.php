@@ -27,14 +27,15 @@ $data_chapter = selectALL("SELECT chapter.* from `chapter` JOIN `komik` ON chapt
 
 <body>
     <?php include 'template/header.php' ?>
-
-    <div style="width: 1100px;height:450px;overflow:hidden;margin: auto; opacity: 0.7;background-size: contain;">
-        <img src="img/<?= $data_detail["nama_komik"] . "/" . $data_detail["cover_komik"] ?>" width="1100" height="" />
+    <div class="flex-container">
+        <div class="cover">
+            <img src="img/<?= $data_detail["nama_komik"] . "/" . $data_detail["cover_komik"] ?>" alt="" class="image" width="100%">
+        </div>
     </div>
     <br>
-    <div class="flex-container">
+    <div class="flex-container" style="justify-content: space-between;">
         <div>
-            <img src="img/<?= $data_detail["nama_komik"] . "/" . $data_detail["cover_komik"] ?>" alt="" width="200" style="border: black 5pt solid;">
+            <img src="img/<?= $data_detail["nama_komik"] . "/" . $data_detail["cover_komik"] ?>" alt="" width="200" style="border: black 5pt solid; margin-left: 20px ;margin-top: -70px;">
         </div>
         <div class="info">
             <div class="content">
@@ -42,10 +43,11 @@ $data_chapter = selectALL("SELECT chapter.* from `chapter` JOIN `komik` ON chapt
                 <p>
                     Genre :
                     <?php foreach ($data_genre_list as $data) { ?>
-                        <button class="btn btn-secondary btn-sm me-3"><?= ucwords($data["nama_genre"]) ?></button>
-                    <?php } ?>
+                        <a href="genre.php?=" class="genre"><?= ucwords($data["nama_genre"]) ?></button>
+                        <?php } ?></a>
                 </p>
-                <table border="0" cellpadding="0">
+                <br><br>
+                <table border="0" cellpadding="5">
                     <tr>
                         <td style="padding-right: 250px;"><strong>Released : </strong><?= $data_detail["waktu_rilis"] ?></td>
                         <td><strong>Type : </strong><?= $data_detail["kategori"] ?></td>
@@ -66,7 +68,7 @@ $data_chapter = selectALL("SELECT chapter.* from `chapter` JOIN `komik` ON chapt
 
     <div class="flex-container">
         <div class="chapter">
-            <p style="font-size: 25px;"><strong>Sinopsis</strong></p>
+            <p style="font-size: 25px; padding: 0px 20px 0px;"><strong>Sinopsis</strong></p>
             <hr>
             <p class="teks"><?= $data_detail["deskripsi"] ?></p>
             <br><br>

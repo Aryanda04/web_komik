@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2022 at 02:59 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- Waktu pembuatan: 18 Jan 2022 pada 17.35
+-- Versi server: 10.1.38-MariaDB
+-- Versi PHP: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -24,18 +25,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `chapter`
+-- Struktur dari tabel `chapter`
 --
 
 CREATE TABLE `chapter` (
   `chapter_id` int(11) NOT NULL,
   `komik_id` int(100) NOT NULL,
   `nama_chapter` varchar(255) NOT NULL,
-  `waktu_update` date NOT NULL DEFAULT current_timestamp()
+  `waktu_update` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `chapter`
+-- Dumping data untuk tabel `chapter`
 --
 
 INSERT INTO `chapter` (`chapter_id`, `komik_id`, `nama_chapter`, `waktu_update`) VALUES
@@ -53,7 +54,7 @@ INSERT INTO `chapter` (`chapter_id`, `komik_id`, `nama_chapter`, `waktu_update`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gambar`
+-- Struktur dari tabel `gambar`
 --
 
 CREATE TABLE `gambar` (
@@ -63,7 +64,7 @@ CREATE TABLE `gambar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `gambar`
+-- Dumping data untuk tabel `gambar`
 --
 
 INSERT INTO `gambar` (`gambar_id`, `chapter_id`, `file_gambar`) VALUES
@@ -403,7 +404,7 @@ INSERT INTO `gambar` (`gambar_id`, `chapter_id`, `file_gambar`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `genre`
+-- Struktur dari tabel `genre`
 --
 
 CREATE TABLE `genre` (
@@ -412,7 +413,7 @@ CREATE TABLE `genre` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `genre`
+-- Dumping data untuk tabel `genre`
 --
 
 INSERT INTO `genre` (`genre_id`, `nama_genre`) VALUES
@@ -428,7 +429,7 @@ INSERT INTO `genre` (`genre_id`, `nama_genre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `komik`
+-- Struktur dari tabel `komik`
 --
 
 CREATE TABLE `komik` (
@@ -442,12 +443,12 @@ CREATE TABLE `komik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `komik`
+-- Dumping data untuk tabel `komik`
 --
 
 INSERT INTO `komik` (`komik_id`, `nama_komik`, `cover_komik`, `kategori`, `deskripsi`, `waktu_rilis`, `total_views`) VALUES
 (1, 'Solo Leveling', 'cover.png', 'Manhwa', '10 tahun yang lalu, setelah \"Gerbang\" yang menghubungkan dunia nyata dengan dunia monster terbuka, beberapa orang biasa, setiap hari menerima kekuatan untuk berburu monster di dalam Gerbang. Mereka dikenal sebagai \"Pemburu\". Namun, tidak semua Pemburu kuat. Nama saya Sung Jin-Woo, seorang Pemburu peringkat-E. Saya seseorang yang harus mempertaruhkan nyawanya di ruang bawah tanah paling rendah, \"Terlemah di Dunia\". Tidak memiliki keterampilan apa pun untuk ditampilkan, saya hampir tidak mendapatkan uang yang dibutuhkan dengan bertarung di ruang bawah tanah berlevel rendah… setidaknya sampai saya menemukan ruang bawah tanah tersembunyi dengan kesulitan tersulit dalam ruang bawah tanah peringkat-D! Pada akhirnya, saat aku menerima kematian, tiba-tiba aku menerima kekuatan aneh, log pencarian yang hanya bisa kulihat, rahasia untuk naik level yang hanya aku yang tahu! Jika saya berlatih sesuai dengan pencarian saya dan monster yang diburu, level saya akan naik. Berubah dari Hunter terlemah menjadi Hunter S-rank terkuat!', 2016, 442107),
-(2, 'Magic Emperor', 'komik1.webp', 'Manhwa', 'Zhuo Yifan adalah seorang kaisar sihir atau bisa di panggil kaisar iblis, karena dia mempunyai buku kaisar kuno yang di sebut buku sembilan rahasia dia menjadi sasaran semua ahli beradiri bahkan dia di khianati dan di bunuh oleh muridnya. Kemudian jiwanya masuk dan hidup kembali dalam seorang anak pelayan keluarga bernama Zhuo Fan.Karena suatu sihir iblis mengekangnya, dia harus menyatukan ingatan anak itu dan tidak bisa mengabaikan keluarga dan nona yang dia layaninya. Bagaimana kehidupan nya membangun kembali keluarganya dan kembali menjadi yang terkuat didaratan benua', 2018, 1720365),
+(2, 'Magic Emperor', 'komik1.webp', 'Manhwa', 'Zhuo Yifan adalah seorang kaisar sihir atau bisa di panggil kaisar iblis, karena dia mempunyai buku kaisar kuno yang di sebut buku sembilan rahasia dia menjadi sasaran semua ahli beradiri bahkan dia di khianati dan di bunuh oleh muridnya. Kemudian jiwanya masuk dan hidup kembali dalam seorang anak pelayan keluarga bernama Zhuo Fan.Karena suatu sihir iblis mengekangnya, dia harus menyatukan ingatan anak itu dan tidak bisa mengabaikan keluarga dan nona yang dia layaninya. Bagaimana kehidupan nya membangun kembali keluarganya dan kembali menjadi yang terkuat didaratan benua', 2018, 1720370),
 (3, 'Regina Rena - To the Unforgiveable', 'komik3.jpeg', 'Manhwa', '“Aku akan memberimu kesempatan. Kesempatan untuk dimaafkan.” Sang ayah membuang putrinya. Dan putri itu kembali dari neraka. Di sebuah kerajaan dengan keragaman hidup dan mati, Rena Rubel ditakdirkan untuk mati sebagai pengorbanan untuk ayahnya. Tapi enam tahun kemudian, gadis yang semua orang mengira telah mati, hidup kembali. Melepas topeng domba kecil, dan menjadi singa.', 2021, 21117),
 (4, 'Max Level Returner', 'komik4.jpg', 'Manhwa', '120 juta orang telah hilang di seluruh dunia. [Hadiah Penyelesaian Misi Akhir: \'Kembali\' Diaktifkan] Untuk pertama kalinya dalam 22 tahun, Yoon Sang-Hyuk menyelesaikan game bertahan hidup terburuk di dunia. Dia, yang disebut orang terkuat di antara semua pemain lain, yang memiliki semua item hadiah bahkan yang tidak dapat diperoleh orang lain, telah kembali.', 2020, 1301191),
 (5, 'Talent-Swallowing Magician', 'komik2.webp', 'Manhua', 'Elric Melvinger. Pewaris kekuasan dari keluarga sihir terkemuka. Dia tidak memiliki ‘Talent’ dari lahir, sebagai akibatnya dia tidak bisa mempelajari ilmu sihir. namun, dia mendapatkan ‘Blessing’ dari leluhurnya! [Makan Demon] [Telan Demon] [Minum darah Demon] [ Akan aku Kumpulkan Sebanyak-banyaknya demon dalam diriku, dan dapatkan Sihir baru!] Aku akan bertambah kuat. Sangat kuat sampai tidak ada yang mampu mengalahkanku.', 2021, 225101);
@@ -455,7 +456,7 @@ INSERT INTO `komik` (`komik_id`, `nama_komik`, `cover_komik`, `kategori`, `deskr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `list_genre`
+-- Struktur dari tabel `list_genre`
 --
 
 CREATE TABLE `list_genre` (
@@ -465,7 +466,7 @@ CREATE TABLE `list_genre` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `list_genre`
+-- Dumping data untuk tabel `list_genre`
 --
 
 INSERT INTO `list_genre` (`list_genre_id`, `komik_id`, `genre_id`) VALUES
@@ -493,33 +494,33 @@ INSERT INTO `list_genre` (`list_genre_id`, `komik_id`, `genre_id`) VALUES
 --
 
 --
--- Indexes for table `chapter`
+-- Indeks untuk tabel `chapter`
 --
 ALTER TABLE `chapter`
   ADD PRIMARY KEY (`chapter_id`),
   ADD KEY `chapter_chapter_id_komik_komik_id_fk` (`komik_id`);
 
 --
--- Indexes for table `gambar`
+-- Indeks untuk tabel `gambar`
 --
 ALTER TABLE `gambar`
   ADD PRIMARY KEY (`gambar_id`),
   ADD KEY `gambar_gambar_id_chapter_chapter_id_fk` (`chapter_id`);
 
 --
--- Indexes for table `genre`
+-- Indeks untuk tabel `genre`
 --
 ALTER TABLE `genre`
   ADD PRIMARY KEY (`genre_id`);
 
 --
--- Indexes for table `komik`
+-- Indeks untuk tabel `komik`
 --
 ALTER TABLE `komik`
   ADD PRIMARY KEY (`komik_id`);
 
 --
--- Indexes for table `list_genre`
+-- Indeks untuk tabel `list_genre`
 --
 ALTER TABLE `list_genre`
   ADD PRIMARY KEY (`list_genre_id`),
@@ -527,57 +528,57 @@ ALTER TABLE `list_genre`
   ADD KEY `list_genre_list_genre_id_komik_komik_id_fk` (`komik_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `chapter`
+-- AUTO_INCREMENT untuk tabel `chapter`
 --
 ALTER TABLE `chapter`
   MODIFY `chapter_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `gambar`
+-- AUTO_INCREMENT untuk tabel `gambar`
 --
 ALTER TABLE `gambar`
   MODIFY `gambar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=333;
 
 --
--- AUTO_INCREMENT for table `genre`
+-- AUTO_INCREMENT untuk tabel `genre`
 --
 ALTER TABLE `genre`
   MODIFY `genre_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `komik`
+-- AUTO_INCREMENT untuk tabel `komik`
 --
 ALTER TABLE `komik`
   MODIFY `komik_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `list_genre`
+-- AUTO_INCREMENT untuk tabel `list_genre`
 --
 ALTER TABLE `list_genre`
   MODIFY `list_genre_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `chapter`
+-- Ketidakleluasaan untuk tabel `chapter`
 --
 ALTER TABLE `chapter`
   ADD CONSTRAINT `chapter_chapter_id_komik_komik_id_fk` FOREIGN KEY (`komik_id`) REFERENCES `komik` (`komik_id`);
 
 --
--- Constraints for table `gambar`
+-- Ketidakleluasaan untuk tabel `gambar`
 --
 ALTER TABLE `gambar`
   ADD CONSTRAINT `gambar_gambar_id_chapter_chapter_id_fk` FOREIGN KEY (`chapter_id`) REFERENCES `chapter` (`chapter_id`);
 
 --
--- Constraints for table `list_genre`
+-- Ketidakleluasaan untuk tabel `list_genre`
 --
 ALTER TABLE `list_genre`
   ADD CONSTRAINT `list_genre_list_genre_id_genre_genre_id_fk` FOREIGN KEY (`genre_id`) REFERENCES `genre` (`genre_id`),
