@@ -37,7 +37,8 @@ $data_chapter = selectALL("SELECT chapter.* from `chapter` JOIN `komik` ON chapt
         <div>
             <img src="img/<?= $data_detail["nama_komik"] . "/" . $data_detail["cover_komik"] ?>" alt="" width="200" style="border: black 5pt solid; margin-left: 20px ;margin-top: -70px;">
         </div>
-            <div class="content">
+        <div class="info">
+            <div class="content" style="font-size: 20px;">
                 <p class="title"><strong><?= $data_detail["nama_komik"] ?></strong></p>
                 <p>
                     Genre :
@@ -53,10 +54,12 @@ $data_chapter = selectALL("SELECT chapter.* from `chapter` JOIN `komik` ON chapt
                     </tr>
                     <tr>
                         <td style="padding-right: 250px;"><strong>Total Chapter : </strong><?= $data_detail["total_chapter"] ?></td>
-                        <td><strong>Updated on : </strong><?= date_format(date_create($data_detail["waktu_update"]), "Y F d") ?></td>
+                        <td><strong>Updated on : </strong><?= date_format(date_create($data_detail["waktu_update"]), "F d, Y") ?></td>
                     </tr>
                 </table>
             </div>
+
+        </div>
         <div class="rating">
             <p>Jumlah Pembaca</p>
             <p><?= $data_detail["total_views"] ?></p>
@@ -67,18 +70,18 @@ $data_chapter = selectALL("SELECT chapter.* from `chapter` JOIN `komik` ON chapt
         <div class="chapter">
             <p style="font-size: 25px; padding: 0px 20px 0px;"><strong>Sinopsis</strong></p>
             <hr>
-            <p class="teks"><?= $data_detail["deskripsi"] ?></p>
+            <p class="teks" style="font-size: 20px;"><?= $data_detail["deskripsi"] ?></p>
             <br><br>
             <p style="color: teal;" class="teks">CHAPTER <?= strtoupper($data_detail["nama_komik"]) ?></p>
             <hr>
             <div class="scroll">
-                <table cellpadding="5" id="table">
+                <table cellpadding="10" id="table" style="width: 100%;font-size: 20px;padding-bottom: 30px;">
                     <?php foreach ($data_chapter as $chapter) { ?>
                         <tr>
-                            <td style="padding-right: 850px;">
+                            <td>
                                 <a href="isi_komik.php?id=<?= $chapter["chapter_id"] ?>"><?= $chapter["nama_chapter"] ?></a>
                             </td>
-                            <td><?= $chapter["waktu_update"] ?></td>
+                            <td style="float: right;"><?= date_format(date_create($chapter["waktu_update"]), "F d, Y") ?></td>
                         </tr>
                     <?php } ?>
                 </table>
