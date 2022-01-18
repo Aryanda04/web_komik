@@ -11,7 +11,6 @@ $data_genre_list = selectALL("SELECT * FROM `list_genre` JOIN `genre` ON list_ge
 
 /// data list chapter
 $data_chapter = selectALL("SELECT chapter.* from `chapter` JOIN `komik` ON chapter.komik_id = komik.komik_id WHERE chapter.komik_id = $id ORDER BY chapter_id DESC");
-
 ?>
 
 <!DOCTYPE html>
