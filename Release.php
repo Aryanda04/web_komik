@@ -21,7 +21,7 @@ function showKomik($queryKomik, $loop)
     echo "<div class=\"list-produk\">";
     echo "  <div class=\"kategori\">";
     echo "    <div>" . $komik["kategori"] . "</div>";
-    echo "    <div>" . $komik["waktu_update"] . " Views</div>";
+    echo "    <div>" . $komik["waktu_update"] . "</div>";
     echo "  </div>";
     echo "  <div class=\"cover\">";
     echo "  <img src=\"img/" . $komik["nama_komik"] . "/" . $komik["cover_komik"] . "\">";
@@ -57,25 +57,8 @@ function showKomik($queryKomik, $loop)
 
 
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="home.css">
-    <style>
-    .column {
-        float: left;
-        width: 100%;
-        border-radius: 20px;
-        padding: 5px;
-        height: auto;
-        border: 2px solid #000000;
-    }
+    <link rel="stylesheet" type="text/css" href="release.css">
 
-
-    ul {
-        list-style-type: none;
-        margin: 0;
-        overflow: hidden;
-
-    }
-    </style>
 </head>
 
 <body>
@@ -118,8 +101,6 @@ function showKomik($queryKomik, $loop)
         <br><br>
 
         <div class="column" style="background-color: #9BA4B4;">
-
-
             <div class="flex-container" id="most-view">
                 <?php showKomik($data_komik, -1) ?>
             </div>
@@ -128,15 +109,9 @@ function showKomik($queryKomik, $loop)
 
 
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="Lrelase.js"></script>
-    <script src="isi_komik.js"></script>
-    <script src="home.js"></script>
+
+    <script src="release.js"></script>
+
 </body>
 
 </html>
