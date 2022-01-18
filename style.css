@@ -61,7 +61,12 @@ li a:hover {
 }
 
 ul input[type="text"] {
-  padding: 0 0 0 20px;
+  padding: 0 0 0 40px;
+
+  background-image: url("img/searchlogo.png");
+  background-position: 8px 6px;
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
 }
 
 /* dark-mode slider */

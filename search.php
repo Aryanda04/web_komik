@@ -23,10 +23,10 @@
           $deskripsi = $komik["deskripsi"];
         }
 
-        echo "<div class=\"list-produk\">";
+        echo "<div class=\"komik-card\">";
         echo "  <div class=\"kategori\">";
         echo "    <div>" . $komik["kategori"] . "</div>";
-        echo "    <div>" . $komik["total_views"] . " Total Pembaca</div>";
+        echo "    <div>" . $komik["total_views"] . " Viewer</div>";
         echo "  </div>";
         echo "  <img src=\"img/" . $komik["nama_komik"] . "/" . $komik["cover_komik"] . "\"  style=\"object-fit:contain; height:233px !important; align:center\">";
         echo "    <div class=\"judul\">" . $komik["nama_komik"] . "</div>";
