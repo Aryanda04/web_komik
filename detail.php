@@ -4,7 +4,7 @@ require 'db/functions.php';
 $id = $_GET['id'];
 
 /// data detail komik
-$data_detail = selectFirst("SELECT komik.*,MAX(chapter.waktu_update) AS waktu_update,total_views,COUNT(komik.komik_id) AS total_chapter FROM `komik` JOIN `chapter` ON komik.komik_id = chapter.komik_id GROUP BY komik.komik_id");
+$data_detail = selectFirst("SELECT komik.*,MAX(chapter.waktu_update) AS waktu_update,total_views,COUNT(komik.komik_id) AS total_chapter FROM `komik` JOIN `chapter` ON komik.komik_id = chapter.komik_id WHERE komik.komik_id = $id GROUP BY komik.komik_id");
 
 /// data list genre di detail komik
 $data_genre_list = selectALL("SELECT * FROM `list_genre` JOIN `genre` ON list_genre.genre_id = genre.genre_id WHERE list_genre.komik_id = $id");
@@ -12,7 +12,6 @@ $data_genre_list = selectALL("SELECT * FROM `list_genre` JOIN `genre` ON list_ge
 /// data list chapter
 $data_chapter = selectALL("SELECT chapter.* from `chapter` JOIN `komik` ON chapter.komik_id = komik.komik_id WHERE chapter.komik_id = $id ORDER BY chapter_id DESC");
 
-var_dump($data_chapter[0]);
 ?>
 
 <!DOCTYPE html>
@@ -29,14 +28,15 @@ var_dump($data_chapter[0]);
 
 <body>
     <?php include 'template/header.php' ?>
-
-    <div style="width: 1100px;height:450px;overflow:hidden;margin: auto; opacity: 0.7;background-size: contain;">
-        <img src="img/<?= $data_detail["nama_komik"] . "/" . $data_detail["cover_komik"] ?>" width="1100" height="" />
+    <div class="flex-container">
+        <div class="cover">
+            <img src="img/<?= $data_detail["nama_komik"] . "/" . $data_detail["cover_komik"] ?>" alt="" class="image" width="100%">
+        </div>
     </div>
     <br>
-    <div class="flex-container">
+    <div class="flex-container" style="justify-content: space-between;">
         <div>
-            <img src="img/<?= $data_detail["nama_komik"] . "/" . $data_detail["cover_komik"] ?>" alt="" width="200" style="border: black 5pt solid;">
+            <img src="img/<?= $data_detail["nama_komik"] . "/" . $data_detail["cover_komik"] ?>" alt="" width="200" style="border: black 5pt solid; margin-left: 20px ;margin-top: -70px;">
         </div>
         <div class="info">
             <div class="content">
@@ -44,10 +44,11 @@ var_dump($data_chapter[0]);
                 <p>
                     Genre :
                     <?php foreach ($data_genre_list as $data) { ?>
-                        <button class="btn btn-secondary btn-sm me-3"><?= ucwords($data["nama_genre"]) ?></button>
-                    <?php } ?>
+                        <a href="genre.php?=" class="genre"><?= ucwords($data["nama_genre"]) ?></button>
+                        <?php } ?></a>
                 </p>
-                <table border="0" cellpadding="0">
+                <br><br>
+                <table border="0" cellpadding="5">
                     <tr>
                         <td style="padding-right: 250px;"><strong>Released : </strong><?= $data_detail["waktu_rilis"] ?></td>
                         <td><strong>Type : </strong><?= $data_detail["kategori"] ?></td>
@@ -68,7 +69,7 @@ var_dump($data_chapter[0]);
 
     <div class="flex-container">
         <div class="chapter">
-            <p style="font-size: 25px;"><strong>Sinopsis</strong></p>
+            <p style="font-size: 25px; padding: 0px 20px 0px;"><strong>Sinopsis</strong></p>
             <hr>
             <p class="teks"><?= $data_detail["deskripsi"] ?></p>
             <br><br>

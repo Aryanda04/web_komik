@@ -1,52 +1,84 @@
 .flex-container {
-    display: flex;
-    margin-left: 7%;
-    margin-right: 7%;
+  display: flex;
+  margin-left: 7%;
+  margin-right: 7%;
 }
 
 .img-box {
-    width: 200px;
-    margin: 10px;
-    text-align: center;
-    line-height: 75px;
-    font-size: 30px;
+  width: 200px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
 }
 
 .content {
-    width: 800px;
-    margin: 10px;
+  width: 800px;
+  margin: 10px;
 }
 
 .rating {
-    background-color: rgb(144, 157, 160);
-    width: 250px;
-    margin: 10px;
-    text-align: center;
-    line-height: 75px;
-    font-size: 30px;
+  background-color: #f1f6f9;
+  width: 250px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
 }
 
 .title {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .checked {
-    color: orange;
+  color: orange;
 }
 
 .chapter {
-    background-color: rgb(144, 157, 160);
-    width: 100%;
-    height: 100%;
-    margin: 10px;
+  background-color: #f1f6f9;
+  width: 100%;
+  height: 100%;
+  margin: 10px;
 }
 
 .teks {
-    font-size: 15px;
+  font-size: 15px;
+  padding: 0px 20px 0px;
+  text-align: justify;
 }
 
 .scroll {
-    width: 100%;
-    height: 100vh;
-    overflow: auto;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+.genre {
+  background-color: #394867;
+  border-radius: 6px;
+  margin-left: 10px;
+  border-width: 0;
+  color: white;
+  font-size: 100%;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+}
+.container {
+  margin: 0% 7% 0%;
+  width: 100%;
+}
+.image {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #000000;
+}
+.cover {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  opacity: 0.7;
+  z-index: -1;
+  background-size: auto;
+}
+.info {
+  margin-left: -1%;
 }
