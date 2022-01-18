@@ -1,7 +1,7 @@
 <?php
 require 'db/functions.php';
 
-$data_komik = selectALL("SELECT * FROM `komik` ORDER BY waktu_update DESC");
+$data_komik = selectALL("SELECT komik.*,MAX(chapter.waktu_update) AS waktu_update,total_views,COUNT(komik.komik_id) AS total_chapter FROM `komik` JOIN `chapter` ON komik.komik_id = chapter.komik_id GROUP BY komik.komik_id");
 ?>
 
 <!doctype html>
