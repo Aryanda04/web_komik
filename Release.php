@@ -1,8 +1,10 @@
 <?php
 require 'db/functions.php';
 
-$data_komik = selectALL("SELECT komik.*,MAX(chapter.waktu_update) AS waktu_update,total_views,COUNT(komik.komik_id) AS total_chapter FROM `komik` JOIN `chapter` ON komik.komik_id = chapter.komik_id GROUP BY komik.komik_id");
-$select_komik_sort_view = "SELECT komik.*, COUNT(komik.komik_id) AS total_chapter FROM komik JOIN chapter ON komik.komik_id = chapter.komik_id GROUP BY komik.komik_id ORDER BY waktu_update DESC";function showKomik($queryKomik, $loop)
+$data_komik = "SELECT komik.*,MAX(chapter.waktu_update) AS waktu_update,total_views,COUNT(komik.komik_id) AS total_chapter FROM `komik` JOIN `chapter` ON komik.komik_id = chapter.komik_id GROUP BY komik.komik_id ORDER BY waktu_update DESC";
+
+
+function showKomik($queryKomik, $loop)
 {
   $i = 1;
   // data list komik berdasarkan query dari variabel queryKomik
@@ -119,7 +121,7 @@ $select_komik_sort_view = "SELECT komik.*, COUNT(komik.komik_id) AS total_chapte
 
 
             <div class="flex-container" id="most-view">
-                <?php showKomik($select_komik_sort_view, -1) ?>
+                <?php showKomik($data_komik, -1) ?>
             </div>
         </div>
     </div>

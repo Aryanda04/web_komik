@@ -37,7 +37,6 @@ $data_chapter = selectALL("SELECT chapter.* from `chapter` JOIN `komik` ON chapt
         <div>
             <img src="img/<?= $data_detail["nama_komik"] . "/" . $data_detail["cover_komik"] ?>" alt="" width="200" style="border: black 5pt solid; margin-left: 20px ;margin-top: -70px;">
         </div>
-        <div class="info">
             <div class="content">
                 <p class="title"><strong><?= $data_detail["nama_komik"] ?></strong></p>
                 <p>
@@ -58,8 +57,6 @@ $data_chapter = selectALL("SELECT chapter.* from `chapter` JOIN `komik` ON chapt
                     </tr>
                 </table>
             </div>
-
-        </div>
         <div class="rating">
             <p>Jumlah Pembaca</p>
             <p><?= $data_detail["total_views"] ?></p>
