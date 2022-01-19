@@ -1,64 +1,51 @@
 <?php
-require 'db/functions.php';
+require 'db/db.php';
+require 'php/functions.php';
 
-$data_komik = "SELECT komik.*,MAX(chapter.waktu_update) AS waktu_update,total_views,COUNT(komik.komik_id) AS total_chapter FROM `komik` JOIN `chapter` ON komik.komik_id = chapter.komik_id GROUP BY komik.komik_id ORDER BY waktu_update DESC";
+/* list data */
+$data_komik = selectALL("SELECT komik.*,MAX(chapter.waktu_update) AS waktu_update,total_views,COUNT(komik.komik_id) AS total_chapter FROM `komik` JOIN `chapter` ON komik.komik_id = chapter.komik_id GROUP BY komik.komik_id ORDER BY waktu_update DESC");
+foreach($data_komik as $key => $komik) {
+  $id = $komik["komik_id"];
+  $list_genre_komik = array_column(selectALL("SELECT nama_genre FROM `genre` JOIN `list_genre` ON list_genre.genre_id = genre.genre_id WHERE list_genre.komik_id = $id"), "nama_genre");
+  $data_komik[$key]["list_genre"] = $list_genre_komik;
+}
 
+$data_list_genre = selectALL("SELECT * FROM `genre`");
+/* list data */
 
-function showKomik($queryKomik, $loop)
+function showKomik($list_komik, $loop)
 {
   $i = 1;
-  // data list komik berdasarkan query dari variabel queryKomik
-  $list_komik = selectALL($queryKomik);
-
+  
   foreach ($list_komik as $komik) {
-    $max_char = 100;
-    if (strlen($komik["deskripsi"]) > $max_char) {
-      $deskripsi = substr($komik["deskripsi"], 0, $max_char) . "...";
+    // var_dump($komik);
+    if(isset($_GET["Genre"]) || isset($_GET["Type"])) {
+      if($komik["kategori"] == $_GET["Type"] || in_array($_GET["Genre"], $komik["list_genre"])) {
+        komikCard($komik);
+      } else {
+        continue;
+      }
     } else {
-      $deskripsi = $komik["deskripsi"];
+      komikCard($komik);
     }
-
-    echo "<div class=\"list-produk\">";
-    echo "  <div class=\"kategori\">";
-    echo "    <div>" . $komik["kategori"] . "</div>";
-    echo "    <div>" . $komik["waktu_update"] . "</div>";
-    echo "  </div>";
-    echo "  <div class=\"cover\">";
-    echo "  <img src=\"img/" . $komik["nama_komik"] . "/" . $komik["cover_komik"] . "\">";
-    echo "  </div>";
-    echo "    <div class=\"judul\">" . $komik["nama_komik"] . "</div>";
-    echo "    <p class=\"deskripsi\">" . $deskripsi . "</p>";
-    echo "  <div class=\"footer\">";
-    echo "    <a href=\"detail.php?id=" . $komik["komik_id"] . "\" class=\"detail-button\"> Details </a>";
-    echo "    <div class=\"detail-chapter\">" . $komik["total_chapter"] . " Chapter</div>";
-    echo "  </div>";
-    echo "</div>";
     $i++;
     // var_dump($komik['komik_id']);
     if ($i > $loop && $loop != -1) {
       break;
     }
   }
-}?>
+}
+?>
 
 <!doctype html>
 <html lang="en">
 
 <head>
-
     <title>Latest Release</title>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
-
-
-
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="release.css">
-
 </head>
 
 <body>
@@ -66,13 +53,10 @@ function showKomik($queryKomik, $loop)
     <div class="badan">
         <h1 class="grid-container">Latest Release</h1>
 
-
-        <br>
-
         <div class="column" style="background-color: #394867;">
-            <div style="text-align: center; ">
+            <!-- <div style="text-align: center; ">
                 <select id="Genre " name="Genre"
-                    style="font-size:medium; margin-left: 80px; margin-right: 80px; padding-left: 45px; padding-right: 45px;">
+                    style="font-size:large; margin-left: 80px; margin-right: 80px; padding-left: 45px; padding-right: 45px;">
                     <option value="genre0 ">Genre</option>
                     <option value="genre1 ">Action</option>
                     <option value="genre2 ">Adventure</option>
@@ -82,23 +66,45 @@ function showKomik($queryKomik, $loop)
                     <option value="genre6 ">Horror</option>
                 </select>
                 <select id="Type" name="Type"
-                    style="font-size:medium; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
+                    style="font-size:large; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
                     <option value="type0 ">Type</option>
                     <option value="type1 ">Mahwa</option>
+                    <option value="type1 ">Mahua</option>
                     <option value="type2 ">Manga</option>
                 </select>
-                <select id="Sort By" name="Sort By"
-                    style="font-size:medium; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
-                    <option value="sortBy0 ">Sort By</option>
-                    <option value="sortBy1 ">Update</option>
-                    <option value="sortBy2 ">A-Z</option>
-                    <option value="sortBy3 ">Z-A</option>
-                    <option value="sortBy4 ">Popular</option>
-                </select>
+            </div> -->
+
+
+            <div style="text-align: center;">
+                <form method="get">
+                    <select id="Genre " name="Genre"
+                        style="font-size:large; margin-left: 80px; margin-right: 80px; padding-left: 45px; padding-right: 45px;">
+                        <option value="genre0">Genre</option>
+                        <?php
+                          $iterasi_genre = 1;
+                          foreach($data_list_genre as $genre) {
+                      ?>
+                        <option value="<?= $genre["nama_genre"] ?>"><?= ucwords($genre["nama_genre"]) ?></option>
+                        <?php
+                            $iterasi_genre += 1;
+                          }
+                      ?>
+                    </select>
+                    <select id="Type" name="Type"
+                        style="font-size:large; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
+                        <option value="type0">Type</option>
+                        <option value="Manga">Manga</option>
+                        <option value="Manhwa">Manhwa</option>
+                        <option value="Manhua">Manhua</option>
+                    </select>
+                    <input type="submit" name="submit"
+                        style="font-size:medium; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
+                </form>
+
             </div>
         </div>
 
-        <br><br>
+        <br><br><br>
 
         <div class="column" style="background-color: #9BA4B4;">
             <div class="flex-container" id="most-view">
@@ -107,11 +113,7 @@ function showKomik($queryKomik, $loop)
         </div>
     </div>
 
-
-
-
     <script src="release.js"></script>
-
 </body>
 
 </html>

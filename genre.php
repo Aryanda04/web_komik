@@ -1,5 +1,5 @@
 <?php
-require 'db/functions.php';
+require 'db/db.php';
 
 // data list komik semua
 $data_komik = selectALL("SELECT * FROM `komik`");
@@ -40,11 +40,10 @@ $data_genre = selectALL("SELECT * FROM `genre`");
 <body>
   <?php include 'template/header.php' ?>
 
-  <div class="list">
-    <h1>Latest Release</h1>
+  <div class="badan">
     <div class="filter">
-      <h1>Genres</h1>
-      <div class="models">
+      <h1 class="grid-container">Genres</h1>
+      <div class="models, grid-container">
 
         <div class="checkbox">
           <label><input type="checkbox" rel="action" onchange="change();" />Action</label>
@@ -69,113 +68,167 @@ $data_genre = selectALL("SELECT * FROM `genre`");
         <div class="checkbox">
           <label><input type="checkbox" rel="Horror" onchange="change();" />Horror</label>
         </div>
-
-        <div class="row" id="daftar-komik" style="border-top: solid black 5px; padding-top: 10px">
-        </div>
       </div>
     </div>
 
     <div class="result">
       <div class="list">
         <div class="kat">
-          <div class="action">
-            <h1 class="title">Magic Emperor</h1>
+          <div>Manhwa</div>
+          <div>1720365 Views</div>
+        </div>
+        <div class="action">
+          <div class="cover">
+            <img src="img/Magic Emperor/komik1.webp" />
+          </div>
+          <h1 class="title">Magic Emperor</h1>
+          <p class="desc">Deskripsiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii iiiii</p>
+          <div class="footer">
+            <a href="#" class="detail-button">Details</a>
+            <div class="detail-chapter">
+              2 Chapter
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="list">
+        <div class="kat">
+          <div>Manhwa</div>
+          <div>225101 Views</div>
+        </div>
+        <div class="action">
+          <div class="cover">
+            <img src="img/Talent-Swallowing Magician/komik2.webp" />
+          </div>
+          <h1 class="title">Talent-Swallowing Magician</h1>
+          <p class="desc">Deskripsiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
+          <div class="footer">
+            <a href="#" class="detail-button">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="list">
+        <div class="kat">
+          <div>Manhwa</div>
+          <div>21117 Views</div>
+        </div>
+        <div class="romance">
+          <div class="cover">
+            <img src="img/Regina Rena - To the Unforgiveable/komik3.jpeg" />
+          </div>
+          <h1 class="title">Regina Rena : To the Unforgiveable</h1>
+          <p class="desc">Deskripsiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
+          <div class="footer">
+            <a href="#" class="detail-button">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="list">
+        <div class="kat">
+          <div>Manhwa</div>
+          <div>442107 Views</div>
+        </div>
+        <div class="adven">
+          <div class="cover">
+            <img src="img/Solo Leveling/cover.png" />
+            <h1 class="title">Solo Leveling</h1>
+          </div>
+          <p class="desc">Deskripsiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
+          <div class="footer">
+            <a href="#" class="detail-button">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="result">
+        <div class="list">
+          <div class="kat">
+            <div>Manhwa</div>
+            <div>1720365 Views</div>
+          </div>
+          <div class="fantasy">
             <div class="cover">
               <img src="img/Magic Emperor/komik1.webp" />
             </div>
-            <p class="desc">Deskripsi</p>
-            <a href="#" class="detail-button">Details</a>
+            <h1 class="title">Magic Emperor</h1>
+            <p class="desc">Deskripsiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii iiiii</p>
+            <div class="footer">
+              <a href="#" class="detail-button">Details</a>
+              <div class="detail-chapter">
+                2 Chapter
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="list">
-        <div class="kat">
-          <div class="action">
-            <h1 class="title">Talent-Swallowing Magician</h1>
+        <div class="list">
+          <div class="kat">
+            <div>Manhwa</div>
+            <div>225101 Views</div>
+          </div>
+          <div class="fantasy">
             <div class="cover">
               <img src="img/Talent-Swallowing Magician/komik2.webp" />
             </div>
-            <p class="desc">Deskripsi</p>
-            <a href="#" class="detail-button">Details</a>
+            <h1 class="title">Talent-Swallowing Magician</h1>
+            <p class="desc">Deskripsiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
+            <div class="footer">
+              <a href="#" class="detail-button">Details</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="list">
-        <div class="kat">
-          <div class="romance">
-            <h1 class="title">Regina Rena : To the Unforgiveable</h1>
+        <div class="list">
+          <div class="kat">
+            <div>Manhwa</div>
+            <div>21117 Views</div>
+          </div>
+          <div class="fantasy">
             <div class="cover">
               <img src="img/Regina Rena - To the Unforgiveable/komik3.jpeg" />
             </div>
-            <pclass="desc">Deskripsi</p>
+            <h1 class="title">Regina Rena : To the Unforgiveable</h1>
+            <p class="desc">Deskripsiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
+            <div class="footer">
               <a href="#" class="detail-button">Details</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="list">
-        <div class="adven" style="min-height: max-content; width: 20%">
-          <h1>Max Level Returner</h1>
-          <img src="img/Max level returner/komik4.jpg" />
-          <p>Deskripsi</p>
-          <a href="#" class="btn btn-primary">Details</a>
+        <div class="list">
+          <div class="kat">
+            <div>Manhwa</div>
+            <div>442107 Views</div>
+          </div>
+          <div class="fantasy">
+            <div class="cover">
+              <img src="img/Solo Leveling/cover.png" />
+              <h1 class="title">Solo Leveling</h1>
+            </div>
+            <p class="desc">Deskripsiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
+            <div class="footer">
+              <a href="#" class="detail-button">Details</a>
+            </div>
+          </div>
         </div>
+
       </div>
 
-      <br>
-      <br>
+      <!-- Optional JavaScript; choose one of the two! -->
 
-      <div class="fantasy" style="min-height: max-content; width: 20%">
-        <h1>Magic Emperor</h1>
-        <img src="img/Magic Emperor/komik1.webp" />
-        <p>Deskripsi</p>
-        <a href="#" class="btn btn-primary">Details</a>
-
-        <br>
-        <br>
-
-        <h1>Talent-Swallowing Magician</h1>
-        <img src="img/Talent-Swallowing Magician/komik2.webp" />
-        <p>Deskripsi</p>
-        <a href="#" class="btn btn-primary">Details</a>
-
-        <br>
-        <br>
-
-        <h1>Regina Rena : To the Unforgiveable</h1>
-        <img src="img/Regina Rena - To the Unforgiveable/komik3.jpeg" />
-        <p>Deskripsi</p>
-        <a href="#" class="btn btn-primary">Details</a>
-
-        <br>
-        <br>
-
-        <h1>Max Level Returner</h1>
-        <img src="img/Max Level Returner/komik4.jpg">
-        <p>Deskripsi</p>
-        <a href="#" class="btn btn-primary">Details</a>
-
-        <br>
-        <br>
-      </div>
-    </div>
-  </div>
-
-  </div>
-  <!-- Optional JavaScript; choose one of the two! -->
-
-  <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <!-- Option 2: Separate Popper and Bootstrap JS -->
-  <!--
+      <!-- Option 1: Bootstrap Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <!-- Option 2: Separate Popper and Bootstrap JS -->
+      <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
-  <script src="genre.js"></script>
-  <script src="isi_komik.js"></script>
+      <script src="genre.js"></script>
+      <script src="isi_komik.js"></script>
 </body>
 
 </html>

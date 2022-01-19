@@ -40,6 +40,10 @@
   overflow: hidden;
 }
 
+.size {
+  height: 90%;
+  width: 35%;
+}
 .desc {
   margin-top: 0px;
   padding: 10px;
@@ -57,4 +61,42 @@
   display: inline-block;
   font-size: 16px;
   border-radius: 3px;
+}
+
+.footer {
+  background-color: rgb(189, 189, 189);
+  border-top: rgb(146, 146, 146);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.detail-chapter {
+  font-size: 15px;
+  color: rgb(88, 88, 88);
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.badan {
+  width: 80%;
+  margin: 15px auto;
+  background-color: white;
+  padding: 20px;
+  overflow: hidden;
+
+  border-radius: 5px;
+}
+
+.grid-container {
+  object-fit: fill;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  min-height: max-content;
+  padding-left: 15px;
+  /* width: max-content; */
+  background-color: #ffffff;
+  border-bottom: solid black 5px;
+  border-radius: 10px;
 }
