@@ -54,7 +54,7 @@ function showKomik($list_komik, $loop)
         <h1 class="grid-container">Latest Release</h1>
 
         <div class="column" style="background-color: #394867;">
-            <<<<<<< HEAD <div style="text-align: center; ">
+            <!-- <div style="text-align: center; ">
                 <select id="Genre " name="Genre"
                     style="font-size:large; margin-left: 80px; margin-right: 80px; padding-left: 45px; padding-right: 45px;">
                     <option value="genre0 ">Genre</option>
@@ -72,36 +72,36 @@ function showKomik($list_komik, $loop)
                     <option value="type1 ">Mahua</option>
                     <option value="type2 ">Manga</option>
                 </select>
+            </div> -->
 
 
-                =======
-                <div style="text-align: center;">
-                    <form method="get">
-                        <select id="Genre " name="Genre"
-                            style="font-size:medium; margin-left: 80px; margin-right: 80px; padding-left: 45px; padding-right: 45px;">
-                            <option value="genre0">Genre</option>
-                            <?php
+            <div style="text-align: center;">
+                <form method="get">
+                    <select id="Genre " name="Genre"
+                        style="font-size:large; margin-left: 80px; margin-right: 80px; padding-left: 45px; padding-right: 45px;">
+                        <option value="genre0">Genre</option>
+                        <?php
                           $iterasi_genre = 1;
                           foreach($data_list_genre as $genre) {
                       ?>
-                            <option value="<?= $genre["nama_genre"] ?>"><?= ucwords($genre["nama_genre"]) ?></option>
-                            <?php
+                        <option value="<?= $genre["nama_genre"] ?>"><?= ucwords($genre["nama_genre"]) ?></option>
+                        <?php
                             $iterasi_genre += 1;
                           }
                       ?>
-                        </select>
-                        <select id="Type" name="Type"
-                            style="font-size:medium; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
-                            <option value="type0">Type</option>
-                            <option value="Manga">Manga</option>
-                            <option value="Manhwa">Manhwa</option>
-                            <option value="Manhua">Manhua</option>
-                        </select>
-                        <input type="submit" name="submit"
-                            style="font-size:medium; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
-                    </form>
-                    >>>>>>> 580321efaca84b66e4fb2028017f3a6a0085c830
-                </div>
+                    </select>
+                    <select id="Type" name="Type"
+                        style="font-size:large; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
+                        <option value="type0">Type</option>
+                        <option value="Manga">Manga</option>
+                        <option value="Manhwa">Manhwa</option>
+                        <option value="Manhua">Manhua</option>
+                    </select>
+                    <input type="submit" name="submit"
+                        style="font-size:medium; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
+                </form>
+
+            </div>
         </div>
 
         <br><br><br>
