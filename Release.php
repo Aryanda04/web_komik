@@ -51,11 +51,6 @@ function showKomik($queryKomik, $loop)
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
-
-
-
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="release.css">
 
@@ -72,7 +67,7 @@ function showKomik($queryKomik, $loop)
         <div class="column" style="background-color: #394867;">
             <div style="text-align: center; ">
                 <select id="Genre " name="Genre"
-                    style="font-size:medium; margin-left: 80px; margin-right: 80px; padding-left: 45px; padding-right: 45px;">
+                    style="font-size:large; margin-left: 80px; margin-right: 80px; padding-left: 45px; padding-right: 45px;">
                     <option value="genre0 ">Genre</option>
                     <option value="genre1 ">Action</option>
                     <option value="genre2 ">Adventure</option>
@@ -82,23 +77,18 @@ function showKomik($queryKomik, $loop)
                     <option value="genre6 ">Horror</option>
                 </select>
                 <select id="Type" name="Type"
-                    style="font-size:medium; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
+                    style="font-size:large; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
                     <option value="type0 ">Type</option>
                     <option value="type1 ">Mahwa</option>
+                    <option value="type1 ">Mahua</option>
                     <option value="type2 ">Manga</option>
                 </select>
-                <select id="Sort By" name="Sort By"
-                    style="font-size:medium; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
-                    <option value="sortBy0 ">Sort By</option>
-                    <option value="sortBy1 ">Update</option>
-                    <option value="sortBy2 ">A-Z</option>
-                    <option value="sortBy3 ">Z-A</option>
-                    <option value="sortBy4 ">Popular</option>
-                </select>
+
+
             </div>
         </div>
 
-        <br><br>
+        <br><br><br>
 
         <div class="column" style="background-color: #9BA4B4;">
             <div class="flex-container" id="most-view">
