@@ -76,14 +76,14 @@ $data_chapter = selectALL("SELECT chapter.* from `chapter` JOIN `komik` ON chapt
             <hr>
             <p class="teks" style="font-size: 20px;"><?= $data_detail["deskripsi"] ?></p>
             <br><br>
-            <p style="color: teal;" class="teks">CHAPTER <?= strtoupper($data_detail["nama_komik"]) ?></p>
+            <p style="color: teal;font-size: 25px;" class="teks">CHAPTER <?= strtoupper($data_detail["nama_komik"]) ?></p>
             <hr>
             <div class="scroll">
                 <table cellpadding="10" id="table" style="width: 100%;font-size: 20px;padding-bottom: 30px;">
                     <?php foreach ($data_chapter as $chapter) { ?>
-                        <tr>
+                        <tr class="hover">
                             <td>
-                                <a style="text-decoration: none;" href="isi_komik.php?id=<?= $chapter["chapter_id"] ?>"><?= $chapter["nama_chapter"] ?></a>
+                                <a class="black" style="text-decoration: none;" href="isi_komik.php?id=<?= $chapter["chapter_id"] ?>"><?= $chapter["nama_chapter"] ?></a>
                             </td>
                             <td style="float: right;"><?= date_format(date_create($chapter["waktu_update"]), "F d, Y") ?></td>
                         </tr>
