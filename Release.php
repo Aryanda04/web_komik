@@ -22,6 +22,8 @@ function showKomik($list_komik, $loop)
     if(isset($_GET["Genre"]) || isset($_GET["Type"])) {
       if($komik["kategori"] == $_GET["Type"] || in_array($_GET["Genre"], $komik["list_genre"])) {
         komikCard($komik);
+      }else if($_GET["Genre"] == "default" && $_GET["Type"] == "default") {
+        komikCard($komik);
       } else {
         continue;
       }
@@ -58,7 +60,7 @@ function showKomik($list_komik, $loop)
                 <form method="get">
                     <select id="Genre " name="Genre"
                         style="font-size:large; margin-left: 80px; margin-right: 80px; padding-left: 25px; padding-right: 25px;">
-                        <option value="genre0">Genre</option>
+                        <option value="default">Genre</option>
                         <?php
                           $iterasi_genre = 1;
                           foreach($data_list_genre as $genre) {
@@ -71,7 +73,7 @@ function showKomik($list_komik, $loop)
                     </select>
                     <select id="Type" name="Type"
                         style="font-size:large; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
-                        <option value="type0">Type</option>
+                        <option value="default">Type</option>
                         <option value="Manga">Manga</option>
                         <option value="Manhwa">Manhwa</option>
                         <option value="Manhua">Manhua</option>
