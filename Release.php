@@ -1,6 +1,6 @@
 <?php
 require 'db/db.php';
-require 'php/functions.php';
+require 'php/functionsrelease.php';
 
 /* list data */
 $data_komik = selectALL("SELECT komik.*,MAX(chapter.waktu_update) AS waktu_update,total_views,COUNT(komik.komik_id) AS total_chapter FROM `komik` JOIN `chapter` ON komik.komik_id = chapter.komik_id GROUP BY komik.komik_id ORDER BY waktu_update DESC");
@@ -55,31 +55,34 @@ function showKomik($list_komik, $loop)
 
         <div class="column" style="background-color: #394867;">
             <div style="text-align: center;">
-              <form method="get">
-                <select id="Genre " name="Genre" style="font-size:medium; margin-left: 80px; margin-right: 80px; padding-left: 45px; padding-right: 45px;">
-                      <option value="genre0">Genre</option>
-                      <?php
+                <form method="get">
+                    <select id="Genre " name="Genre"
+                        style="font-size:large; margin-left: 80px; margin-right: 80px; padding-left: 25px; padding-right: 25px;">
+                        <option value="genre0">Genre</option>
+                        <?php
                           $iterasi_genre = 1;
                           foreach($data_list_genre as $genre) {
                       ?>
-                              <option value="<?= $genre["nama_genre"] ?>"><?= ucwords($genre["nama_genre"]) ?></option>
-                      <?php
+                        <option value="<?= $genre["nama_genre"] ?>"><?= ucwords($genre["nama_genre"]) ?></option>
+                        <?php
                             $iterasi_genre += 1;
                           }
                       ?>
-                  </select>
-                  <select id="Type" name="Type" style="font-size:medium; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
-                      <option value="type0">Type</option>
-                      <option value="Manga">Manga</option>
-                      <option value="Manhwa">Manhwa</option>
-                      <option value="Manhua">Manhua</option>
-                  </select>
-                  <input type="submit" name="submit" style="font-size:medium; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
-              </form>
+                    </select>
+                    <select id="Type" name="Type"
+                        style="font-size:large; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
+                        <option value="type0">Type</option>
+                        <option value="Manga">Manga</option>
+                        <option value="Manhwa">Manhwa</option>
+                        <option value="Manhua">Manhua</option>
+                    </select>
+                    <input type="submit" name="submit"
+                        style="font-size:large; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
+                </form>
             </div>
         </div>
 
-        <br><br>
+        <br><br><br>
 
         <div class="column" style="background-color: #9BA4B4;">
             <div class="flex-container" id="most-view">
