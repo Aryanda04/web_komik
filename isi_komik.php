@@ -9,7 +9,7 @@ $data_gambar = selectALL("SELECT file_gambar, chapter.nama_chapter, komik.nama_k
 // data list chapter
 $id_komik = $data_gambar[0]["komik_id"];
 $data_chapter = selectALL("SELECT chapter_id, nama_chapter, total_views FROM `chapter` JOIN `komik` ON chapter.komik_id = komik.komik_id WHERE chapter.komik_id = $id_komik ORDER BY chapter_id DESC");
-// var_dump($data_chapter[0]["total_views"]);
+//var_dump($data_chapter[0]["total_views"]);
 updateTotalView($id_komik);
 
 $key_array = array_search($id, array_column($data_chapter, 'chapter_id'));
@@ -38,7 +38,21 @@ if ($key_array - 1 < 0) {
 <body>
     <?php include 'template/header.php' ?>
 
-    <h1 id="judulBacaan" class="judulBacaan"><?= $data_gambar[0]["nama_komik"] ?> <?= $data_gambar[0]["nama_chapter"] ?></h1>
+    <div id="judulBacaan" class="judulBacaan"><?= $data_gambar[0]["nama_komik"]; ?> <?= $data_gambar[0]["nama_chapter"]; ?></div>
+    <br>
+
+    <br>
+    <div class="rootJudulBackground">
+        <?php
+        echo '<a id="judulBacaan" class="rootJudul" href="home.php" style="
+        margin-left: 300px;">Komik aja</a>';
+        echo '<a class="rootJudul"> » </a>';
+        echo '<a id="judulBacaan" class="rootJudul" href="detail.php?id=' . $id_komik . '">' . $data_gambar[0]["nama_komik"] . '</a>';
+        echo '<a class="rootJudul"> » </a>';
+        echo '<a id="judulBacaan" class="rootJudul">' . $data_gambar[0]["nama_chapter"] . '</a>';
+        ?>
+    </div>
+    <br>
 
     <div>
         <select id="chapter" class="chapterList" onchange="location = this.value;">
