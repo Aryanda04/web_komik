@@ -139,6 +139,8 @@ input:checked + .slider:before {
   color: #394867;
   font-family: verdana;
   text-align: center;
+
+  margin-bottom: 35px;
 }
 
 .judulBacaan-darkmode {
@@ -158,6 +160,7 @@ input:checked + .slider:before {
   width: 70%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 35px;
   background-color: #394867;
   padding: 10px 0px 10px 0;
   border-radius: 5px;
@@ -184,6 +187,7 @@ input:checked + .slider:before {
 .buttonNext {
   float: right;
   margin-right: 120px;
+  margin-left: -70px;
   background-color: #405cf5;
   border-radius: 6px;
   border-width: 0;
@@ -200,7 +204,7 @@ input:checked + .slider:before {
 
 .buttonPrevious {
   float: right;
-  margin-right: 50px;
+  margin-right: 120px;
   background-color: #405cf5;
   border-radius: 6px;
   border-width: 0;
