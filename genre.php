@@ -171,7 +171,7 @@ $data_genre = selectALL("SELECT * FROM `genre`");
           <div class="fantasy">
             <h1 class="title">Max Level Returner</h1>
             <div class="cover">
-              <img src="img/Max Level Returner/komik4.jpg" class="size">
+              <img src="img/Max Level Returner/komik4.jpg" class="size" />
             </div>
             <p class="desc">Deskripsi</p>
             <a href="#" class="detail-button">Details</a>
