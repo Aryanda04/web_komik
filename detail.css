@@ -26,6 +26,7 @@
   width: 300px;
   height: 150px;
   margin: 10px;
+  margin-top: 50px;
   margin-right: 60px;
   text-align: center;
   font-size: 30px;
@@ -68,6 +69,9 @@
   padding: 10px 10px 10px 10px;
   text-align: center;
   text-decoration: none;
+}
+.genre:hover {
+  background-color: cornflowerblue;
 }
 .container {
   margin: 0% 7% 0%;
