@@ -1,3 +1,5 @@
+
+
 function darkMode() {
     var element = document.body;
     var element2 = document.getElementsByClassName("badan");

@@ -10,13 +10,13 @@ body {
 }
 
 .badan {
-  width: 80%;
-  margin: 15px auto;
+  width: 85%;
+  margin: 15px auto 0px;
   background-color: white;
   padding: 20px;
   overflow: hidden;
   
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .cover {
@@ -115,7 +115,7 @@ body {
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   /* min-height: content; */
   align-items: center;
   width: 100%;

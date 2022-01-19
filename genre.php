@@ -1,5 +1,5 @@
 <?php
-require 'db/functions.php';
+require 'db/db.php';
 
 // data list komik semua
 $data_komik = selectALL("SELECT * FROM `komik`");
