@@ -147,8 +147,8 @@ input:checked + .slider:before {
 
 .rootJudul {
   font-size: 15px;
-  text-decoration: none;
   color: rgb(207, 207, 207);
+  text-align: center;
 }
 
 .rootJudulBackground {
@@ -156,7 +156,7 @@ input:checked + .slider:before {
   width: 70%;
   margin-left: 200px;
   background-color: #394867;
-  padding: 10px 0px 10px 0px;
+  padding: 10px 0px 10px 0;
   border-radius: 5px;
 }
 

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Jan 2022 pada 17.35
--- Versi server: 10.1.38-MariaDB
--- Versi PHP: 7.3.2
+-- Generation Time: Jan 19, 2022 at 03:19 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,18 +24,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `chapter`
+-- Table structure for table `chapter`
 --
 
 CREATE TABLE `chapter` (
   `chapter_id` int(11) NOT NULL,
   `komik_id` int(100) NOT NULL,
   `nama_chapter` varchar(255) NOT NULL,
-  `waktu_update` date NOT NULL
+  `waktu_update` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `chapter`
+-- Dumping data for table `chapter`
 --
 
 INSERT INTO `chapter` (`chapter_id`, `komik_id`, `nama_chapter`, `waktu_update`) VALUES
@@ -49,22 +48,25 @@ INSERT INTO `chapter` (`chapter_id`, `komik_id`, `nama_chapter`, `waktu_update`)
 (7, 2, 'Chapter 1', '2019-12-06'),
 (8, 2, 'Chapter 2', '2019-12-07'),
 (9, 5, 'Chapter 0', '2022-01-13'),
-(10, 5, 'Chapter 1', '2022-01-14');
+(10, 5, 'Chapter 1', '2022-01-14'),
+(11, 2, 'Chapter 3', '2019-12-10'),
+(12, 5, 'Chapter 2', '2022-01-14'),
+(13, 6, 'Chapter 1', '2012-12-25');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `gambar`
+-- Table structure for table `gambar`
 --
 
 CREATE TABLE `gambar` (
   `gambar_id` int(11) NOT NULL,
   `chapter_id` int(11) NOT NULL,
-  `file_gambar` varchar(50) NOT NULL
+  `file_gambar` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `gambar`
+-- Dumping data for table `gambar`
 --
 
 INSERT INTO `gambar` (`gambar_id`, `chapter_id`, `file_gambar`) VALUES
@@ -399,12 +401,115 @@ INSERT INTO `gambar` (`gambar_id`, `chapter_id`, `file_gambar`) VALUES
 (329, 10, 'https://i.ibb.co/tc6G9yL/77.jpg'),
 (330, 10, 'https://i.ibb.co/3r2GB0y/78.jpg'),
 (331, 10, 'https://i.ibb.co/3vTRtx6/79.jpg'),
-(332, 10, 'https://i.ibb.co/FWpsj51/80.jpg');
+(332, 10, 'https://i.ibb.co/FWpsj51/80.jpg'),
+(333, 11, 'https://i.ibb.co/X4JWYF4/1-komikstation-co.jpg'),
+(334, 11, 'https://i.ibb.co/XjnT2w7/2-komikstation-co.jpg'),
+(335, 11, 'https://i.ibb.co/KhD2dz9/3-komikstation-co.jpg'),
+(336, 11, 'https://i.ibb.co/JsQn1Bv/4-komikstation-co.jpg'),
+(337, 11, 'https://i.ibb.co/MRdRcbh/5-komikstation-co.jpg'),
+(338, 11, 'https://i.ibb.co/4pF477J/6-komikstation-co.jpg'),
+(339, 11, 'https://i.ibb.co/3SQ7Cxz/7-komikstation-co.jpg'),
+(340, 11, 'https://i.ibb.co/Vj2CfqN/8-komikstation-co.jpg'),
+(341, 11, 'https://i.ibb.co/y09NRrw/9-komikstation-co.jpg'),
+(342, 11, 'https://i.ibb.co/B2M0Pss/10-komikstation-co.jpg'),
+(343, 11, 'https://i.ibb.co/S3280Bn/11-komikstation-co.jpg'),
+(344, 11, 'https://i.ibb.co/vqfxg6k/12-komikstation-co.jpg'),
+(345, 11, 'https://i.ibb.co/nsTLv4f/13-komikstation-co.jpg'),
+(346, 11, 'https://i.ibb.co/nj86j72/14-komikstation-co.jpg'),
+(347, 11, 'https://i.ibb.co/5X05pxX/15-komikstation-co.jpg'),
+(348, 11, 'https://i.ibb.co/4gmzMgM/16-komikstation-co.jpg'),
+(349, 11, 'https://i.ibb.co/Rc2WfKB/17-komikstation-co.jpg'),
+(350, 11, 'https://i.ibb.co/8Y0bBmQ/18-komikstation-co.jpg'),
+(351, 11, 'https://i.ibb.co/VNMM6PC/19-komikstation-co.jpg'),
+(352, 11, 'https://i.ibb.co/qrfRyT1/20-komikstation-co.jpg'),
+(353, 11, 'https://i.ibb.co/9wzTwFn/21-komikstation-co.jpg'),
+(354, 11, 'https://i.ibb.co/ZxV9n4p/22-komikstation-co.jpg'),
+(355, 11, 'https://i.ibb.co/fp6LQ3r/23-komikstation-co.jpg'),
+(356, 11, 'https://i.ibb.co/pKNrnVb/24-komikstation-co.jpg'),
+(357, 11, 'https://i.ibb.co/3hGCHXj/25-komikstation-co.jpg'),
+(358, 11, 'https://i.ibb.co/zRJF9Y0/26-komikstation-co.jpg'),
+(359, 11, 'https://i.ibb.co/448LmVg/27-komikstation-co.jpg'),
+(360, 11, 'https://i.ibb.co/CJnpzYs/28-komikstation-co.jpg'),
+(361, 11, 'https://i.ibb.co/QDKNFk7/29-komikstation-co.jpg'),
+(362, 11, 'https://i.ibb.co/mvmRLXQ/30-komikstation-co.jpg'),
+(363, 11, 'https://i.ibb.co/gP0yC1L/31-komikstation-co.jpg'),
+(364, 11, 'https://i.ibb.co/YbFKwSg/32-komikstation-co.jpg'),
+(365, 11, 'https://i.ibb.co/wgz4PkY/33-komikstation-co.jpg'),
+(366, 11, 'https://i.ibb.co/nQYMzyZ/34-komikstation-co.jpg'),
+(367, 11, 'https://i.ibb.co/HhR7wPt/35-komikstation-co.jpg'),
+(368, 11, 'https://i.ibb.co/xLrRY6b/36-komikstation-co.jpg'),
+(369, 11, 'https://i.ibb.co/nk7zphk/37-komikstation-co.jpg'),
+(370, 11, 'https://i.ibb.co/3SZbYt9/38-komikstation-co.jpg'),
+(371, 11, 'https://i.ibb.co/Vm5rjf9/39-komikstation-co.jpg'),
+(372, 11, 'https://i.ibb.co/H4DfgmB/40-komikstation-co.jpg'),
+(373, 11, 'https://i.ibb.co/1TBVwz9/41-komikstation-co.jpg'),
+(374, 11, 'https://i.ibb.co/5FzG2ZP/42-komikstation-co.jpg'),
+(375, 11, 'https://i.ibb.co/KWzLk4T/43-komikstation-co.jpg'),
+(376, 11, 'https://i.ibb.co/YpqqhXh/44-komikstation-co.jpg'),
+(377, 11, 'https://i.ibb.co/jkMKXKX/45-komikstation-co.jpg'),
+(378, 11, 'https://i.ibb.co/vPBJJ5R/46-komikstation-co.jpg'),
+(379, 11, 'https://i.ibb.co/PhkvTND/47-komikstation-co.jpg'),
+(380, 11, 'https://i.ibb.co/3cfq9D1/48-komikstation-co.jpg'),
+(381, 11, 'https://i.ibb.co/6ZwJC3q/49-komikstation-co.jpg'),
+(382, 11, 'https://i.ibb.co/bmk1SHV/50-komikstation-co.jpg'),
+(383, 11, 'https://i.ibb.co/t8kcPNL/51-komikstation-co.jpg'),
+(384, 11, 'https://i.ibb.co/myZL5ft/52-komikstation-co.jpg'),
+(385, 11, 'https://i.ibb.co/qR8v1gJ/53-komikstation-co.jpg'),
+(386, 11, 'https://i.ibb.co/SrpH7Bk/54-komikstation-co.jpg'),
+(387, 11, 'https://i.ibb.co/p2Q99hx/55-komikstation-co.jpg'),
+(388, 12, 'https://i.ibb.co/XZ3b1R6/1-komikstation-co.jpg'),
+(389, 12, 'https://i.ibb.co/TBc6Sm0/2-komikstation-co.jpg'),
+(390, 12, 'https://i.ibb.co/qrwR0RF/3-komikstation-co.jpg'),
+(391, 12, 'https://i.ibb.co/BCgvCW9/4-komikstation-co.jpg'),
+(392, 12, 'https://i.ibb.co/dLLgfG6/5-komikstation-co.jpg'),
+(393, 12, 'https://i.ibb.co/Sc60572/6-komikstation-co.jpg'),
+(394, 12, 'https://i.ibb.co/64NYBVB/7-komikstation-co.jpg'),
+(395, 12, 'https://i.ibb.co/4mswcmH/8-komikstation-co.jpg'),
+(396, 12, 'https://i.ibb.co/GCrBBkn/9-komikstation-co.jpg'),
+(397, 12, 'https://i.ibb.co/4MWnb3w/10-komikstation-co.jpg'),
+(398, 12, 'https://i.ibb.co/hRSjLDs/11-komikstation-co.jpg'),
+(399, 12, 'https://i.ibb.co/t8ydQkK/12-komikstation-co.jpg'),
+(400, 12, 'https://i.ibb.co/ZWFQ1zF/13-komikstation-co.jpg'),
+(401, 12, 'https://i.ibb.co/tbHk64X/14-komikstation-co.jpg'),
+(402, 12, 'https://i.ibb.co/ynjNSVY/15-komikstation-co.jpg'),
+(403, 12, 'https://i.ibb.co/56nwWd0/16-komikstation-co.jpg'),
+(404, 12, 'https://i.ibb.co/NLnyTXm/17-komikstation-co.jpg'),
+(405, 12, 'https://i.ibb.co/WPnLCwv/18-komikstation-co.jpg'),
+(406, 12, 'https://i.ibb.co/5rHnFZR/19-komikstation-co.jpg'),
+(407, 12, 'https://i.ibb.co/PjwJMx4/20-komikstation-co.jpg'),
+(408, 12, 'https://i.ibb.co/N2hkGtQ/21-komikstation-co.jpg'),
+(409, 12, 'https://i.ibb.co/LYynHQQ/22-komikstation-co.jpg'),
+(410, 12, 'https://i.ibb.co/mNRJ9fM/23-komikstation-co.jpg'),
+(411, 12, 'https://i.ibb.co/88q0gtF/24-komikstation-co.jpg'),
+(412, 12, 'https://i.ibb.co/k9LXSHw/25-komikstation-co.jpg'),
+(413, 12, 'https://i.ibb.co/zRxg7GY/26-komikstation-co.jpg'),
+(414, 12, 'https://i.ibb.co/bX5CPfd/27-komikstation-co.jpg'),
+(415, 12, 'https://i.ibb.co/McQ9BNQ/28-komikstation-co.jpg'),
+(416, 12, 'https://i.ibb.co/KskJnF6/29-komikstation-co.jpg'),
+(417, 12, 'https://i.ibb.co/PxQJ5jZ/30-komikstation-co.jpg'),
+(418, 12, 'https://i.ibb.co/gw4GvgL/31-komikstation-co.jpg'),
+(436, 13, 'https://i.ibb.co/BZgSm7r/0-komikstation-co.png'),
+(437, 13, 'https://i.ibb.co/vH0Xf5x/1-komikstation-co.png'),
+(438, 13, 'https://i.ibb.co/KbGNHTT/2-komikstation-co.png'),
+(439, 13, 'https://i.ibb.co/3S426DF/3-komikstation-co.png'),
+(440, 13, 'https://i.ibb.co/6rk795z/4-komikstation-co.png'),
+(441, 13, 'https://i.ibb.co/8zmTHXz/5-komikstation-co.png'),
+(442, 13, 'https://i.ibb.co/vj054yk/6-komikstation-co.png'),
+(443, 13, 'https://i.ibb.co/wRDGN3R/7-komikstation-co.png'),
+(444, 13, 'https://i.ibb.co/4fcKwGL/8-komikstation-co.png'),
+(445, 13, 'https://i.ibb.co/ZHQHGFv/9-komikstation-co.png'),
+(446, 13, 'https://i.ibb.co/wJ8Xfkf/10-komikstation-co.png'),
+(447, 13, 'https://i.ibb.co/Db0909N/11-komikstation-co.png'),
+(448, 13, 'https://i.ibb.co/D1LCYvL/12-komikstation-co.png'),
+(449, 13, 'https://i.ibb.co/ydF5S5k/13-komikstation-co.png'),
+(450, 13, 'https://i.ibb.co/SsRy93K/14-komikstation-co.png'),
+(451, 13, 'https://i.ibb.co/cgHPrJB/15-komikstation-co.png'),
+(452, 13, 'https://i.ibb.co/YtS5NdP/16-komikstation-co.png');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `genre`
+-- Table structure for table `genre`
 --
 
 CREATE TABLE `genre` (
@@ -413,7 +518,7 @@ CREATE TABLE `genre` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `genre`
+-- Dumping data for table `genre`
 --
 
 INSERT INTO `genre` (`genre_id`, `nama_genre`) VALUES
@@ -424,12 +529,14 @@ INSERT INTO `genre` (`genre_id`, `nama_genre`) VALUES
 (5, 'martial arts'),
 (6, 'josei'),
 (7, 'drama'),
-(8, 'shounen');
+(8, 'shounen'),
+(9, 'comedy'),
+(10, 'super power');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `komik`
+-- Table structure for table `komik`
 --
 
 CREATE TABLE `komik` (
@@ -443,20 +550,21 @@ CREATE TABLE `komik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `komik`
+-- Dumping data for table `komik`
 --
 
 INSERT INTO `komik` (`komik_id`, `nama_komik`, `cover_komik`, `kategori`, `deskripsi`, `waktu_rilis`, `total_views`) VALUES
 (1, 'Solo Leveling', 'cover.png', 'Manhwa', '10 tahun yang lalu, setelah \"Gerbang\" yang menghubungkan dunia nyata dengan dunia monster terbuka, beberapa orang biasa, setiap hari menerima kekuatan untuk berburu monster di dalam Gerbang. Mereka dikenal sebagai \"Pemburu\". Namun, tidak semua Pemburu kuat. Nama saya Sung Jin-Woo, seorang Pemburu peringkat-E. Saya seseorang yang harus mempertaruhkan nyawanya di ruang bawah tanah paling rendah, \"Terlemah di Dunia\". Tidak memiliki keterampilan apa pun untuk ditampilkan, saya hampir tidak mendapatkan uang yang dibutuhkan dengan bertarung di ruang bawah tanah berlevel rendah… setidaknya sampai saya menemukan ruang bawah tanah tersembunyi dengan kesulitan tersulit dalam ruang bawah tanah peringkat-D! Pada akhirnya, saat aku menerima kematian, tiba-tiba aku menerima kekuatan aneh, log pencarian yang hanya bisa kulihat, rahasia untuk naik level yang hanya aku yang tahu! Jika saya berlatih sesuai dengan pencarian saya dan monster yang diburu, level saya akan naik. Berubah dari Hunter terlemah menjadi Hunter S-rank terkuat!', 2016, 442107),
-(2, 'Magic Emperor', 'komik1.webp', 'Manhwa', 'Zhuo Yifan adalah seorang kaisar sihir atau bisa di panggil kaisar iblis, karena dia mempunyai buku kaisar kuno yang di sebut buku sembilan rahasia dia menjadi sasaran semua ahli beradiri bahkan dia di khianati dan di bunuh oleh muridnya. Kemudian jiwanya masuk dan hidup kembali dalam seorang anak pelayan keluarga bernama Zhuo Fan.Karena suatu sihir iblis mengekangnya, dia harus menyatukan ingatan anak itu dan tidak bisa mengabaikan keluarga dan nona yang dia layaninya. Bagaimana kehidupan nya membangun kembali keluarganya dan kembali menjadi yang terkuat didaratan benua', 2018, 1720370),
+(2, 'Magic Emperor', 'komik1.webp', 'Manhwa', 'Zhuo Yifan adalah seorang kaisar sihir atau bisa di panggil kaisar iblis, karena dia mempunyai buku kaisar kuno yang di sebut buku sembilan rahasia dia menjadi sasaran semua ahli beradiri bahkan dia di khianati dan di bunuh oleh muridnya. Kemudian jiwanya masuk dan hidup kembali dalam seorang anak pelayan keluarga bernama Zhuo Fan.Karena suatu sihir iblis mengekangnya, dia harus menyatukan ingatan anak itu dan tidak bisa mengabaikan keluarga dan nona yang dia layaninya. Bagaimana kehidupan nya membangun kembali keluarganya dan kembali menjadi yang terkuat didaratan benua', 2018, 1720373),
 (3, 'Regina Rena - To the Unforgiveable', 'komik3.jpeg', 'Manhwa', '“Aku akan memberimu kesempatan. Kesempatan untuk dimaafkan.” Sang ayah membuang putrinya. Dan putri itu kembali dari neraka. Di sebuah kerajaan dengan keragaman hidup dan mati, Rena Rubel ditakdirkan untuk mati sebagai pengorbanan untuk ayahnya. Tapi enam tahun kemudian, gadis yang semua orang mengira telah mati, hidup kembali. Melepas topeng domba kecil, dan menjadi singa.', 2021, 21117),
-(4, 'Max Level Returner', 'komik4.jpg', 'Manhwa', '120 juta orang telah hilang di seluruh dunia. [Hadiah Penyelesaian Misi Akhir: \'Kembali\' Diaktifkan] Untuk pertama kalinya dalam 22 tahun, Yoon Sang-Hyuk menyelesaikan game bertahan hidup terburuk di dunia. Dia, yang disebut orang terkuat di antara semua pemain lain, yang memiliki semua item hadiah bahkan yang tidak dapat diperoleh orang lain, telah kembali.', 2020, 1301191),
-(5, 'Talent-Swallowing Magician', 'komik2.webp', 'Manhua', 'Elric Melvinger. Pewaris kekuasan dari keluarga sihir terkemuka. Dia tidak memiliki ‘Talent’ dari lahir, sebagai akibatnya dia tidak bisa mempelajari ilmu sihir. namun, dia mendapatkan ‘Blessing’ dari leluhurnya! [Makan Demon] [Telan Demon] [Minum darah Demon] [ Akan aku Kumpulkan Sebanyak-banyaknya demon dalam diriku, dan dapatkan Sihir baru!] Aku akan bertambah kuat. Sangat kuat sampai tidak ada yang mampu mengalahkanku.', 2021, 225101);
+(4, 'Max Level Returner', 'komik4.jpg', 'Manhwa', '120 juta orang telah hilang di seluruh dunia. [Hadiah Penyelesaian Misi Akhir: \'Kembali\' Diaktifkan] Untuk pertama kalinya dalam 22 tahun, Yoon Sang-Hyuk menyelesaikan game bertahan hidup terburuk di dunia. Dia, yang disebut orang terkuat di antara semua pemain lain, yang memiliki semua item hadiah bahkan yang tidak dapat diperoleh orang lain, telah kembali.', 2020, 1301194),
+(5, 'Talent-Swallowing Magician', 'komik2.webp', 'Manhua', 'Elric Melvinger. Pewaris kekuasan dari keluarga sihir terkemuka. Dia tidak memiliki ‘Talent’ dari lahir, sebagai akibatnya dia tidak bisa mempelajari ilmu sihir. namun, dia mendapatkan ‘Blessing’ dari leluhurnya! [Makan Demon] [Telan Demon] [Minum darah Demon] [ Akan aku Kumpulkan Sebanyak-banyaknya demon dalam diriku, dan dapatkan Sihir baru!] Aku akan bertambah kuat. Sangat kuat sampai tidak ada yang mampu mengalahkanku.', 2021, 225101),
+(6, 'One Punch-Man', 'coveropm.jpg', 'Manga', 'One Punch-Man bercerita tentang peristiwa yang terjadi di kota metropolitan Jepang, sebuah kota fiksi bernama Z. Dunia ini penuh dengan monster aneh dan misterius yang muncul lalu menyebabkan bencana di kota. Saitama adalah pahlawan yang sangat kuat, dengan mudah ia mengalahkan monster atau penjahat hanya dengan satu pukulan. Namun, karena kekuatannya yang luar biasa, Saitama menjadi bosan dengan kehidupan pahlawannya dan terus berusaha mencari lawan yang lebih kuat yang mampu untuk melawannya.', 2012, 11230449);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `list_genre`
+-- Table structure for table `list_genre`
 --
 
 CREATE TABLE `list_genre` (
@@ -466,7 +574,7 @@ CREATE TABLE `list_genre` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `list_genre`
+-- Dumping data for table `list_genre`
 --
 
 INSERT INTO `list_genre` (`list_genre_id`, `komik_id`, `genre_id`) VALUES
@@ -487,40 +595,45 @@ INSERT INTO `list_genre` (`list_genre_id`, `komik_id`, `genre_id`) VALUES
 (18, 5, 8),
 (19, 5, 1),
 (20, 5, 7),
-(21, 5, 4);
+(21, 5, 4),
+(22, 6, 1),
+(23, 6, 9),
+(24, 6, 5),
+(25, 6, 8),
+(26, 6, 10);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `chapter`
+-- Indexes for table `chapter`
 --
 ALTER TABLE `chapter`
   ADD PRIMARY KEY (`chapter_id`),
   ADD KEY `chapter_chapter_id_komik_komik_id_fk` (`komik_id`);
 
 --
--- Indeks untuk tabel `gambar`
+-- Indexes for table `gambar`
 --
 ALTER TABLE `gambar`
   ADD PRIMARY KEY (`gambar_id`),
   ADD KEY `gambar_gambar_id_chapter_chapter_id_fk` (`chapter_id`);
 
 --
--- Indeks untuk tabel `genre`
+-- Indexes for table `genre`
 --
 ALTER TABLE `genre`
   ADD PRIMARY KEY (`genre_id`);
 
 --
--- Indeks untuk tabel `komik`
+-- Indexes for table `komik`
 --
 ALTER TABLE `komik`
   ADD PRIMARY KEY (`komik_id`);
 
 --
--- Indeks untuk tabel `list_genre`
+-- Indexes for table `list_genre`
 --
 ALTER TABLE `list_genre`
   ADD PRIMARY KEY (`list_genre_id`),
@@ -528,57 +641,57 @@ ALTER TABLE `list_genre`
   ADD KEY `list_genre_list_genre_id_komik_komik_id_fk` (`komik_id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `chapter`
+-- AUTO_INCREMENT for table `chapter`
 --
 ALTER TABLE `chapter`
-  MODIFY `chapter_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `chapter_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT untuk tabel `gambar`
+-- AUTO_INCREMENT for table `gambar`
 --
 ALTER TABLE `gambar`
-  MODIFY `gambar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=333;
+  MODIFY `gambar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=453;
 
 --
--- AUTO_INCREMENT untuk tabel `genre`
+-- AUTO_INCREMENT for table `genre`
 --
 ALTER TABLE `genre`
-  MODIFY `genre_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `genre_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `komik`
+-- AUTO_INCREMENT for table `komik`
 --
 ALTER TABLE `komik`
-  MODIFY `komik_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `komik_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `list_genre`
+-- AUTO_INCREMENT for table `list_genre`
 --
 ALTER TABLE `list_genre`
-  MODIFY `list_genre_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `list_genre_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `chapter`
+-- Constraints for table `chapter`
 --
 ALTER TABLE `chapter`
   ADD CONSTRAINT `chapter_chapter_id_komik_komik_id_fk` FOREIGN KEY (`komik_id`) REFERENCES `komik` (`komik_id`);
 
 --
--- Ketidakleluasaan untuk tabel `gambar`
+-- Constraints for table `gambar`
 --
 ALTER TABLE `gambar`
   ADD CONSTRAINT `gambar_gambar_id_chapter_chapter_id_fk` FOREIGN KEY (`chapter_id`) REFERENCES `chapter` (`chapter_id`);
 
 --
--- Ketidakleluasaan untuk tabel `list_genre`
+-- Constraints for table `list_genre`
 --
 ALTER TABLE `list_genre`
   ADD CONSTRAINT `list_genre_list_genre_id_genre_genre_id_fk` FOREIGN KEY (`genre_id`) REFERENCES `genre` (`genre_id`),
