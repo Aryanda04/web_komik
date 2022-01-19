@@ -115,12 +115,13 @@ $data_genre = selectALL("SELECT * FROM `genre`");
         </div>
       </div>
 
-
-      <div class="adven" style="min-height: max-content; width: 20%">
-        <h1>Max Level Returner</h1>
-        <img src="img/Max level returner/komik4.jpg" />
-        <p>Deskripsi</p>
-        <a href="#" class="btn btn-primary">Details</a>
+      <div class="list">
+        <div class="adven" style="min-height: max-content; width: 20%">
+          <h1>Max Level Returner</h1>
+          <img src="img/Max level returner/komik4.jpg" />
+          <p>Deskripsi</p>
+          <a href="#" class="btn btn-primary">Details</a>
+        </div>
       </div>
 
       <br>
