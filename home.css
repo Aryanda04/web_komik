@@ -15,8 +15,8 @@ body {
   background-color: white;
   padding: 20px;
   overflow: hidden;
-  
-  border-radius: 10px;
+
+  border-radius: 5px;
 }
 
 .cover {
@@ -59,7 +59,7 @@ body {
 }
 
 .footer {
-  background-color: rgb(189, 189, 189);
+  background-color: #9dcbe0;
   border-top: rgb(146, 146, 146);
   padding: 10px;
   display: flex;
@@ -68,7 +68,7 @@ body {
 }
 .kategori {
   text-align: left;
-  background-color: rgb(189, 189, 189);
+  background-color: #9dcbe0;
   padding: 10px;
   border-radius: 10px 10px 0px 0px;
   display: flex;
@@ -93,6 +93,7 @@ body {
   padding: 10px;
   text-align: left;
   font-size: 15px;
+  align-items: stretch;
 }
 
 .detail-chapter {
