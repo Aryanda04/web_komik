@@ -43,7 +43,7 @@ $data_chapter = selectALL("SELECT chapter.* from `chapter` JOIN `komik` ON chapt
                 <p>
                     Genre :
                     <?php foreach ($data_genre_list as $data) { ?>
-                        <a href="genre.php?=" class="genre"><?= ucwords($data["nama_genre"]) ?></button>
+                        <a href="genre.php?=" class="genre"><?= ucwords($data["nama_genre"]) ?>
                         <?php } ?></a>
                 </p>
                 <br><br>
@@ -76,7 +76,7 @@ $data_chapter = selectALL("SELECT chapter.* from `chapter` JOIN `komik` ON chapt
             <hr>
             <p class="teks" style="font-size: 20px;"><?= $data_detail["deskripsi"] ?></p>
             <br><br>
-            <p style="color: teal;font-size: 25px;" class="teks">CHAPTER <?= strtoupper($data_detail["nama_komik"]) ?></p>
+            <p style="color: #00587a;font-size: 25px;" class="teks">CHAPTER <?= strtoupper($data_detail["nama_komik"]) ?></p>
             <hr>
             <div class="scroll">
                 <table cellpadding="10" id="table" style="width: 100%;font-size: 20px;padding-bottom: 30px;">
