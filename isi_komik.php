@@ -1,5 +1,5 @@
 <?php
-require 'db/functions.php';
+require 'db/db.php';
 
 $id = $_GET['id'];
 
@@ -39,6 +39,19 @@ if ($key_array - 1 < 0) {
     <?php include 'template/header.php' ?>
 
     <h1 id="judulBacaan" class="judulBacaan"><?= $data_gambar[0]["nama_komik"] ?> <?= $data_gambar[0]["nama_chapter"] ?></h1>
+    <br>
+
+    <br>
+    <div class="rootJudulBackground">
+        <?php
+        echo '<a id="judulBacaan" class="rootJudul" href="home.php" style="margin-left: 40%">Komik aja</a>';
+        echo '<a class="rootJudul"> » </a>';
+        echo '<a id="judulBacaan" class="rootJudul" href="detail.php?id=' . $id_komik . '">' . $data_gambar[0]["nama_komik"] . '</a>';
+        echo '<a class="rootJudul"> » </a>';
+        echo '<a id="judulBacaan" class="rootJudul">' . $data_gambar[0]["nama_chapter"] . '</a>';
+        ?>
+    </div>
+    <br>
 
     <div>
         <select id="chapter" class="chapterList" onchange="location = this.value;">
