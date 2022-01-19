@@ -2,7 +2,7 @@ function darkMode() {
     var element = document.body;
     var element2 = document.getElementsByClassName("badan");
     var element3 = document.getElementsByClassName("grid-container");
-    var element4 = document.getElementsByClassName("komik-card");
+    var element4 = document.getElementsByClassName("list-produk");
     element.classList.toggle("dark-mode");
     element2[0].classList.toggle("badan-darkmode");
     for(let item of element3) {

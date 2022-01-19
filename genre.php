@@ -1,5 +1,5 @@
 <?php
-require 'db/functions.php';
+require 'db/db.php';
 
 // data list komik semua
 $data_komik = selectALL("SELECT * FROM `komik`");
@@ -41,7 +41,6 @@ $data_genre = selectALL("SELECT * FROM `genre`");
   <?php include 'template/header.php' ?>
 
   <div class="list">
-    <h1>Latest Release</h1>
     <div class="filter">
       <h1>Genres</h1>
       <div class="models">
@@ -109,61 +108,82 @@ $data_genre = selectALL("SELECT * FROM `genre`");
             <div class="cover">
               <img src="img/Regina Rena - To the Unforgiveable/komik3.jpeg" />
             </div>
-            <pclass="desc">Deskripsi</p>
-              <a href="#" class="detail-button">Details</a>
+            <p class="desc">Deskripsi</p>
+            <a href="#" class="detail-button">Details</a>
           </div>
         </div>
       </div>
 
       <div class="list">
-        <div class="adven" style="min-height: max-content; width: 20%">
-          <h1>Max Level Returner</h1>
-          <img src="img/Max level returner/komik4.jpg" />
-          <p>Deskripsi</p>
-          <a href="#" class="btn btn-primary">Details</a>
+        <div class="kat">
+          <div class="adven">
+            <h1 class="title">Max Level Returner</h1>
+            <div class="cover">
+              <img src="img/Max level returner/komik4.jpg" class="size" />
+            </div>
+            <p class="desc">Deskripsi</p>
+            <a href="#" class="detail-button">Details</a>
+          </div>
         </div>
       </div>
 
-      <br>
-      <br>
-
-      <div class="fantasy" style="min-height: max-content; width: 20%">
-        <h1>Magic Emperor</h1>
-        <img src="img/Magic Emperor/komik1.webp" />
-        <p>Deskripsi</p>
-        <a href="#" class="btn btn-primary">Details</a>
-
-        <br>
-        <br>
-
-        <h1>Talent-Swallowing Magician</h1>
-        <img src="img/Talent-Swallowing Magician/komik2.webp" />
-        <p>Deskripsi</p>
-        <a href="#" class="btn btn-primary">Details</a>
-
-        <br>
-        <br>
-
-        <h1>Regina Rena : To the Unforgiveable</h1>
-        <img src="img/Regina Rena - To the Unforgiveable/komik3.jpeg" />
-        <p>Deskripsi</p>
-        <a href="#" class="btn btn-primary">Details</a>
-
-        <br>
-        <br>
-
-        <h1>Max Level Returner</h1>
-        <img src="img/Max Level Returner/komik4.jpg">
-        <p>Deskripsi</p>
-        <a href="#" class="btn btn-primary">Details</a>
-
-        <br>
-        <br>
+      <div class="list">
+        <div class="kat">
+          <div class="fantasy">
+            <h1 class="title">Magic Emperor</h1>
+            <div class="cover">
+              <img src="img/Magic Emperor/komik1.webp" />
+            </div>
+            <p class="desc">Deskripsi</p>
+            <a href="#" class="detail-button">Details</a>
+          </div>
+        </div>
       </div>
+
+      <div class="list">
+        <div class="kat">
+          <div class="fantasy">
+            <h1 class="title">Talent-Swallowing Magician</h1>
+            <div class="cover">
+              <img src="img/Talent-Swallowing Magician/komik2.webp" />
+            </div>
+            <p class="desc">Deskripsi</p>
+            <a href="#" class="detail-button">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="list">
+        <div class="kat">
+          <div class="fantasy">
+            <h1 class="title">Regina Rena : To the Unforgiveable</h1>
+            <div class="cover">
+              <img src="img/Regina Rena - To the Unforgiveable/komik3.jpeg" />
+            </div>
+            <p class="desc">Deskripsi</p>
+            <a href="#" class="detail-button">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="list">
+        <div class="kat">
+          <div class="fantasy">
+            <h1 class="title">Max Level Returner</h1>
+            <div class="cover">
+              <img src="img/Max Level Returner/komik4.jpg" class="size" />
+            </div>
+            <p class="desc">Deskripsi</p>
+            <a href="#" class="detail-button">Details</a>
+          </div>
+        </div>
+      </div>
+
     </div>
+    <br>
+    <br>
   </div>
 
-  </div>
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->

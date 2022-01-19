@@ -1,38 +1,15 @@
 <?php
-require 'db/functions.php';
+require 'db/db.php';
+require 'php/functions.php';
 
-$select_komik = "SELECT komik.*, COUNT(komik.komik_id) AS total_chapter FROM komik JOIN chapter ON komik.komik_id = chapter.komik_id GROUP BY komik.komik_id";
-$select_komik_sort_view = "SELECT komik.*, COUNT(komik.komik_id) AS total_chapter FROM komik JOIN chapter ON komik.komik_id = chapter.komik_id GROUP BY komik.komik_id ORDER BY total_views DESC";
+$select_komik = selectALL("SELECT komik.*, COUNT(komik.komik_id) AS total_chapter FROM komik JOIN chapter ON komik.komik_id = chapter.komik_id GROUP BY komik.komik_id");
+$select_komik_sort_view = selectALL("SELECT komik.*, COUNT(komik.komik_id) AS total_chapter FROM komik JOIN chapter ON komik.komik_id = chapter.komik_id GROUP BY komik.komik_id ORDER BY total_views DESC");
 
-function showKomik($queryKomik, $loop)
+function showKomik($list_komik, $loop)
 {
   $i = 1;
-  // data list komik berdasarkan query dari variabel queryKomik
-  $list_komik = selectALL($queryKomik);
-
   foreach ($list_komik as $komik) {
-    $max_char = 100;
-    if (strlen($komik["deskripsi"]) > $max_char) {
-      $deskripsi = substr($komik["deskripsi"], 0, $max_char) . "...";
-    } else {
-      $deskripsi = $komik["deskripsi"];
-    }
-
-    echo "<div class=\"list-produk\">";
-    echo "  <div class=\"kategori\">";
-    echo "    <div>" . $komik["kategori"] . "</div>";
-    echo "    <div>" . $komik["total_views"] . " Views</div>";
-    echo "  </div>";
-    echo "  <div class=\"cover\">";
-    echo "  <img src=\"img/" . $komik["nama_komik"] . "/" . $komik["cover_komik"] . "\">";
-    echo "  </div>";
-    echo "    <div class=\"judul\">" . $komik["nama_komik"] . "</div>";
-    echo "    <p class=\"deskripsi\">" . $deskripsi . "</p>";
-    echo "  <div class=\"footer\">";
-    echo "    <a href=\"detail.php?id=" . $komik["komik_id"] . "\" class=\"detail-button\"> Details </a>";
-    echo "    <div class=\"detail-chapter\">" . $komik["total_chapter"] . " Chapter</div>";
-    echo "  </div>";
-    echo "</div>";
+    komikCard($komik);
     $i++;
     // var_dump($komik['komik_id']);
     if ($i > $loop && $loop != -1) {
@@ -40,6 +17,7 @@ function showKomik($queryKomik, $loop)
     }
   }
 }
+
 ?>
 
 <!doctype html>
