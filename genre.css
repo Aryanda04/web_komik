@@ -9,7 +9,17 @@
   min-width: auto;
   border-radius: 10px;
 }
-
+.list-produk {
+  border: 2px solid rgb(88, 88, 88);
+  background-color: rgb(255, 255, 255);
+  float: left;
+  width: 20%;
+  margin: 20px;
+  text-align: center;
+  min-height: 100%;
+  min-width: content;
+  border-radius: 10px;
+}
 .kat {
   text-align: left;
   background-color: rgb(189, 189, 189);
@@ -80,15 +90,82 @@
 }
 
 .badan {
-  width: 80%;
-  margin: 15px auto;
+  width: 85%;
+  margin: 15px auto 0px;
   background-color: white;
   padding: 20px;
   overflow: hidden;
 
   border-radius: 5px;
 }
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* min-height: content; */
+  align-items: center;
+  width: 100%;
+}
 
+.footer {
+  background-color: #9dcbe0;
+  border-top: rgb(146, 146, 146);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0px 0px 10px 10px;
+}
+.kategori {
+  text-align: left;
+  background-color: #9dcbe0;
+  padding: 10px;
+  border-radius: 10px 10px 0px 0px;
+  display: flex;
+  flex-basis: 0;
+  justify-content: space-between;
+}
+.judul {
+  text-align: left;
+  font-size: 20px;
+  padding: 10px;
+  height: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 900;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+}
+.deskripsi {
+  margin-top: 0px;
+  padding: 10px;
+  text-align: left;
+  font-size: 15px;
+  align-items: stretch;
+}
+
+.detail-chapter {
+  font-size: 15px;
+  color: rgb(88, 88, 88);
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.detail-button {
+  background-color: #5c5c5c;
+  border: none;
+  color: white;
+  padding: 7px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 3px;
+}
+.cover img {
+  max-height: 300px;
+  max-width: min-content;
+}
 .grid-container {
   object-fit: fill;
   display: grid;
@@ -98,5 +175,18 @@
   /* width: max-content; */
   background-color: #ffffff;
   border-bottom: solid black 5px;
-  border-radius: 10px;
+  border-radius: 0px;
+}
+.grid-container2 {
+  object-fit: fill;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  min-height: max-content;
+  padding-left: 15px;
+  /* width: max-content; */
+  background-color: #ffffff;
+}
+.filter {
+  padding: 0%;
+  margin-top: -25px;
 }

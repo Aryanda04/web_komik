@@ -40,11 +40,13 @@ function showKomik($list_komik, $loop)
     <div class="flex-container" id="most-view">
       <?php showKomik($select_komik_sort_view, 4) ?>
     </div>
-
+  </div>
+  <div class="badan">
     <h1 class="grid-container">Komik List</h1>
     <div class="flex-container" id="daftar-komik">
       <?php showKomik($select_komik, -1) ?>
     </div>
+  </div>
   </div>
 
 
