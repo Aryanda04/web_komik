@@ -97,4 +97,9 @@
 .table {
   padding-left: 15px;
 }
-/*  */
+.black {
+  color: black;
+}
+.hover:hover {
+  background-color: #008891;
+}

@@ -11,6 +11,7 @@ foreach($data_komik as $key => $komik) {
 }
 
 $data_list_genre = selectALL("SELECT * FROM `genre`");
+$data_list_type = selectALL("SELECT * FROM `komik` GROUP BY kategori");
 /* list data */
 
 function showKomik($list_komik, $loop)
@@ -74,9 +75,15 @@ function showKomik($list_komik, $loop)
                     <select id="Type" name="Type"
                         style="font-size:large; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
                         <option value="default">Type</option>
-                        <option value="Manga">Manga</option>
-                        <option value="Manhwa">Manhwa</option>
-                        <option value="Manhua">Manhua</option>
+                        <?php
+                          $iterasi_type = 1;
+                          foreach($data_list_type as $type) {
+                      ?>
+                        <option value="<?= $type["kategori"] ?>"><?= ucwords($type["kategori"]) ?></option>
+                        <?php
+                            $iterasi_type += 1;
+                          }
+                      ?>
                     </select>
                     <input type="submit" name="submit"
                         style="font-size:large; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
