@@ -54,57 +54,32 @@ function showKomik($list_komik, $loop)
         <h1 class="grid-container">Latest Release</h1>
 
         <div class="column" style="background-color: #394867;">
-            <!-- <div style="text-align: center; ">
-                <select id="Genre " name="Genre"
-                    style="font-size:large; margin-left: 80px; margin-right: 80px; padding-left: 45px; padding-right: 45px;">
-                    <option value="genre0 ">Genre</option>
-                    <option value="genre1 ">Action</option>
-                    <option value="genre2 ">Adventure</option>
-                    <option value="genre3 ">Comedy</option>
-                    <option value="genre4 ">Fantasi</option>
-                    <option value="genre5 ">Romance</option>
-                    <option value="genre6 ">Horror</option>
-                </select>
-                <select id="Type" name="Type"
-                    style="font-size:large; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
-                    <option value="type0 ">Type</option>
-                    <option value="type1 ">Mahwa</option>
-                    <option value="type1 ">Mahua</option>
-                    <option value="type2 ">Manga</option>
-                </select>
-            </div> -->
-
-
             <div style="text-align: center;">
-                <form method="get">
-                    <select id="Genre " name="Genre"
-                        style="font-size:large; margin-left: 80px; margin-right: 80px; padding-left: 45px; padding-right: 45px;">
-                        <option value="genre0">Genre</option>
-                        <?php
+              <form method="get">
+                <select id="Genre " name="Genre" style="font-size:medium; margin-left: 80px; margin-right: 80px; padding-left: 45px; padding-right: 45px;">
+                      <option value="genre0">Genre</option>
+                      <?php
                           $iterasi_genre = 1;
                           foreach($data_list_genre as $genre) {
                       ?>
-                        <option value="<?= $genre["nama_genre"] ?>"><?= ucwords($genre["nama_genre"]) ?></option>
-                        <?php
+                              <option value="<?= $genre["nama_genre"] ?>"><?= ucwords($genre["nama_genre"]) ?></option>
+                      <?php
                             $iterasi_genre += 1;
                           }
                       ?>
-                    </select>
-                    <select id="Type" name="Type"
-                        style="font-size:large; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
-                        <option value="type0">Type</option>
-                        <option value="Manga">Manga</option>
-                        <option value="Manhwa">Manhwa</option>
-                        <option value="Manhua">Manhua</option>
-                    </select>
-                    <input type="submit" name="submit"
-                        style="font-size:medium; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
-                </form>
-
+                  </select>
+                  <select id="Type" name="Type" style="font-size:medium; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
+                      <option value="type0">Type</option>
+                      <option value="Manga">Manga</option>
+                      <option value="Manhwa">Manhwa</option>
+                      <option value="Manhua">Manhua</option>
+                  </select>
+                  <input type="submit" name="submit" style="font-size:medium; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
+              </form>
             </div>
         </div>
 
-        <br><br><br>
+        <br><br>
 
         <div class="column" style="background-color: #9BA4B4;">
             <div class="flex-container" id="most-view">
