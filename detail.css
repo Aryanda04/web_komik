@@ -23,11 +23,14 @@
 
 .rating {
   background-color: #9ba4b4;
-  width: 250px;
+  width: 300px;
+  height: 150px;
   margin: 10px;
+  margin-right: 60px;
   text-align: center;
-  line-height: 75px;
   font-size: 30px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .title {
@@ -64,6 +67,7 @@
   font-size: 100%;
   padding: 10px 10px 10px 10px;
   text-align: center;
+  text-decoration: none;
 }
 .container {
   margin: 0% 7% 0%;
@@ -82,3 +86,15 @@
   z-index: -1;
   background-size: auto;
 }
+.kotak {
+  width: 5 px;
+  height: 5 px;
+  border-radius: 2px;
+  background: #3367d6;
+  position: absolute;
+  margin-top: 11px;
+}
+.table {
+  padding-left: 15px;
+}
+/*  */
