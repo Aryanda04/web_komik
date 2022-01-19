@@ -49,19 +49,23 @@ $data_chapter = selectALL("SELECT chapter.* from `chapter` JOIN `komik` ON chapt
                 <br><br>
                 <table border="0" cellpadding="5">
                     <tr>
-                        <td style="padding-right: 250px;"><strong>Released : </strong><?= $data_detail["waktu_rilis"] ?></td>
-                        <td><strong>Type : </strong><?= $data_detail["kategori"] ?></td>
+                        <td class="kotak"></td>
+                        <td style="padding-right: 250px;" class="table"><strong>Released : </strong><?= $data_detail["waktu_rilis"] ?></td>
+                        <td class="kotak"></td>
+                        <td class="table"><strong>Type : </strong><?= $data_detail["kategori"] ?></td>
                     </tr>
                     <tr>
-                        <td style="padding-right: 250px;"><strong>Total Chapter : </strong><?= $data_detail["total_chapter"] ?></td>
-                        <td><strong>Updated on : </strong><?= date_format(date_create($data_detail["waktu_update"]), "F d, Y") ?></td>
+                        <td class="kotak"></td>
+                        <td style="padding-right: 250px;" class="table"><strong>Total Chapter : </strong><?= $data_detail["total_chapter"] ?></td>
+                        <td class="kotak"></td>
+                        <td class="table"><strong>Updated on : </strong><?= date_format(date_create($data_detail["waktu_update"]), "F d, Y") ?></td>
                     </tr>
                 </table>
             </div>
 
         </div>
         <div class="rating">
-            <p>Jumlah Pembaca</p>
+            <p>Total Views</p>
             <p><?= $data_detail["total_views"] ?></p>
         </div>
     </div>
@@ -79,7 +83,7 @@ $data_chapter = selectALL("SELECT chapter.* from `chapter` JOIN `komik` ON chapt
                     <?php foreach ($data_chapter as $chapter) { ?>
                         <tr>
                             <td>
-                                <a href="isi_komik.php?id=<?= $chapter["chapter_id"] ?>"><?= $chapter["nama_chapter"] ?></a>
+                                <a style="text-decoration: none;" href="isi_komik.php?id=<?= $chapter["chapter_id"] ?>"><?= $chapter["nama_chapter"] ?></a>
                             </td>
                             <td style="float: right;"><?= date_format(date_create($chapter["waktu_update"]), "F d, Y") ?></td>
                         </tr>
