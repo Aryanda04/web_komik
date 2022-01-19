@@ -61,7 +61,12 @@ li a:hover {
 }
 
 ul input[type="text"] {
-  padding: 0 0 0 20px;
+  padding: 0 0 0 40px;
+
+  background-image: url("img/searchlogo.png");
+  background-position: 8px 6px;
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
 }
 
 /* dark-mode slider */
@@ -130,6 +135,9 @@ input:checked + .slider:before {
 /* judul komik di isi_komik */
 
 .judulBacaan {
+  font-size: 40px;
+  color: #394867;
+  font-family: verdana;
   text-align: center;
 }
 
@@ -137,12 +145,27 @@ input:checked + .slider:before {
   color: white;
 }
 
+.rootJudul {
+  font-size: 15px;
+  text-decoration: none;
+  color: rgb(207, 207, 207);
+}
+
+.rootJudulBackground {
+  font-family: verdana;
+  width: 70%;
+  margin-left: 200px;
+  background-color: #394867;
+  padding: 10px 0px 10px 0px;
+  border-radius: 5px;
+}
+
 /* chapterbox */
 
 .chapterList {
   float: left;
   padding-left: 0px;
-  margin-left: 30px;
+  margin-left: 120px;
   max-width: 300px;
   width: 150px;
   background-color: #394867;
@@ -157,7 +180,7 @@ input:checked + .slider:before {
 
 .buttonNext {
   float: right;
-  margin-right: 50px;
+  margin-right: 120px;
   background-color: #405cf5;
   border-radius: 6px;
   border-width: 0;

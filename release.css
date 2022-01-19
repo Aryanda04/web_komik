@@ -10,11 +10,13 @@ body {
 }
 
 .badan {
-    width: 80%;
-    margin: 15px auto;
+    width: 85%;
+    margin: 15px auto 0px;
     background-color: white;
     padding: 20px;
     overflow: hidden;
+
+    border-radius: 10px;
 }
 
 .cover {
