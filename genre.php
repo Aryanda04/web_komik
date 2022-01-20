@@ -19,11 +19,19 @@ function showKomik($list_komik, $loop)
 {
   $i = 1;
   foreach ($list_komik as $komik) {
-    if (isset($_GET["Genre"])) {
-      if (cekGenre($komik)) {
-        komikCard($komik);
+    if (isset($_GET["pilihan_genre"])) {
+      if(gettype($_GET["pilihan_genre"]) == "array") {
+        if (cekGenre($komik)) {
+          komikCard($komik);
+        } else {
+          continue;
+        }
       } else {
-        continue;
+        if (in_array($_GET["pilihan_genre"], $komik["list_genre"])) {
+          komikCard($komik);
+        } else {
+          continue;
+        }
       }
     } else {
       komikCard($komik);
@@ -38,7 +46,7 @@ function showKomik($list_komik, $loop)
 
 function cekGenre($komik)
 {
-  foreach ($_GET["Genre"] as $pilihan_genre) {
+  foreach ($_GET["pilihan_genre"] as $pilihan_genre) {
     if (in_array($pilihan_genre, $komik["list_genre"])) {
       return TRUE;
     }
@@ -71,9 +79,7 @@ function cekGenre($komik)
         <div class="grid-container2">
           <?php foreach ($data_genre as $genre) { ?>
 
-
-            <label class="grid-item"><input type="checkbox" name="Genre[]" rel="<?= $genre["nama_genre"] ?>" value="<?= $genre["nama_genre"] ?>"><?= ucwords($genre["nama_genre"]) ?></label>
-
+            <label class="grid-item"><input type="checkbox" name="pilihan_genre[]" rel="<?= $genre["nama_genre"] ?>" value="<?= $genre["nama_genre"] ?>"><?= ucwords($genre["nama_genre"]) ?></label>
 
           <?php } ?>
 

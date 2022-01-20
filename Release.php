@@ -2,6 +2,13 @@
 require 'db/db.php';
 require 'php/functionsrelease.php';
 
+$a = array();
+if($a) {
+  echo "kosong";
+} else {
+  echo "keisi";
+}
+
 /* list data */
 $data_komik = selectALL("SELECT komik.*,MAX(chapter.waktu_update) AS waktu_update,total_views,COUNT(komik.komik_id) AS total_chapter FROM `komik` JOIN `chapter` ON komik.komik_id = chapter.komik_id GROUP BY komik.komik_id ORDER BY waktu_update DESC");
 foreach($data_komik as $key => $komik) {

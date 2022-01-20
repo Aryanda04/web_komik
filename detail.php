@@ -43,7 +43,7 @@ $data_chapter = selectALL("SELECT chapter.* from `chapter` JOIN `komik` ON chapt
                 <p>
                     Genre :
                     <?php foreach ($data_genre_list as $data) { ?>
-                        <a href="genre.php?=" class="genre"><?= ucwords($data["nama_genre"]) ?>
+                        <a href="genre.php?pilihan_genre=<?= $data["nama_genre"] ?>" class="genre"><?= ucwords($data["nama_genre"]) ?>
                         <?php } ?></a>
                 </p>
                 <br><br>
