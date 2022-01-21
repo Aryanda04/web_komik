@@ -2,12 +2,12 @@
 require 'db/db.php';
 require 'php/functionsrelease.php';
 
-$a = array();
-if($a) {
-  echo "kosong";
-} else {
-  echo "keisi";
-}
+// $a = array();
+// if($a) {
+//   echo "kosong";
+// } else {
+//   echo "keisi";
+// }
 
 /* list data */
 $data_komik = selectALL("SELECT komik.*,MAX(chapter.waktu_update) AS waktu_update,total_views,COUNT(komik.komik_id) AS total_chapter FROM `komik` JOIN `chapter` ON komik.komik_id = chapter.komik_id GROUP BY komik.komik_id ORDER BY waktu_update DESC");
@@ -63,11 +63,10 @@ function showKomik($list_komik, $loop)
     <div class="badan">
         <h1 class="grid-container">Latest Release</h1>
 
-        <div class="column" style="background-color: #394867;">
+        <div class="column" style="background-color: #394867;height: 50px;margin: top 22px;">
             <div style="text-align: center;">
                 <form method="get">
-                    <select id="Genre " name="Genre"
-                        style="font-size:large; margin-left: 80px; margin-right: 80px; padding-left: 25px; padding-right: 25px;">
+                    <select class="dropbtn" id="Genre " name="Genre">
                         <option value="default">Genre</option>
                         <?php
                           $iterasi_genre = 1;
@@ -79,8 +78,7 @@ function showKomik($list_komik, $loop)
                           }
                       ?>
                     </select>
-                    <select id="Type" name="Type"
-                        style="font-size:large; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
+                    <select class="dropbtn" id=" Type" name="Type">
                         <option value="default">Type</option>
                         <?php
                           $iterasi_type = 1;
@@ -92,13 +90,11 @@ function showKomik($list_komik, $loop)
                           }
                       ?>
                     </select>
-                    <input type="submit" name="submit"
-                        style="font-size:large; margin-left: 80px; margin-right: 80px;padding-left: 45px; padding-right: 45px;">
+                    <input class="dropbtn" type="submit" name="submit">
                 </form>
             </div>
         </div>
 
-        <br><br><br>
 
         <div class="column" style="background-color: #9BA4B4;">
             <div class="flex-container" id="most-view">
