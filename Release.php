@@ -63,7 +63,7 @@ function showKomik($list_komik, $loop)
     <div class="badan">
         <h1 class="grid-container">Latest Release</h1>
 
-        <div class="column" style="background-color: #394867;height: 50px;margin: top 22px;">
+        <div class="column" style="background-color: #394867;height: 60px;margin: top 22px;">
             <div style="text-align: center;">
                 <form method="get">
                     <select class="dropbtn" id="Genre " name="Genre">

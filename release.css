@@ -158,11 +158,14 @@ ul {
 }
 
 .dropbtn {
-    font-size: large;
+    font-size: x-large;
     margin-left: 80px;
     margin-right: 80px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: auto;
+    padding-right: auto;
     margin-top: 12px;
+    margin-bottom: 12px;
     text-align: center;
+    border-radius: 3px;
+    background-color: #b0d8fd;
 }
