@@ -38,11 +38,12 @@ if ($key_array - 1 < 0) {
 <body>
     <?php include 'template/header.php' ?>
 
-    <h1 id="judulBacaan" class="judulBacaan"><?= $data_gambar[0]["nama_komik"] ?> <?= $data_gambar[0]["nama_chapter"] ?></h1>
+    <h1 id="judulBacaan" class="judulBacaan"><?= $data_gambar[0]["nama_komik"] ?> <?= $data_gambar[0]["nama_chapter"] ?>
+    </h1>
 
     <div class="rootJudulBackground">
         <?php
-        echo '<a id="judulBacaan" class="rootJudul" href="home.php" style="margin-left: 40%">Komik aja</a>';
+        echo '<a id="judulBacaan" class="rootJudul" href="home.php" style="margin-left: 40%">WEB KOMIK</a>';
         echo '<a class="rootJudul"> » </a>';
         echo '<a id="judulBacaan" class="rootJudul" href="detail.php?id=' . $id_komik . '">' . $data_gambar[0]["nama_komik"] . '</a>';
         echo '<a class="rootJudul"> » </a>';
@@ -54,7 +55,7 @@ if ($key_array - 1 < 0) {
         <select id="chapter" class="chapterList" onchange="location = this.value;">
             <option value="">Chapter</option>
             <?php foreach ($data_chapter as $data) { ?>
-                <option value="isi_komik.php?id=<?= $data["chapter_id"]; ?>"><?= $data["nama_chapter"]; ?></option>
+            <option value="isi_komik.php?id=<?= $data["chapter_id"]; ?>"><?= $data["nama_chapter"]; ?></option>
             <?php } ?>
         </select>
     </div>
@@ -72,7 +73,7 @@ if ($key_array - 1 < 0) {
     <br><br>
     <div id="chapterGambar" class="chapterGambar">
         <?php foreach ($data_gambar as $data) { ?>
-            <img src="<?= $data["file_gambar"] ?>" alt="" class="center">
+        <img src="<?= $data["file_gambar"] ?>" alt="" class="center">
         <?php } ?>
     </div>
 
