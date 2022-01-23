@@ -65,14 +65,14 @@ $data_chapter = selectALL("SELECT chapter.* from `chapter` JOIN `komik` ON chapt
 
         </div>
         <div class="rating">
-            <p>Total Views</p>
+            <p class="view">Total Views</p>
             <p><?= $data_detail["total_views"] ?></p>
         </div>
     </div>
 
     <div class="flex-container">
         <div class="chapter">
-            <p style="font-size: 25px; padding: 0px 20px 0px;"><strong>Sinopsis</strong></p>
+            <p style="font-size: 25px; padding: 0px 20px 0px;color: #0f3057 ;"><strong>Sinopsis</strong></p>
             <hr>
             <p class="teks" style="font-size: 20px;"><?= $data_detail["deskripsi"] ?></p>
             <br><br>

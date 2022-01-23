@@ -22,7 +22,7 @@
 }
 
 .rating {
-  background-color: #9ba4b4;
+  background-color: lightskyblue;
   width: 300px;
   height: 150px;
   margin: 10px;
@@ -32,6 +32,10 @@
   font-size: 30px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+}
+
+.rating-darkmode {
+  background-color: steelblue;
 }
 
 .title {
@@ -106,4 +110,13 @@
 }
 .hover:hover {
   background-color: #008891;
+}
+.view {
+  margin-top: auto;
+  padding: 10px;
+  background-color: dodgerblue;
+}
+.view-darkmode {
+  background-color: #14274e;
+  color: whitesmoke;
 }
