@@ -114,6 +114,7 @@
   display: flex;
   flex-basis: 0;
   justify-content: space-between;
+  color: rgb(88, 88, 88);
 }
 .judul {
   text-align: left;
@@ -127,7 +128,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
   margin-right: 10px;
+  color: black;
+  text-decoration: none;
 }
+.judul:hover {
+  text-decoration: underline;
+}
+
 .deskripsi {
   margin-top: 0px;
   padding: 10px;

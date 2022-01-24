@@ -6,16 +6,16 @@
 } */
 
 body {
-    background-color: #b0d8fd;
+  background-color: #b0d8fd;
 }
-  
+
 .badan {
   width: 85%;
   margin: 15px auto 0px;
   background-color: white;
   padding: 20px;
   overflow: hidden;
-  
+
   border-radius: 10px;
 }
 
@@ -47,7 +47,7 @@ body {
 .komikcard-darkmode {
   background-color: #394867;
 }
-  
+
 .cover {
   /* border: 2px solid rgb(255, 255, 255); */
   height: 80%;
@@ -67,6 +67,7 @@ body {
   display: flex;
   flex-basis: 0;
   justify-content: space-between;
+  color: rgb(88, 88, 88);
 }
 
 .footer {
@@ -90,6 +91,11 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   margin-right: 10px;
+  color: black;
+  text-decoration: none;
+}
+.judul:hover {
+  text-decoration: underline;
 }
 .deskripsi {
   margin-top: 0px;
@@ -139,4 +145,3 @@ body {
 .grid-darkmode {
   background-color: #9ba4b4;
 }
-  
