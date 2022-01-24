@@ -20,10 +20,10 @@ function komikCard($komik)
       <a href="detail.php?id= <?= $komik["komik_id"] ?>"><img src="img/<?= $komik["nama_komik"] ?>/<?= $komik["cover_komik"] ?>"></a>
 
     </div>
-    <a class="judul" href="detail.php?id= <?= $komik["komik_id"] ?>">
+    <a class="judul" href="detail.php?id= <?= $komik["komik_id"] ?>" title="<?= $komik["nama_komik"] ?>">
       <div><?= $komik["nama_komik"] ?></div>
     </a>
-    <p class="deskripsi"><?= $deskripsi ?></p>
+    <p class=" deskripsi"><?= $deskripsi ?></p>
     <div class="footer">
       <div class="detail-chapter"><?= $komik["total_chapter"] ?> Chapter</div>
     </div>
