@@ -47,7 +47,7 @@ function showKomik($list_komik, $loop)
       <?php showKomik($select_komik, -1) ?>
     </div>
   </div>
-  </div>
+
 
 
   <script src="home.js"></script>

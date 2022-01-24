@@ -7,6 +7,9 @@
             <input type="checkbox" onclick="darkMode()">
             <span class="slider round"></span>
         </label>
-        <input type="text" placeholder="Search.." class="Searchbox">
+        <div class="search">
+            <input type="text" id="searchbar" placeholder="Search.." class="Searchbox">
+            <div class="search-content"></div>
+        </div>
     </ul>
     <script src="template/header.js"></script>

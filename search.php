@@ -5,17 +5,22 @@
     $key_pencarian = $_GET["pencarian"];
 
     $select_komik = selectALL("SELECT komik.*, COUNT(komik.komik_id) AS total_chapter FROM komik JOIN chapter ON komik.komik_id = chapter.komik_id WHERE komik.nama_komik LIKE '%$key_pencarian%' GROUP BY komik.komik_id");
+    // var_dump(count($select_komik));
 
     function showKomik($list_komik, $loop)
     {
         $i = 1;
-        foreach ($list_komik as $komik) {
-            komikCard($komik);
-            $i++;
-            // var_dump($komik['komik_id']);
-            if ($i > $loop && $loop != -1) {
-                break; 
+        if(count($list_komik) > 0) {
+            foreach ($list_komik as $komik) {
+                komikCard($komik);
+                $i++;
+                // var_dump($komik['komik_id']);
+                if ($i > $loop && $loop != -1) {
+                    break; 
+                }
             }
+        } else {
+            echo "<h1>Hasil Pencarian Komik Yang Kamu Cari Tidak Ada</h1>";
         }
     }
 ?>
