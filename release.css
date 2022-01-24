@@ -27,6 +27,11 @@ body {
 .cover img {
   max-height: 300px;
   max-width: min-content;
+  transition: .2s ease-in;
+}
+
+.cover img:hover {
+  opacity: 0.5;
 }
 
 .badan h2 {

@@ -18,7 +18,6 @@ function komikCard($komik)
     </div>
     <div class="cover">
       <a href="detail.php?id= <?= $komik["komik_id"] ?>"><img src="img/<?= $komik["nama_komik"] ?>/<?= $komik["cover_komik"] ?>"></a>
-
     </div>
     <a class="judul" href="detail.php?id= <?= $komik["komik_id"] ?>">
       <div><?= $komik["nama_komik"] ?></div>

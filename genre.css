@@ -48,6 +48,11 @@
   /* border: 2px solid rgb(255, 255, 255); */
   height: 80%;
   overflow: hidden;
+  transition: .2s ease-in;
+}
+
+.cover:hover {
+  opacity: 0.5;
 }
 
 .size {

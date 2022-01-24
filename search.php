@@ -20,7 +20,7 @@
                 }
             }
         } else {
-            echo "<h1>Hasil Pencarian Komik Yang Kamu Cari Tidak Ada</h1>";
+            echo "<h1>Komik Tidak Ditemukan</h1>";
         }
     }
 ?>
